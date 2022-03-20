@@ -111,9 +111,71 @@ export function dec2binary(number){
 }
 ```
 
+### 栈常见的面试题
+
+实现一个特殊的栈，在基本功能的基础上，再实现返回栈中最小元素的功能
+
+1. pop push getMin操作的时间复杂度都是O（1）
+2. 设计的栈类型可以使用现成的栈结构
+
+```javascript
+export class MinStack extends Stack {
+  constructor() {
+    super();
+    this.minItem = [];
+  }
+  getMinPop() {
+    return this.minItem[this.minItem.length - 1];
+  }
+  push(element) {
+    this.items.push(element);
+    if (this.minItem.length === 0) {
+      this.minItem.push(element);
+    } else if (element > this.getMinPop()) {
+      this.minItem.push(this.getMinPop());
+    } else {
+      let min = this.peek();
+      this.minItem.push(min);
+    }
+  }
+  pop() {
+    this.minItem.pop();
+    return this.items.pop();
+  }
+}
+```
+
+如何用栈结构实现队列结构，两个栈结构拼队列，创建两个栈，分别是data和help，利用data进去的数据导到help中实现队列
+
+```
+export class TowStackQueue {
+  constructor() {
+    this.stack = new Stack();
+    this.stack2 = new Stack();
+  }
+  enqueue(item) {
+    this.stack.push(item);
+  }
+  dequeue() {
+    while (!this.stack.isEmpty()) {
+      this.stack2.push(this.stack.pop());
+    }
+    this.stack2.pop();
+  }
+}
+```
+
+如何用队列结构实现栈结构
+
+```
+
+```
+
 
 
 # 队列 Queue
+
+> 栈和队列实际是通过双向链表、数组实现
 
 - 队列，它是一种受限的线性表，**先进先出FIFO first in first out**
   - 受限之处在于它只允许在表的前端进行删除操作
@@ -213,8 +275,6 @@ for(let i =0;i<nameList.length;i++){
 - 但不同于数组，链表中的元素在内存中**不必是连续的空间**
 - 链表的每个元素由一个储存**元素本身的节点**和一个**指向下一个元素的引用**（指针/连接）组成
 
-
-
 - 相对于数组，链表有一些**优点**
   - 内存空间不是必须连续的，可以利用计算机的内存，实现灵活的内存动态管理
   - 链表不必在创建时就**确定大小**，且大小可以无限延伸
@@ -226,8 +286,6 @@ for(let i =0;i<nameList.length;i++){
 ### 什么是链表
 
 类似火车，有一个火车头，火车头连接一个节点，节点上有乘客（数据（item，next）），且这个节点会连接下一个节点
-
-![image-20210110125824148](C:\Users\qiancheng\AppData\Roaming\Typora\typora-user-images\image-20210110125824148.png)
 
 ### 列表常见操作
 
@@ -379,6 +437,8 @@ size(){
 
 ```
 
+### 双向链表
+
 ```javascript
 // doublyLinkedList
 import { LinkedList,Node } from "./linkedList";
@@ -499,7 +559,65 @@ export class doublyLinkedList extends LinkedList{
 }
 ```
 
+### 反转单项链表
 
+```javascript
+export const reverseList = (head) => {
+  let next = null;
+  let pre = null;
+  while (head !== null) {
+    next = head.next;
+    head.next = pre;
+    pre = head;
+    head = next;
+  }
+  return pre;
+};
+```
+
+### 反转双项链表
+
+```javascript
+export const reverseDoubleList = (head) => {
+  let next = null;
+  let pre = null;
+  while (head !== null) {
+    next = head.next;
+    head.next = pre;
+    head.last = next;
+    pre = head;
+    head = next;
+  }
+  return pre;
+};
+```
+
+### 删除单项链表中的某一项
+
+```javascript
+// 删除链表中某一个数组
+export const removeVal = (head, val) => {
+  // 判断是不是头部删除
+  while (head !== null) {
+    if (head.element !== val) {
+      break;
+    }
+    head = head.next;
+  }
+  let pre = head;
+  let cur = head;
+  while (cur !== null) {
+    if (cur.element === val) {
+      pre.next = cur.next;
+    } else {
+      pre = cur;
+    }
+    cur = cur.next;
+  }
+  return head;
+};
+
+```
 
 # 哈希hash
 
@@ -1296,11 +1414,9 @@ console.log(arr);
 
 **更快捷**的一种记法：无进位相加，例如5^7，对应二进制数是101^111，从个位开始算，1+1需要进位，把进位数去掉，保留本身的0，接下来是0+1=1，所以是1，1+1=10，保留个位数，最终010，等于2
 
-
-
 ### 异或运算题目
 
-题目一
+#### 题目一
 
 两个数的交换，不产生额外的内存空间
 
@@ -1314,7 +1430,7 @@ arr[0]=arr[0]^arr[1]
 console.log(arr); // [2, 1, 3]
 ```
 
-题目二
+#### 题目二
 
 一个数组中有一种数出现了奇数次，其他数都出现了偶数次，怎么找到并打印这种数
 
@@ -1328,7 +1444,7 @@ for (let i = 0; i < arr.length; i++) {
 console.log(eor);
 ```
 
-题目三
+#### 题目三
 
 怎么将一个数最左侧的1提取出来
 
@@ -1338,7 +1454,7 @@ num = num & (~num + 1);
 console.log(num); // 4
 ```
 
-题目四
+#### 题目四
 
 一个数组中有两种数出现了奇数次，其他数都出现了偶数次，怎么找到并打印这两种数
 
@@ -1355,11 +1471,11 @@ for (let i = 0; i < arr.length; i++) {
     oneAddTimes ^= arr[i];
   }
 }
-console.log(oneAddTimes);
-console.log(oneAddTimes^eor);
+console.log(oneAddTimes); // 3
+console.log(oneAddTimes^eor); // 5
 ```
 
-题目五
+#### 题目五
 
 计算一个数中，出现1的次数
 
@@ -1378,3 +1494,4 @@ const bit1Count = (num: number): number => {
 bit1Count(3); // 2
 ```
 
+ 
