@@ -1383,11 +1383,99 @@ sort(heap: number[]) {
 
 # 前缀树
 
-trie，前缀树、又称字典树，他是一种有序的树，是一个数组，里面存放着对象，健通常为字符串，每一个对象即是一个节点，而节点的位置由树的位置决定。
+`trie`，前缀树、又称字典树，他是一种有序的树，是一个数组，里面存放着对象，健通常为字符串，每一个对象即是一个节点，而节点的位置由树的位置决定。
 
-大多数情况下，他被应用到搜索提示中，匹配搜索前缀、字符串检索、字符串最长公共前缀
+<img src="https://raw.githubusercontent.com/QC2168/note-img/main/202204012223125.png" alt="image-20220401222307068" style="zoom:67%;" />
 
+### 应用场景
 
+大多数情况下，他被应用到搜索提示中，匹配搜索前缀、字符串检索、字符串最长公共前缀。
+
+利用公共的前缀来减少查询的时间，减少重复的查询和字符串比较。
+
+### 实现前缀树
+
+前缀树节点分为pass，end，next，分别存放着当前节点有多少个单词经过这个节点，这个节点是否为一个单词的结尾，下一个节点的路。
+
+#### 实现前缀树节点
+
+next这里我使用Map记录，即`Map<string, TNode>`
+
+```typescript
+class TNode {
+  pass: number;
+  end: number;
+  next: Map<string, TNode>;
+  constructor() {
+    this.pass = 0;
+    this.end = 0;
+    this.next = new Map();
+  }
+}
+```
+
+#### 实现前缀树
+
+```typescript
+export default class Trie {
+  root: TNode;
+  constructor() {
+    this.root = new TNode();
+  }
+}
+```
+
+#### insert
+
+```typescript
+// 插入
+insert(word: string): void {
+  if (word.length === 0) {
+    return;
+  }
+  let cur: TNode = this.root;
+  for (let i: number = 0; i < word.length; i++) {
+    // 判断当前节点是否有 word i的路
+    if (!cur.next.has(word[i])) {
+      cur.next.set(word[i], new TNode());
+    }
+    let node = cur.next.get(word[i]) as TNode;
+    node.pass++;
+    if (i === word.length - 1) node.end++;
+    cur = node;
+  }
+}
+```
+
+#### search
+
+```typescript
+// 查找
+search(word: string): boolean {
+  let cur: TNode = this.root;
+  for (let i: number = 0; i < word.length; i++) {
+    if (cur.next.get(word[i])) {
+      cur = cur.next.get(word[i]) as TNode;
+      if (i === word.length - 1 && cur.end > 0) return true;
+    }
+  }
+  return false;
+}
+```
+
+#### startsWith
+
+```typescript
+// 查找是否有指定字符串开头的
+startsWith(word: string): boolean {
+  let cur: TNode = this.root;
+  for (let i: number = 0; i < word.length; i++) {
+    if (!cur.next.get(word[i])) return false;
+    cur = cur.next.get(word[i]) as TNode;
+  }
+  return true;
+}
+```
 
 ## 计数排序
 
