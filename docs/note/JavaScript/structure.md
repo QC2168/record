@@ -38,7 +38,7 @@
 
 - 栈也是一种非常常见的数据结构，并且在程序中的应用非常广泛
 
-![栈的模型](https://bkimg.cdn.bcebos.com/pic/8b82b9014a90f603eab7c55f3912b31bb051eda7?x-bce-process=image/resize,m_lfit,w_220,h_220,limit_1)
+![栈的模型](https://raw.githubusercontent.com/QC2168/note-img/main/202204021835510.jpeg)
 
 - 栈stack，它是一种受限的线性表 **后进先出LIFO last in frist out**
   - 其限制是仅允许在 **表的一端** 进行插入和删除运算。这一端被称为 **栈顶** ，相对地，另一端称为 **栈底**
@@ -618,6 +618,55 @@ export const removeVal = (head, val) => {
 };
 
 ```
+
+### 快慢指针
+
+### 回文链表
+
+> 遍历链表，将链表中的每一个元素推入到一个栈里，遍历完成之后，将栈顶元素弹出来与链表的第一个元素相比（此时是逆序排序），如果其中有一个元素和栈中元素匹配不到就不是回文。（笔试时使用该方法）
+
+整体实现思路，通过快慢指针先定位到链表的中心位置，把链表分成左右两段，右边的链表进行反转操作。定义两个指针，分别指向左右链表的第一个节点，一直往下判断判断，当节点中的元素不一致时则不是回文链表，返回`false`，如果右指针一直到`null`时，说明是回文链表。由于刚刚把链表分成了两段，我们需要把链表恢复回来。
+
+> 这里需要注意的是，此过程会修改链表，在并发时，需要锁定链表的访问。
+
+```typescript
+export default function isPalindrome(head: ListNode | null) {
+    if (head === null) return true
+    // 获取链表中心位置
+    let slow: ListNode = head
+    let fast: ListNode | null = head
+    while (fast.next !== null && fast.next.next !== null) {
+        fast = fast.next.next
+        slow = (slow.next) as ListNode
+    }
+    // 找到前半部分链表的尾节点。
+    let mid = slow
+    // 反转后面的链表
+    let reList = reverseList(mid.next)
+    let n1 = head
+    let n2 = reList
+    while (n2 !== null) {
+        if (n1.element !== n2.element) {
+            return false
+        }
+        n1 = n1.next as ListNode
+        n2 = n2.next
+    }
+
+    // 恢复链表
+    mid.next = reverseList(reList)
+    console.log(head);
+    return true
+};
+```
+
+
+
+### 链表排序
+
+![image-20220402113529601](https://raw.githubusercontent.com/QC2168/note-img/main/202204021135754.png)
+
+
 
 # 哈希hash
 
