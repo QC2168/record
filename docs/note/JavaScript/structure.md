@@ -28,11 +28,11 @@
 
 # javascript数组结构
 
-主要概念，数组的扩容 性能是比较低的，新建一个数组需要确认他的大小，比如现在定了一个长度4的数组，有一天添加到5，他需要新建一个长度5的数组，将原有的数组迁移到这个新数组，这个性能是非常低的
+主要概念，数组的扩容 性能是比较低的，新建一个数组需要确认他的大小，比如现在定了一个长度4的数组，有一天添加到`5`，他需要新建一个长度`5`的数组，将原有的数组迁移到这个新数组，这个性能是非常低的
 
 在数组前面插入或删除元素：元素位移，数组需要将里边一个一个元素进行往后移一位，这个性能是非常低的，但实际开发使用到的次数非常少
 
-数据放到数组中之后，查找数组是靠index，O（1）这个是非常快的
+数据放到数组中之后，查找数组是靠`index`，`O（1）`这个是非常快的
 
 #  栈结构
 
@@ -40,23 +40,24 @@
 
 ![栈的模型](https://raw.githubusercontent.com/QC2168/note-img/main/202204021835510.jpeg)
 
-- 栈stack，它是一种受限的线性表 **后进先出LIFO last in frist out**
+- 栈`stack`，它是一种受限的线性表 **后进先出`LIFO last in frist out`**
   - 其限制是仅允许在 **表的一端** 进行插入和删除运算。这一端被称为 **栈顶** ，相对地，另一端称为 **栈底**
-  - LIFO（last in first out）后进入的元素，第一个弹出栈空间，类似于自动餐托盘，最后的盘子，都是最先出的
+  - `LIFO`（`last in first out`）后进入的元素，第一个弹出栈空间，类似于自动餐托盘，最后的盘子，都是最先出的
   - 向一个栈插入新元素称为 **进栈、入栈、压栈**，它新元素放在栈顶元素上面
   - 从一个栈删除元素称为 **出栈、退栈** 它是把栈顶元素删除掉，使其相邻的元素成为新的栈顶元素
 
-### 栈的操作
+### 栈的常见的操作
 
-- push（element）添加一个新元素到栈顶位置
-- pop 移除栈顶的元素，同时返回被移除的元素
-- peek 返回栈顶的元素，不对栈做任何修改
-- isEmpty 如果栈里没有任何元素就返回true，否则返回false
-- size 返回栈里的元素个数，这个方法和数组的length属性很像
-- toString 将栈结构的内容以字符形式返回
+- `push`（`element`）添加一个新元素到栈顶位置
+- `pop` 移除栈顶的元素，同时返回被移除的元素
+- `peek` 返回栈顶的元素，不对栈做任何修改
+- `isEmpty` 如果栈里没有任何元素就返回`true`，否则返回`false`
+- `size` 返回栈里的元素个数，这个方法和数组的`length`属性很像
+- `toString` 将栈结构的内容以字符形式返回
+
+### 实现栈结构
 
 ```javascript
-
 export class Stack {
     constructor(){
     // 栈中属性
@@ -111,7 +112,27 @@ export function dec2binary(number){
 }
 ```
 
+#### 测试代码
+
+```javascript
+const stack =new Stack();
+
+stack.push("abc");
+stack.push("cba");
+stack.push("npc");
+stack.push("mba");
+console.log(stack); // Stack items: (3) ['abc', 'cba', 'npc']
+console.log(stack.items); // ['abc', 'cba', 'npc', 'mba']
+console.log(stack.pop()); // mba
+console.log(stack.items); // ['abc', 'cba', 'npc']
+console.log(stack.peek()); // npc
+console.log(stack.isEmpty()); // false
+console.log(stack.size()); // 3
+```
+
 ### 栈常见的面试题
+
+#### 题目一
 
 实现一个特殊的栈，在基本功能的基础上，再实现返回栈中最小元素的功能
 
@@ -145,6 +166,8 @@ export class MinStack extends Stack {
 }
 ```
 
+#### 题目二
+
 如何用栈结构实现队列结构，两个栈结构拼队列，创建两个栈，分别是data和help，利用data进去的数据导到help中实现队列
 
 ```
@@ -177,14 +200,16 @@ export class TowStackQueue {
 
 > 栈和队列实际是通过双向链表、数组实现
 
-- 队列，它是一种受限的线性表，**先进先出FIFO first in first out**
+- 队列，它是一种受限的线性表，**先进先出`FIFO first in first out`**
   - 受限之处在于它只允许在表的前端进行删除操作
   - 而在后端进行插入操作
-- enqueue（element）向队列尾部添加一个（或多个）新的项
-- dequeue（）移除队列的第一项，并返回被移除的元素
-- front（）返回队列中第一个元素，队列不做任何变动
-- isEmpty（）判断队列是否有数据
-- size（） 返回队列包含的元素个数，与数组的length属性类似
+- `enqueue（element）`向队列尾部添加一个（或多个）新的项
+- `dequeue（）`移除队列的第一项，并返回被移除的元素
+- `front（）`返回队列中第一个元素，队列不做任何变动
+- `isEmpty（）`判断队列是否有数据
+- `size（）` 返回队列包含的元素个数，与数组的length属性类似
+
+### 实现队列
 
 ```javascript
 export class Queue {
@@ -214,56 +239,21 @@ size(){
     return this.items.length;
 }
 }
-
-class QueueElement{
-    constructor(element,priority){
-        this.element=element;
-        this.priority=priority;
-    }
-}
-export class PriorityQueue extends Queue{
-    enqueue(element,priority){
-// 1. 创建QueueElement 对象
-const queueElement = new QueueElement(element,priority);
-// 2. 插入新的元素
-if(this.isEmpty()){
-    this.items.push(queueElement);
-
-}else{
-    let added =false
-    for(let i=0;i<this.items.length;i++){
-        if(this.items[i].priority>queueElement.priority){
-            this.items.splice(i,0,queueElement)
-            added=true
-            break;
-        }
-    }
-    if(!added){
-        this.items.push(queueElement)
-    }
-}
-
-    }
-}
-export function passGame(nameList,num){
-    // 1. 创建队列
-const queue = new Queue();
-for(let i =0;i<nameList.length;i++){
-    queue.enqueue(nameList[i])
-}
-    // 2。 循环让这些人进入队列中
-    while(queue.size()>1){
-        // 
-        for(let i=0;i<num-1;i++){
-            queue.enqueue(queue.dequeue())
-        }
-        queue.dequeue()
-    }
-    return queue.front()
-}
 ```
 
+#### 测试代码
 
+```javascript
+const queue = new Queue();
+queue.enqueue("abc");
+queue.enqueue("ccb");
+queue.enqueue("def");
+queue.enqueue("666");
+console.log(queue.items); // ['abc', 'ccb', 'def', '666']
+console.log(queue.dequeue()); // abc
+console.log(queue.items); // ['ccb', 'def', '666']
+console.log(queue.front()); // ccb
+```
 
 # 链表
 
@@ -978,10 +968,7 @@ export class HashTable {
     return number;
   }
 }
-
 ```
-
-
 
 # tree
 
