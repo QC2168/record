@@ -650,13 +650,39 @@ export default function isPalindrome(head: ListNode | null) {
 };
 ```
 
-
-
 ### 链表排序
 
 ![image-20220402113529601](https://raw.githubusercontent.com/QC2168/note-img/main/202204021135754.png)
 
 
+
+#### 常见面试题
+
+1. 给定两个可能有环也可能无环的单链表，头节点head1和head2.请实现一个函数，如果两个链表相交，请返回相交的第一个节点，如果不相交，返回null
+
+   - 要求：如果两个链表长度之和为N，时间复杂度要求达到O（N），额外空间复杂度要求达到O（1）
+
+   - ```typescript
+     // https://leetcode-cn.com/problems/intersection-of-two-linked-lists/solution/xiang-jiao-lian-biao-by-leetcode-solutio-a8jn/
+     function getIntersectionNode(headA: Node | null, headB: Node | null): Node | null {
+         if (headA == null || headB == null) {
+             return null;
+         }
+         // 指针
+         let n1: Node | null = headA
+         let n2: Node | null = headB
+         while (n1 !== n2) {
+             n1 = n1 === null ? n2 : n1.next
+             n2 = n2 === null ? n1 : n2.next
+         }
+         console.log(n1);
+         return n1;
+     };
+     ```
+
+2. 能不能不给单链表的头节点，只给想要删除的节点，就能做到在链表上把这个点删掉？
+
+   - 答：**无解，考的是内存管理方面，必须给头节点才能准确的删除节点**
 
 # 哈希hash
 
@@ -1053,6 +1079,23 @@ export class HashTable {
   - 后序遍历
   - 层序遍历 …
 
+### 递归实现二叉树的遍历
+
+- 递归实现二叉树的先序、中序、后序遍历
+
+- 先序、中序、后序都可以在递归序的基础上加工出来
+- 第一个到达一个节点就打印就是先序，第二个是中序，第三次是后序
+
+### 非递归实现二叉树的遍历
+
+- 如何递归函数都可以改成非递归方式
+- 自己设计压栈来实现
+
+实现二叉树的按层遍历
+
+- 宽度优先遍历，用队列
+- 通过设置flag变量的方式，来发现某一层的结束
+
 ### 二叉搜索树的删除
 
 - 删除节点要从查找要删的节点开始，找到节点后，需要考虑三种情况：
@@ -1303,6 +1346,12 @@ export class BinarySearchTree {
 }
 
 ```
+
+### 二叉树的序列化
+
+#### 分先序 中序 后序
+
+
 
 ## 堆
 
