@@ -376,6 +376,8 @@ type AT =ConstructorParameters<any>
 
 #### 分析
 
+先是判断传入的`T`类型函数是否为一个抽象类，接着通过`infer`推断出该构造函数的参数类型，否则返回`never`
+
 ```typescript
 type ConstructorParameters<T extends abstract new (...args: any) => any> = T extends abstract new (...args: infer P) => any ? P : never
 ```
@@ -405,13 +407,15 @@ type f2Type = ReturnType<typeof f2>;
 
 #### 分析
 
+先判断传入的`T`类型是否为一个函数，是则进行`infer`推断返回值参数类型。
+
 ```typescript
 type ReturnType<T extends (...args: any) => any> = T extends (...args: any) => infer R ? R : any
 ```
 
 ### InstanceType
 
-`InstanceType`用于获取一个实例的类型。
+`InstanceType`用于获取一个类的实例的类型。
 
 #### 栗子
 
@@ -437,13 +441,15 @@ type AT =InstanceType<any>
 
 #### 分析
 
+判断传入的`T`类型是否为一个抽象类，通过`inter`推断类返回的参数
+
 ```typescript
 type InstanceType<T extends abstract new (...args: any) => any> = T extends abstract new (...args: any) => infer R ? R : any
 ```
 
 ### ThisParameterType
 
-`ThisParameterType`用于获取函数类型中的`this`类型
+`ThisParameterType`用于提取函数的`this`的参数类型，传入的类型必须是一个函数类型。
 
 #### 栗子
 
@@ -452,7 +458,6 @@ import Person from "./ConstructorParameters";
 
 function f1(this:Person){
     console.log(this);
-
 }
 
 type TT=ThisParameterType<typeof f1>
@@ -461,25 +466,72 @@ type TT=ThisParameterType<typeof f1>
 
 #### 分析
 
+推断`T`类型是否为一个函数，接着推断函数中的`this`类型。
+
 ```typescript
 type ThisParameterType<T> = T extends (this: infer U, ...args: any[]) => any ? U : unknown
 ```
 
 ### OmitThisParameter
 
-同上面的`Omit`类似，将`This`类型中忽略指定的类型属性
+同上面的`Omit`类似，`OmitThisParameter`用于移除类型中的`this`类型。
 
 #### 栗子
 
 ```typescript
+function foo(this: number) {
+  console.log(this);
+}
 
+const fooType: OmitThisParameter<typeof foo> = foo.call(1);
 ```
 
 #### 分析
 
-```typescript
+这里传入了`ThisParameterType`，先得到`T`函数的`this`类型，判断是否为一致，后续推断出`A`和`R`类型。
 
+```typescript
+type OmitThisParameter<T> = unknown extends ThisParameterType<T> ? T : T extends (...args: infer A) => infer R ? (...args: A) => R : T
 ```
 
 ### ThisType
 
+`ThisType`用于在字面量对象中指定`this`。
+
+> 只有在 `--noImplicitThis` 的选项下才有效
+
+#### 栗子
+
+```typescript
+// 简单的栗子
+interface data {
+  count: number;
+  increase:()=>void
+}
+
+// 复杂一点的栗子
+type ObjectDescriptor<D, M> = {
+  data?: D;
+  methods?: M & ThisType<D & M>; // Type of 'this' in methods is D & M
+};
+
+function makeObject<D, M>(desc: ObjectDescriptor<D, M>): D & M {
+  let data: object = desc.data || {};
+  let methods: object = desc.methods || {};
+  return { ...data, ...methods } as D & M;
+}
+
+let obj = makeObject({
+  data: { x: 0, y: 0 },
+  methods: {
+    moveBy(dx: number, dy: number) {
+      this.x += dx; // Strongly typed this
+      this.y += dy; // Strongly typed this
+    },
+  },
+});
+
+obj.x = 10;
+obj.y = 20;
+obj.moveBy(5, 5);
+```
