@@ -1723,21 +1723,52 @@ console.log(arr);
 
 `T(N)=2*T(N/2)+O(N^1)`，根据`master`公式可得到时间复杂度是`O（N*logN）`，`merge`过程需要辅助数组，所以空间复杂度为`O（N）`，归并排序的实质是把比较行为变成了有序信息并传递，比`O（N^2）`的排序快
 
-归并排序实现
-
-```
-
+```typescript
+static merge<T = number>(leftArr: T[], rightArr: T[]): T[] {
+  let help: T[] = [];
+  while (leftArr.length && rightArr.length) {
+    if (leftArr[0] <= rightArr[0]) {
+      help.push(leftArr.shift() as T);
+    } else {
+      help.push(rightArr.shift() as T);
+    }
+  }
+  return [...help, ...leftArr, ...rightArr];
+}
+static mergeSort<T = number>(arr: T[]): T[] {
+  if (arr.length === 1) {
+    return arr;
+  }
+  let mid: number = arr.length >> 1;
+  let leftArr: T[] = arr.slice(0, mid);
+  let rightArr: T[] = arr.slice(mid);
+  return Sort.merge(Sort.mergeSort(leftArr), Sort.mergeSort(rightArr));
+}
 ```
 
 在一般刷题或者比赛中，一道算法题最优解是在**先时间复杂度尽可能低，后再使用最低的空间复杂度**这就是最优解。
 
-
-
-
-
 ## 二分算法
 
 
+
+## 打表法 找规律
+
+当一道题是**输入参数和输出参数只有一个时**，可以使用打表法，先使用暴力法跑一遍题目，再从过程中取”规律“，按照规则来解答
+
+> 如果想严格判断规律是否正确，写一个对数器跑到Max_value即可，先自测一遍
+
+### 栗子
+
+#### 栗子一 
+
+#### 栗子二
+
+## 矩阵处理技巧
+
+zigzag矩阵
+
+转圈打印矩阵
 
 ## 异或运算
 
