@@ -1,13 +1,26 @@
-let obj ={a:1}
+// let obj = new Proxy(
+//   {
+//     get a() {
+//         console.log(this);
+//       return this.b;
+//     },
+//   },
+//   {
+//     get: function (target, key) {
+//       if (key === "b") return "bbb";
+//       return Reflect.get(target, key);
+//     },
+//   }
+// );
 
-// 正常情况下
-let pObj=new Proxy(obj,{
-    get(target,key){
-        return Reflect.get(target,key)
-    },
-    set(target,key){
-        return Reflect.set(target,key)
+// console.log(obj.a); // undefined
+// console.log(obj.b); // bbb
+// console.log(Reflect.get(obj, "a", { b: "reflect bbb" }));
+const obj = { get a() { return this.b; } };
+const proxy = new Proxy(obj, {
+    get(target, key) {
+        return target[key]
     }
 })
-
-console.log(pObj.a); // 1
+console.log(Reflect.get(obj, "a")); // undefined
+console.log(Reflect.get(obj, "a", { b: 2 })); // 2
