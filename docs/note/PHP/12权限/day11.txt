@@ -1,0 +1,10 @@
+1.
+select * from 学生表 where 院系ID=(
+	select 院系ID from 院系 where 院系名称='计算机系'
+);
+2.
+select * from 院系 where 院系ID=(
+select 院系ID from 学生表 where 学生='韩顺平'
+)
+3.
+select 院系名称 from 院系 where 系办地址 like '%行政楼%';

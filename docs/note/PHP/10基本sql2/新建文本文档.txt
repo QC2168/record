@@ -1,0 +1,48 @@
+//主键演示
+create table tab_zhujian1(
+	id int,
+	name varchar(10)
+);
+insert into tab_zhujian1 values(1,'aa');
+insert into tab_zhujian1 values(1,'aa');
+//以下为对比表  及数据
+create table tab_zhujian2(
+	id int,
+	name varchar(10),
+	primary key(id)
+);
+
+insert into tab_zhujian2 values(1,'aa');
+insert into tab_zhujian2 values(1,'aa');
+
+#replace into 
+insert into tab_zhujian2 values(1,'bb');//这个不行  报错
+replace into tab_zhujian2 values(1,'bb');
+
+演示load data（载入数据）的语句
+先看要“载入”的数据
+
+create table tab_load_data(
+	id int auto_increment primary key,
+	name varchar(10),
+	sex enum('男','女'),
+	jiguan varchar(10),
+	f5 int
+);
+
+
+where子句的常见语法
+select * from 表名 where id >5 and f5 <3;
+
+
+
+create table use(
+	user_id int auto_increment primary key,
+	user_name varchar(10),
+	user_pass varchar(10),
+	age tinyint unsigned,
+	edu enun('小学','中学','大学','硕士','博士')，
+	xingqu set('排球','篮球','足球','中国足球','地球')，
+	'from' enum('东北','华北','西北','华东','华南','华西'),
+	reg_time datetime
+);

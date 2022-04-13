@@ -1,0 +1,74 @@
+//创建用户
+create user 'user1'@'localhost' identified by '123';
+//创建用户2
+create user 'user1'@'127.0.0.1' identified by '123';
+
+
+授权
+grant 权限 on 某库.某个对象 to 用户名@登录位置 【identified by  '密码'】
+
+//授予权限
+grant select on php174133.*  to 'user1'@'localhost'
+grant insert on php174133.*  to 'user1'@'localhost';   #添加性权限 
+
+#创建一个存储过程
+#目标是：将3个数据写入到表tab_int
+#并返回该表第一个字段的前3大值的行
+Create procedure insert_get_Data(p1 int,p2 tinyint,p3 bigint)
+Begin
+	Insert into tab_int(f1,f2,f3)values(p1,p2,p3);
+	Select * from tab_int order by f1 desc limit 0,3;
+End;
+///
+
+#创建一个存储过程  其中使用in ，out ， inout
+#目标是：将3个数据写入到表tab_int
+#并返回该表第一个字段的前3大值的行
+Create procedure pro1(in p1 int,out p2 tinyint,inout p3 bigint)
+Begin
+	set p2=p1*2;#p2设置为p1的2倍
+	set p3=p3+p1*3;#p3设置为p3本身再加上p1的三倍
+	Insert into tab_int(f1,f2,f3)values(p1,p2,p3);
+End;
+
+#定义一个触发器
+#在表tab_int插入一行数据的时候，能够同时将这个表中的第一个字段的前大值的行
+#写入到另一个表中（tab_int_max1）
+#其中表tab_int的结构为
+CREATE TABLE `tab_int` 
+  `f1` int(11) DEFAULT NULL,
+  `f2` tinyint(4) DEFAULT NULL,
+  `f3` bigint(20) DEFAULT NULL
+然后表tab_int_max3的结构跟其一样
+#但其中永远都只存储tab_int中的最大值的行 
+CREATE TABLE `tab_int_max1` (
+  `f1` int(11) DEFAULT NULL,
+  `f2` tinyint(4) DEFAULT NULL,
+  `f3` bigint(20) DEFAULT NULL
+)
+#然后，在tab_int写触发器
+create trigger tri1 after insert on tab_int for each row
+begin
+	delete from tab_int_max1;#先删除tab_int_max1中的所有数据
+	#取得tab_int中的f1字段的最大值，并存入变量@f1
+	select max(f1) into @maxf1 from tab_int;
+	#根据得到的f1字段的最大值，作为条件，取出3个字段的值
+	select f2 into @v2 from tab_int where f1=@maxf1;
+	select f3 into @v3 from tab_int where f1=@maxf1;
+	#将@maxf1，@v2，@v3插入到tab_int_max1
+	insert into tab_int_max1(f1,f2,f3)values(@maxf1,@v2,@v3);
+end;
+
+#新的触发器，在tab_int进行insert之前
+#将该行数据也同时插入到一个跟其类似结构的表中（tab_int_some）
+CREATE TABLE `tab_int_some` (
+  `id` int(11) DEFAULT NULL,
+  `age` tinyint(4) DEFAULT NULL
+)///
+create trigger copy_data before insert on tab_int for each row
+begin
+	set @v1=new.f1; #获取新行的字段f1的值
+	set @v2=new.f2; #获取新行的字段f2的值
+	insert into tab_int_some(id,age)values(@v1,@v2);
+end;
+///

@@ -1,0 +1,22 @@
+<mxfile host="65bd71144e">
+    <diagram id="8Q0ww0wtHp3JKw4YpJ0d" name="Page-1">
+        <mxGraphModel dx="798" dy="484" grid="0" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="827" pageHeight="1169" math="0" shadow="0">
+            <root>
+                <mxCell id="0"/>
+                <mxCell id="1" parent="0"/>
+                <mxCell id="2" value="var name =&quot;hxh&quot;&lt;br&gt;var age = 18&lt;br&gt;&lt;br&gt;// 复杂类型&lt;br&gt;// 引用类型&lt;br&gt;var obj=0x100&lt;br&gt;var names=0x200" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#ffe6cc;strokeColor=#d79b00;" vertex="1" parent="1">
+                    <mxGeometry x="37" y="72" width="234" height="358" as="geometry"/>
+                </mxCell>
+                <mxCell id="3" value="&lt;span style=&quot;background-color: rgb(255 , 255 , 255)&quot;&gt;&lt;br&gt;&lt;span style=&quot;color: rgb(0 , 0 , 0) ; font-family: &amp;#34;helvetica&amp;#34; ; font-size: 12px ; font-style: normal ; font-weight: 400 ; letter-spacing: normal ; text-align: center ; text-indent: 0px ; text-transform: none ; word-spacing: 0px ; display: inline ; float: none&quot;&gt;&lt;br style=&quot;font-family: &amp;#34;helvetica&amp;#34;&quot;&gt;0x100={&lt;br&gt;name:'hxh1',&lt;br&gt;age:40&lt;br&gt;}&lt;br&gt;&lt;/span&gt;0x200=['a','b']&lt;/span&gt;" style="rounded=1;whiteSpace=wrap;html=1;strokeColor=#6c8ebf;" vertex="1" parent="1">
+                    <mxGeometry x="298" y="72" width="452" height="353" as="geometry"/>
+                </mxCell>
+                <mxCell id="4" value="堆" style="text;html=1;align=center;verticalAlign=middle;resizable=0;points=[];autosize=1;strokeColor=none;" vertex="1" parent="1">
+                    <mxGeometry x="510" y="51" width="22" height="17" as="geometry"/>
+                </mxCell>
+                <mxCell id="5" value="栈" style="text;html=1;align=center;verticalAlign=middle;resizable=0;points=[];autosize=1;strokeColor=none;" vertex="1" parent="1">
+                    <mxGeometry x="143" y="51" width="22" height="17" as="geometry"/>
+                </mxCell>
+            </root>
+        </mxGraphModel>
+    </diagram>
+</mxfile>

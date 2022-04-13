@@ -1,0 +1,24 @@
+#ﬂ…ﬂ…Õ¯’æµ„
+NameVirtualHost *:80
+<VirtualHost *:80>
+	ServerName   www.guagua.com
+	DocumentRoot  "D:\guagua"
+	Redirect 404 /
+	<Directory °∞D:\guagua°±>
+	#ErrorDocument 404 "This is 404 page
+	Options Indexes 
+	Order Deny,Allow
+	Allow from all
+</Directory>
+</VirtualHost>
+
+
+<VirtualHost *:80>
+	ServerName   localhost:80
+	DocumentRoot  "C:\AppServ\www"
+	<Directory °∞C:\AppServ\www°±>
+	Options Indexes 
+	Order Deny,Allow
+	Allow from all
+</Directory>
+</VirtualHost>

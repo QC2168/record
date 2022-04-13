@@ -1,0 +1,107 @@
+//varchar  char 使用
+create table tab_char_varchar(
+	postcide char(6),/*中国邮政*/
+	name varchar(10) /*姓名*/
+)
+//enum set
+create table enum_set(
+	id int auto_increment primary key,
+	sex enum('男','女'),
+	fav set('篮球','排球','足球')
+)
+
+ insert into enum_set('sex','fav')values('1','3');
+
+
+
+
+
+演示时间日期类型
+create table tab_time(
+	dt datetime,
+	d2 date,
+	t2 time,
+	y year,
+	s timestamp   /* 通常不用赋值 */
+)
+
+insert into tab_time(dt,d2,t2,y)
+values('2015-7-8 12:12:12','2019/4/19','12:12:12','2019');
+insert into tab_time(sex，fav)
+values('2015-7-8 12:12:12','2019/4/19','12:12:12','2019');
+insert into tab_time(dt,d2,t2,y)
+values('2015/7/8 1:12:12','2019/4/19','12:12:12','2019');
+
+insert into tab_time(dt,d2,t2,y)
+values(now(),now(),now(),now());
+
+
+演示字段属性的使用：
+create table tab_shuxing(
+	id int auto_increment primary key,
+	user_name varchar(20) not null unique key,
+	password varchar(48) not null,
+	age tinyint default 18,
+	email varchar(50) comment'电子邮箱'
+);
+
+
+#索引创建语法
+create table tab_suoying(
+	id int auto_increment,
+	user_name varchar(20),
+	email varchar(50),
+	age int,           /* 没有索引 */
+	unique key(user_name),   /* 这就是唯一索引 */
+	primary key(id),   /* 这就是主键索引 */
+	key(email)  /*普通索引*/
+);
+	
+
+
+#外键索引
+create table banji(
+	id int auto_increment primary key,
+	banjihao varchar(10) unique key comment '班级',
+	banzhuren varchar(10) comment '班主任',
+	open_date date comment '开班日期'
+);
+
+create table xuesheng(
+	stu_id int auto_increment primary key,
+	name varchar(10),
+	age tinyint,
+	banji_id int comment '班级id',
+	foreign key(banji_id)references banji(id)
+);
+
+
+#演示表选项
+create table tab_xuanxiang(
+	id int auto_increment primary key,
+	name varchar(10),
+	age tinyint
+)
+charset=gbk, 	/* 当前数据库的字符编码为utf8 */
+engine=MyIsam,	/* 存储引擎 */
+auto_increment=1000, /* 设定当前表的自增长字段的初始值 */
+comment = '说明.....'
+;
+
+insert into tab_xuanxiang(
+id,name,age
+)values(
+null,'123',11
+);
+
+#修改表
+alter table tab_xuanxiang add column email varchar(50);
+alter table  tab_xuanxiang add key(age); /* 添加普通索引 */
+	
+#复制表
+create table [if not exists] 新表名 like 原表名;
+
+
+
+#创建视图
+select id,

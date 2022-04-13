@@ -1,0 +1,4 @@
+int 占32位	他就可以存0-255
+tinyint占8位 他就可以存0-255
+decimal（总位数，小数位数）定点数  
+效率不如float   double
