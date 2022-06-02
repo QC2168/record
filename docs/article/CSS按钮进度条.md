@@ -8,13 +8,13 @@
 
 #### 实现效果
 
-![1](https://gitee.com/QC2168/note-img/raw/master/202203161632523.gif)
+![1](https://raw.githubusercontent.com/QC2168/note-img/main/202203161632523.gif)
 
 #### 原理
 
 创建一个`div`作为按钮的总体，在按钮里边放入`3`个`div`，分别是进度条元素，图标元素，文本元素，我们将按钮设置为相对定位，将进度条元素设置为绝对定位，利用`top`和`left`值来控制进度条，让我们用码实现！
 
-![2](https://gitee.com/QC2168/note-img/raw/master/202203161632524.png)
+![2](https://raw.githubusercontent.com/QC2168/note-img/main/202203161632524.png)
 
 #### 用码实现
 
@@ -48,7 +48,7 @@
     }
 ```
 
-![](https://gitee.com/QC2168/note-img/raw/master/202203161632525.png)
+![](https://raw.githubusercontent.com/QC2168/note-img/main/202203161632525.png)
 
 很快，我们按钮的基本样式已经写出来了，接下来我们先实现进度条效果，在`.button`元素下创建一个`span`标签，并绑定上一个``progress`类名作为进度条元素。这里不能使用伪元素，因为后续我们需要使用`JavaScript`来控制按钮的状态。而伪元素是不能通过`JavaScript`被查找到的。
 
@@ -80,7 +80,7 @@
 
 我们先把`overflow`的`hidden`属性注释掉，可以看到现在`.progress`元素位于按钮元素的左下边。露出`10%`的高度显示在按钮可见范围中。后面我们通过`JavaScript`的`API`来获取到`.progress`元素，控制该元素的`left`值就可以实现进度条效果啦！
 
-![4](https://gitee.com/QC2168/note-img/raw/master/202203161632526.png)
+![4](https://raw.githubusercontent.com/QC2168/note-img/main/202203161632526.png)
 
 #### 码出下载效果
 
@@ -100,11 +100,11 @@ btn.addEventListener('click', () => {
 });
 ```
 
-![5](https://gitee.com/QC2168/note-img/raw/master/202203161632527.gif)
+![5](https://raw.githubusercontent.com/QC2168/note-img/main/202203161632527.gif)
 
 接下来，我们把按钮元素的`overflow`属性设置为`hidden`时。
 
-![6](https://gitee.com/QC2168/note-img/raw/master/202203161632528.gif)
+![6](https://raw.githubusercontent.com/QC2168/note-img/main/202203161632528.gif)
 
 到了这里，我们已经完成了进度条效果，但对比效果图还是差了那么一点点，当进度条到`100%`之后，我们需要将`.progress`元素的`top`值设置为`0`，把整块元素上移。在点击事件后加入以下代码：
 
@@ -125,7 +125,7 @@ setTimeout(() => {
     }
 ```
 
-![7](https://gitee.com/QC2168/note-img/raw/master/202203161632529.gif)
+![7](https://raw.githubusercontent.com/QC2168/note-img/main/202203161632529.gif)
 
 ##### 引入图标
 
@@ -157,7 +157,7 @@ i {
   }
 ```
 
-![8](https://gitee.com/QC2168/note-img/raw/master/202203161632530.png)
+![8](https://raw.githubusercontent.com/QC2168/note-img/main/202203161632530.png)
 
 给这个图标设置一个循环动画，这样可以用来吸引用户眼球从而促使去点击它 。
 
@@ -176,7 +176,7 @@ i {
 }
 ```
 
-![9](https://gitee.com/QC2168/note-img/raw/master/202203161632531.gif)
+![9](https://raw.githubusercontent.com/QC2168/note-img/main/202203161632531.gif)
 
 加了这个动效之后，用户是不是更有点击欲啦？
 
@@ -222,7 +222,7 @@ btn.addEventListener('click', () => {
   }
 ```
 
-![10](https://gitee.com/QC2168/note-img/raw/master/202203161632532.gif)
+![10](https://raw.githubusercontent.com/QC2168/note-img/main/202203161632532.gif)
 
 #### 最后
 

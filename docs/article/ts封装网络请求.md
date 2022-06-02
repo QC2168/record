@@ -58,7 +58,7 @@ axios.patch(url[, data[, config]])
 - 将直接常用的参数，使用一个`Api`类进行封装。如果需要日后更换一些常用的配置选项可直接在`Api`中进行修改
 - 集中管理`Api`，方便后续管理网络`Api`
 
-![image-20220120005713912](https://gitee.com/QC2168/note-img/raw/master/202201200057328.png)
+![image-20220120005713912](https://raw.githubusercontent.com/QC2168/note-img/main/202201200057328.png)
 
 在项目中新建`network`文件，作为项目的网络请求根文件夹。后续我们会将相关的配置文件放到这里。
 

@@ -16,7 +16,7 @@
 
 在封装组件之前，我们需要有一个`Vue`组件（废话...），我们先看看这个界面是如何的，接下来我们要怎么去区分它们的功能块，然后按照功能进行一个逻辑功能抽离和视图抽离，今天我们主要先讲关于视图的封装。
 
-![image-20220226205220242](https://gitee.com/QC2168/note-img/raw/master/202202262052955.png)
+![image-20220226205220242](https://raw.githubusercontent.com/QC2168/note-img/main/202202262052955.png)
 
 这是一个还没有封装的静态页面，目前还没有对任何逻辑的页面，本文将介绍如何去封装这一个页面
 
@@ -27,7 +27,7 @@
 
 最终我将它们分出`Card`组件、`Data`组件、`Option`组件、`Chart`组件、`Progress`组件。
 
-![image-20220226210314325](https://gitee.com/QC2168/note-img/raw/master/202202262103443.png)
+![image-20220226210314325](https://raw.githubusercontent.com/QC2168/note-img/main/202202262103443.png)
 
 源`Vue`文件代码，这里我截取了`template`中的内容，逻辑这块我们暂不抽离处理。
 

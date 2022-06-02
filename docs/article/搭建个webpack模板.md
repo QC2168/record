@@ -8,7 +8,7 @@
 
 我们就可以从官网中的主图看出`webpack`它可以将多种文件打包合并成一个或多个`bundle`。
 
-![image-20210620160811018](https://gitee.com/QC2168/note-img/raw/master/202203161654712.png)
+![image-20210620160811018](https://raw.githubusercontent.com/QC2168/note-img/main/202203161654712.png)
 
 #### 初始化项目
 
@@ -26,7 +26,7 @@ tsc --init  	// 生成 tsconfig.json 配置文件
 npm install webpack webpack-cli --save-dev
 ```
 
-![](https://gitee.com/QC2168/note-img/raw/master/202203161654713.png)
+![](https://raw.githubusercontent.com/QC2168/note-img/main/202203161654713.png)
 
 #### 配置快捷脚本
 
@@ -176,13 +176,13 @@ npm install --save-dev css-loader style-loader sass-loader sass ts-loader typesc
 
 可以看到里边有index.html和main.js文件，由于我们写的是`ts`文件，无法直接在浏览器中跑起来，上面我们配置了`ts-loader`，是它帮我们把`ts`转换为`js`文件的。
 
-![3](https://gitee.com/QC2168/note-img/raw/master/202203161654714.png)
+![3](https://raw.githubusercontent.com/QC2168/note-img/main/202203161654714.png)
 
 #### 配置多页面
 
 为什么这里要配置多页面？
 
-![问号表情包](https://gitee.com/QC2168/note-img/raw/master/202203161658799.jpg)
+![问号表情包](https://raw.githubusercontent.com/QC2168/note-img/main/202203161658799.jpg)
 
 现在`Vue`，`React`，`Angular`这三大框架都是`SPA`了，开局直接`npm run serve`
 
@@ -270,11 +270,11 @@ entry: {
 
 现在我们再执行一下`npm run build`命令，打包我们的项目。
 
-![4](https://gitee.com/QC2168/note-img/raw/master/202203161654715.png)
+![4](https://raw.githubusercontent.com/QC2168/note-img/main/202203161654715.png)
 
 打开`hello.html`和`hello.html`，我们在`pages`文件夹中对应的页面文件也都被`HtmlWebpackPlugin`插件处理到对应的`html`文件中。
 
-![5](https://gitee.com/QC2168/note-img/raw/master/202203161654716.png)
+![5](https://raw.githubusercontent.com/QC2168/note-img/main/202203161654716.png)
 
 #### 配置代码规范
 
@@ -307,7 +307,7 @@ trim_trailing_whitespace = false
 
 提示：如果你是使用`vscode`编辑器，需要到插件市场中安装 `EditorConfig for VS Code` 插件。
 
-![6](https://gitee.com/QC2168/note-img/raw/master/202203161654717.png)
+![6](https://raw.githubusercontent.com/QC2168/note-img/main/202203161654717.png)
 
 ##### ESlint
 
@@ -366,11 +366,11 @@ new ESLintPlugin({
 
 提示：如果你是使用`vscode`编辑器，需要到插件市场中安装 `ESLint` 插件并开启`ESlint`服务。
 
-![16](https://gitee.com/QC2168/note-img/raw/master/202203161654718.png)
+![16](https://raw.githubusercontent.com/QC2168/note-img/main/202203161654718.png)
 
 测试下是否配置成功，可以在一个ts文件中，声明一个变量，不要添加分号，这个时候编辑器会显示红色波浪线来提示你。
 
-![](https://gitee.com/QC2168/note-img/raw/master/202203161654719.png)
+![](https://raw.githubusercontent.com/QC2168/note-img/main/202203161654719.png)
 
 打开在`vscode`编辑器的`settings.json`配置文件，添加以下代码：
 
@@ -408,7 +408,7 @@ npx husky-init && npm install
 
 不过，还是需要手动修改下文件的，打开`.husky\pre-commit`文件，把npm test命令替换成`eslint --fix --ext .js,.ts src`。
 
-![18](https://gitee.com/QC2168/note-img/raw/master/202203161654720.png)
+![18](https://raw.githubusercontent.com/QC2168/note-img/main/202203161654720.png)
 
 这个`pre-commit`是一个hook文件，作用是当我们执行`git commit`的时候，会先对项目执行一遍`eslint --fix --ext .js,.ts src`，如果`ESlint`通过，即`commit`成功，否则停止`commit`。
 
@@ -438,7 +438,7 @@ npm i lint-staged -D
 npx lint-staged
 ```
 
-![19](https://gitee.com/QC2168/note-img/raw/master/202203161654721.png)
+![19](https://raw.githubusercontent.com/QC2168/note-img/main/202203161654721.png)
 
 #### 调试环境
 
@@ -491,7 +491,7 @@ const config: Configuration = {
 
 执行`npm run serve`后，`webserver`将开始运行构建一个服务环境，对应的`URL`地址也在`terminal`中显示出来，`webserver`也会自动的帮我们打开浏览器访问对应的`URL`地址。
 
-![1](https://gitee.com/QC2168/note-img/raw/master/202203161653679.png)
+![1](https://raw.githubusercontent.com/QC2168/note-img/main/202203161653679.png)
 
 现在，当我们在`index.html`中修改一些代码时，`webpack-dev-server`会监听到项目下代码的修改，立即将修改后的代码重新进行打包合并，更新后服务中 ，页面也会进行相对应的改变
 
@@ -515,7 +515,7 @@ const config: Configuration = {
 
 ```
 
-![2](https://gitee.com/QC2168/note-img/raw/master/202203161654722.png)
+![2](https://raw.githubusercontent.com/QC2168/note-img/main/202203161654722.png)
 
 关于`webpack-dev-server`该插件还有很多的配置项，这里我们只是做了简单的配置，如果你想了解更多的配置，[请移至插件配置文档](https://github.com/webpack/webpack-dev-server#usage)
 

@@ -18,17 +18,17 @@
 
 如下图，点击创建应用，为你的项目创建一个应用。用于使用百度地图`API`。
 
-![1](https://gitee.com/QC2168/note-img/raw/master/202203161638550.png)
+![1](https://raw.githubusercontent.com/QC2168/note-img/main/202203161638550.png)
 
 ##### 应用信息
 
 设置你的应用名称，以及应用的类型（浏览端）。
 
-![2](https://gitee.com/QC2168/note-img/raw/master/202203161638551.png)
+![2](https://raw.githubusercontent.com/QC2168/note-img/main/202203161638551.png)
 
 创建之后，我们就可以拿到AK了，后面我们引入需要使用到它。
 
-![3](https://gitee.com/QC2168/note-img/raw/master/202203161638552.png)
+![3](https://raw.githubusercontent.com/QC2168/note-img/main/202203161638552.png)
 
 ##### 引入API
 

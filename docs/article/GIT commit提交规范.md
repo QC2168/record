@@ -14,19 +14,19 @@
 
 我们看下不太规范的`commit`，是不是感觉这种`commit`信息有点乱，且如果这种`commit`写得再乱一点可能其他人想从这里面的`commit`获取有效信息有点困难。
 
-![image-20220208142940703](https://gitee.com/QC2168/note-img/raw/master/202202081429851.png)
+![image-20220208142940703](https://raw.githubusercontent.com/QC2168/note-img/main/202202081429851.png)
 
 我们可以看下`vue`、`react`这些主流的前端框架在`github`上的`commit message`，在每一条`commit`的前面都会有`chore`、`docs`、`fix`等字段，分别代表修改构建流程或者增加依赖包、修改文档、修复问题。通过这些前缀我们就能直接看出每次`commit`的类型。后面接上本次提交的描述，更清晰的表达本次修改的内容。
 
-![image-20220208142007226](https://gitee.com/QC2168/note-img/raw/master/202202081420558.png)
+![image-20220208142007226](https://raw.githubusercontent.com/QC2168/note-img/main/202202081420558.png)
 
-![image-20220208142037549](https://gitee.com/QC2168/note-img/raw/master/202202081420714.png)
+![image-20220208142037549](https://raw.githubusercontent.com/QC2168/note-img/main/202202081420714.png)
 
 其实，它们都遵循了`conventional commits`（约定式提交）的一种提交规范，也是本文的主题。
 
 ### Conventional Commits
 
-![image-20220208143859217](https://gitee.com/QC2168/note-img/raw/master/202202081438535.png)
+![image-20220208143859217](https://raw.githubusercontent.com/QC2168/note-img/main/202202081438535.png)
 
 [`Conventional Commits`](https://www.conventionalcommits.org/en/v1.0.0/)是一个提交格式规范，这个规范主要是当你在`commit`的时候，对我们的提交信息做一个格式规范约束，它提供了一组简单规则来创建清晰的提交历史，通过在提交信息中描述功能、修复、破坏性变更。
 
@@ -52,7 +52,7 @@
   - 主题内容 描述修改的内容 （可选）
   - 页脚注释 通常用于放`issues` （可选）
 
-![image-20220208150623469](https://gitee.com/QC2168/note-img/raw/master/202202081506627.png)
+![image-20220208150623469](https://raw.githubusercontent.com/QC2168/note-img/main/202202081506627.png)
 
 ### Angular Commit规范
 
@@ -288,7 +288,7 @@ module.exports = {
 
 ### 效果
 
-![image-20220209214905892](https://gitee.com/QC2168/note-img/raw/master/202202092149184.png)
+![image-20220209214905892](https://raw.githubusercontent.com/QC2168/note-img/main/202202092149184.png)
 
 ### 总结
 

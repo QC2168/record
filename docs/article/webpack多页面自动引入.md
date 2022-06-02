@@ -109,6 +109,6 @@ const config: Configuration = {
 };
 ```
 
-![image-20220122161150279](https://gitee.com/QC2168/note-img/raw/master/202201221612253.png)
+![image-20220122161150279](https://raw.githubusercontent.com/QC2168/note-img/main/202201221612253.png)
 
-![image-20220122161054056](https://gitee.com/QC2168/note-img/raw/master/202201221610125.png)
+![image-20220122161054056](https://raw.githubusercontent.com/QC2168/note-img/main/202201221610125.png)

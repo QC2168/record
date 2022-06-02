@@ -4,9 +4,9 @@
 
 今天我们来讲讲如何使用`HTML` `CSS`和`JavaScript`来实现涟漪效果，我们先看下成品:
 
-![1](https://gitee.com/QC2168/note-img/raw/master/202203161628917.gif)
+![1](https://raw.githubusercontent.com/QC2168/note-img/main/202203161628917.gif)
 
-![5](https://gitee.com/QC2168/note-img/raw/master/202203161628444.png)
+![5](https://raw.githubusercontent.com/QC2168/note-img/main/202203161628444.png)
 
 看完是不是也想给自己项目整一个这样子的效果😎😎
 
@@ -14,7 +14,7 @@
 
 如图，我们需要两个元素来实现这个涟漪效果，当`button`被点击时，在`button`元素中放置一个元素，执行一个绽开动画效果，执行完毕后把`buttion`里的元素移除。
 
-![2](https://gitee.com/QC2168/note-img/raw/master/202203161628502.png)
+![2](https://raw.githubusercontent.com/QC2168/note-img/main/202203161628502.png)
 
 
 
@@ -51,7 +51,7 @@
 }
 ```
 
-![3](https://gitee.com/QC2168/note-img/raw/master/202203161628918.png)
+![3](https://raw.githubusercontent.com/QC2168/note-img/main/202203161628918.png)
 
 当样式写完之后我们按钮的样式就跟效果图上的按钮一模一样了，由于我们`JavaScript`部分还没有写以及实现涟漪效果还没有实现，此时我们点击按钮是没有涟漪效果的，接下来我们要就添加涟漪效果了。
 
@@ -87,7 +87,7 @@
 
 添加一个帧动画，命名为`blink`，将`span`元素的宽度，高度从`0px`过渡到`400px`，及透明度从设定的`0.5`过渡到0，渐渐向外绽开，这样子就形成了涟漪效果了，当我们把`span`元素挂载上去我们可以看下效果，接下来我们将通过JavaScript来获取鼠标点击位置来决定绽开的位置。
 
-![4](https://gitee.com/QC2168/note-img/raw/master/202203161628919.gif)
+![4](https://raw.githubusercontent.com/QC2168/note-img/main/202203161628919.gif)
 
 **注意**
 
@@ -135,9 +135,9 @@ const addRipple = function (e) {
 $('#btn').click(addRipple);
 ```
 
-![1](https://gitee.com/QC2168/note-img/raw/master/202203161628917.gif)
+![1](https://raw.githubusercontent.com/QC2168/note-img/main/202203161628917.gif)
 
-![5](https://gitee.com/QC2168/note-img/raw/master/202203161628920.png)
+![5](https://raw.githubusercontent.com/QC2168/note-img/main/202203161628920.png)
 
 #### 最后
 
