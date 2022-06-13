@@ -3,7 +3,6 @@ import { defineConfig4CustomTheme } from "vuepress/config";
 import type { recoTheme } from 'vuepress-theme-reco'
 import getChildren from './autoSidebar'
 import path from 'path'
-console.log(getChildren(path.join(__dirname,'../article'),'article'));
 
 export default defineConfig4CustomTheme<recoTheme>({
     theme: 'reco',
@@ -12,15 +11,16 @@ export default defineConfig4CustomTheme<recoTheme>({
         config.node.set('node', true)
         config.node.set('process', true)
     },
+
     themeConfig: {
         navbar: true,
         sidebar: {
             "/article/": [{
                 title: '文章列表',   // 必要的
                 path: '/article/',      // 可选的, 标题的跳转链接，应为绝对路径且必须存在
-                collapsable: false, // 可选的, 默认值是 true,
+                collapsable: true, // 可选的, 默认值是 true,
                 sidebarDepth: 1,    // 可选的, 默认值是 1
-                children:getChildren(path.join(__dirname,'../article'),'article')
+                children: getChildren(path.join(__dirname, '../article'), 'article')
 
             },]
         },
