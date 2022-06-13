@@ -1,5 +1,4 @@
 import fs from 'fs'
-import path from 'path'
 export default function getChildren(path, link) {
     var allFile = fs.readdirSync(path);
     // 获取文件名
@@ -9,5 +8,4 @@ export default function getChildren(path, link) {
         path: `/${link}/${fileName.slice(0, -3)}`,
     }))// 过滤readme文件，否则会出错无法渲染出列表
     .filter(i=>i.title!=='readme')
-
 }
