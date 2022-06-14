@@ -60,7 +60,7 @@ let pObj=new Proxy(obj,{
     }
 })
 
-console.log(pObj.a); 
+console.log(pObj.a);
 ```
 
 > Uncaught RangeError: Maximum call stack size exceeded

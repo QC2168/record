@@ -18,6 +18,4 @@ for item in files:
     if item == 'index.py':
         continue
     updateUrl(item)
-
-
 ```

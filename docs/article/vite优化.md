@@ -1,5 +1,3 @@
-一起养成写作习惯！这是我参与「掘金日新计划 · 4 月更文挑战」的第1天，[点击查看活动详情](https://juejin.cn/post/7080800226365145118)。
-
 ### 前言
 
 作者最近在开发的项目有一个使用到了`vite`构建工具，在构建项目时，当时看到这个就是我的天！这个包怎么这么大！于是，我对他做了一场小手术。
@@ -134,7 +132,7 @@ export default defineConfig({
 
 在`vue3`中，许多的`Api`都是可以被`tree-shake`优化，也即是你的项目中使用到了某些`API`只打包这些被使用到的`API`，减少包的体积。在选择第三方库时，尽量使用ES版本就比如`lodash-es`和`lodash`，前者是`ES6`格式的代码可以被`tree-shake`，而`lodash`则是全部引入，体积较大。
 
-### 兼容
+### 兼容性优化
 
 目前，大部分的浏览器支持了`ESM`，但部分旧版浏览器不支持`ESM`，此时就需要使用`@vitejs/plugin-legacy`来兼容这些旧版的浏览器。[详细请戳这里](https://github.com/vitejs/vite/tree/main/packages/plugin-legacy#readme)
 
