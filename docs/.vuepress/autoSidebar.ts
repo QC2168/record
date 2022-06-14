@@ -1,6 +1,6 @@
 import fs from 'fs'
-export default function getChildren(path, link) {
-    var allFile = fs.readdirSync(path);
+export default function getChildren(path:string, link:string) {
+    let allFile = fs.readdirSync(path);
     // 获取文件名
     allFile = allFile.filter(i => i.includes('.md'))
     return allFile.map(fileName => ({
