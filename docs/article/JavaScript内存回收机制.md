@@ -110,7 +110,12 @@ element.someObject = null;
 
 `FinalizationRegistry`对象可以让你在对象被垃圾回收时请求一个回调
 
-我们直接看下面这个例子，我们创建了一个registry对象，
+我们直接看下面这个例子，我们创建了一个registry对象，`FinalizationRegistry`接收一个函数，当执行垃圾回收时会触发执行这个函数。
+
+接下来，我们把`foo`对象通过`registry.register`注册了foo，并传入了'foo被销毁了'，这是刚刚定义的函数形参`heldValue`。
+
+最后，我们把foo指向null，在下一次GC后foo将会被销毁。
+
 ```javascript
 const registry = new FinalizationRegistry(heldValue => {
     console.log(heldValue) // foo被销毁了
@@ -122,6 +127,8 @@ registry.register(foo,'foo被销毁了');
 foo = null
 
 ```
+
+> FinalizationRegistry 是 ES2021引入的薪对象
 
 #### 浏览器大战
 > 在1998年，微软公司的IE浏览器取代了网景公司Netscape浏览器
