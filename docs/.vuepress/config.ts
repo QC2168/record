@@ -4,6 +4,7 @@ import getChildren from './autoSidebar'
 import path from 'path'
 
 export default defineConfig4CustomTheme({
+    base:'/record/',
     theme: 'reco',
     chainWebpack(config) {
         // config 是一个 ChainableConfig 的实例
