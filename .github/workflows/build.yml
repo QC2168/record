@@ -15,12 +15,8 @@ jobs:
 
     steps:
       - uses: actions/checkout@v3
-      - name: Use Node.js 16
-        uses: actions/setup-node@v3
-        with:
-          node-version: 16
-      - name: run build
-        run: npm i && run build
+      - name: install and build
+        run: npm install && npm run build
       - name: Deploy
         uses: JamesIves/github-pages-deploy-action@v4
         with:
