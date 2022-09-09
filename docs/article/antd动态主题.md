@@ -1,5 +1,5 @@
 ## 实现效果
-
+![1](https://raw.githubusercontent.com/QC2168/note-img/main/1.gif)
 ## 实现原理
 通过修改`antd`样式中的前缀，改变对应的类选择器实现样式改变。
 ## 搭建环境
@@ -219,6 +219,8 @@ body .dark{
 ```
 
 到这里，我们就已经实现了首图中的主题的切换效果！
+
+![1](https://raw.githubusercontent.com/QC2168/note-img/main/1.gif)
 
 ## 扩展：使用less变量主题
 在实现了主题切换之后,但我们对主题有定制颜色时也很简单,我们只需要在`less`文件中设置变量值即可
