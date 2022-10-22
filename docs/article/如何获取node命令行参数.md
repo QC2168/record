@@ -7,18 +7,18 @@
 > [node process文档](https://nodejs.org/api/process.html#process)
 
 ## process.arg
-在该对象中，有一个arg属性，它可以获取当前node执行时传入各个参数数据。
+在该对象中，有一个`argv`属性，它可以获取当前`node`执行时传入各个参数数据。
 
-我们创建一个index.js文件，先打印下process.args里面是什么东西
+我们创建一个`index.js`文件，先打印下`process.argv`里面是什么东西
 ```JavaScript
-console.log(process.arg)
+console.log(process.argv)
 // node index.js
 [
   'D:\\software\\nodejs\\node.exe',
   'D:\\project\\script\\src\\index.js'
 ]
 ```
-从上面的输出结果，可以得到当前执行的node程序路径(也就是`process.execPath`返回值)和执行的文件（`index.js`）路径，我们像使用其他`cli`工具一样添加一些参数试试
+从上面的输出结果，可以得到当前执行的`node`程序路径(也就是`process.execPath`返回值)和执行的文件（`index.js`）路径，我们像使用其他`cli`工具一样添加一些参数试试
 ```bash
 node index.js name=zhangsan age=18
 ```
@@ -33,7 +33,7 @@ node index.js name=zhangsan age=18
 可以看到我们传入的`name`参数与`age`参数也被获取到了
 > 需要注意的是argv中的参数是通过空格来分割的
 
-通常，我们会在命令行每个参数前面添加`--`字符，用来识别传入的各个参数。
+通常，我们会在命令行每个参数前面添加`--`字符，用来识别传入的各个参数。（这种是`GNU`风格的命令行参数，以`--`开头，也是比较常见的）
 
 例如在`esbuild`构建工具中
 ```bash
@@ -43,7 +43,18 @@ esbuild app.jsx --bundle --outfile=out.js
 ```bash
 vite --config my-config.js
 ```
-修改一下上面的命令为
+
+除了上面的`GNU`风格，常见的还有`UNIX`风格，以`-`开头的，例如下面命令获取当前目录下文件，文件夹详情。
+```bash
+ls -l
+```
+你是不是会想到了最常用的`npm`了？
+没错，它即是使用`UNIX`风格
+```
+npm i -d esbuild
+```
+
+继续我们步骤，修改一下上面的命令为
 ```bash
 node index.js --name=zhangsan --age=18
 ```
@@ -84,5 +95,12 @@ const params = Object.fromEntries(
 console.log(params)
 // { name: 'zhangsan', age: '18' }
 ```
+当然，上面这个只是简单的获取参数的函数，也没有一些边界情况（例如出现`foo=bar=baz`参数等情况）。
+### 相关的解析库
+在`github`上也有一些成熟的命令行参数解析库，感兴趣的同学也可以看看源码🍔🍔
+
+- [mri](https://github.com/lukeed/mri)
+- [yargs-parser](https://github.com/yargs/yargs-parser)
+- [minimist](https://github.com/minimistjs/minimist)
 
 😊 如果您觉得这一篇文章对您有所帮助，请点个👍 🌹🌹
