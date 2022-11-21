@@ -1,16 +1,18 @@
 ### refreshToken
 
+
 ### 业务需求
 在用户登录应用后，服务器会返回一组数据，其中就包含了`accessToken`和`refreshToken`，每个`accessToken`都有一个固定的有效期，如果携带一个过期的`token`向服务器请求时，服务器会返回401的状态码来告诉用户此`token`过期了，此时就需要用到登录时返回的`refreshToken`调用刷新`Token`的接口（`Refresh`）来更新下新的`token`再发送请求即可。
 
-### Coding ！
+### 话不多说，先上代码
 ### 工具
-`axios`作为最热门的`http`请求库之一，我们本篇文章就借助它的错误响应拦截器来实现token无感刷新功能。
+`axios`作为最热门的`http`请求库之一，我们本篇文章就借助它的错误响应拦截器来实现`token`无感刷新功能。
 ### 具体实现
-基于 https://github.com/QC2168/axios-bz
+> 本次基于[axios-bz](https://github.com/QC2168/axios-bz)代码片段封装响应拦截器
+> 可直接配置到你的项目中使用 ✈️ ✈️
 
-利用`interceptors.response`，在业务代码获取到接口数据之前进行状态码`401`判断当前携带的accessToken是否失效。
-下面是关于interceptors.response中异常阶段处理内容。当响应码为401时，响应拦截器会走中第二个回调函数`onRejected`
+利用`interceptors.response`，在业务代码获取到接口数据之前进行状态码`401`判断当前携带的`accessToken`是否失效。
+下面是关于`interceptors.response`中异常阶段处理内容。当响应码为401时，响应拦截器会走中第二个回调函数`onRejected`
 ```typescript
 // 最大重发次数
 const MAX_ERROR_COUNT = 5;
@@ -94,7 +96,7 @@ export default async (error: AxiosError<ResponseDataType>) => {
 };
 ```
 
-抽离代码
+### 抽离代码
 
 把上面关于调用刷新`token`的代码抽离成一个`refreshToken`函数，单独处理这一情况，这样子做有利于提高代码的可读性和维护性，且让看上去代码不是很臃肿
 ```typescript
@@ -120,3 +122,24 @@ export default async (error: AxiosError<ResponseDataType>) => {
   return Promise.reject(error);
 };
 ```
+
+### 为什么需要refreshToken
+
+当你第一次接触`JWT`的时候，你有没有一个这样子的疑惑，为什么需要`refreshToken`这个东西，而不是服务器端给一个期限较长甚至永久性的`accessToken`呢？
+
+抱着这个疑惑我在网上搜寻了一番，
+
+其实这个`accessToken`的使用期限有点像我们生活中的入住酒店，当我们在入住酒店时，会出示我们的身份证明来登记获取房卡，此时房卡相当于`accessToken`，可以访问对应的房间，当你的房卡过期之后就无法再开启房门了，此时就需要再到前台更新一下房卡，才能正常进入，这个过程也就相当于`refreshToken`。
+
+
+
+`accessToken`使用率相比`refreshToken`频繁很多，如果按上面所说如果`accessToken`给定一个较长的有效时间，就会出现不可控的权限泄露风险。
+
+### 使用refreshToken可以提高安全性
+
+- 用户在访问网站时，`accessToken`被盗取了，此时攻击者就可以拿这个`accessToke`访问权限以内的功能了。如果`accessToken`设置一个短暂的有效期2小时，攻击者能使用被盗取的`accessToken`的时间最多也就2个小时，除非再通过`refreshToken`刷新`accessToken`才能正常访问。
+
+- 设置`accessToken`有效期是永久的，用户在更改密码之后，之前的`accessToken`也是有效的
+
+总体来说有了`refreshToken`可以降低`accessToken`被盗的风险
+
