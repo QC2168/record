@@ -83,14 +83,14 @@ HMACSHA256(
 
 #### 弊端
 
-- 生成出来的Token无法撤销，即使重置账号密码之前的Token也是可以使用的（需等待JWT过期）
-- 无法确认用户已经签发了多少个JWT
-- 不支持refreshToken
+- 生成出来的`Token`无法撤销，即使重置账号密码之前的`Token`也是可以使用的（需等待JWT过期）
+- 无法确认用户已经签发了多少个`JWT`
+- 不支持`refreshToken`
 
 
 ### 关于refreshToken
 
-refreshToken是Oauth认证中的一个概念，和accessToken一起生成出来的。
+`refreshToken`是`Oauth2`认证中的一个概念，和`accessToken`一起生成出来的。
 
 当用户携带的这个`accessToken`过期时，用户就需要在重新获取新的`accessToken`，而`refreshToken`就用来重新获取新的`accessToken`的凭证。
 
