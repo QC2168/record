@@ -33,8 +33,6 @@
   },
   "dependencies": {
     "glob": "^8.0.3",
-    "record": "link:",
-    "vuepress-sidebar-atuo": "^1.0.4",
     "vuepress-theme-reco": "^1.6.13"
   }
 }
