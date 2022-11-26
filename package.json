@@ -5,7 +5,7 @@
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "dev": "vuepress dev docs --debug",
+    "dev": "nodemon --ext md,vue --watch ./docs/.vuepress/config.ts --exec vuepress dev docs",
     "build": "vuepress build docs",
     "commit": "git-cz"
   },
@@ -27,6 +27,7 @@
     "cz-customizable": "^6.9.1",
     "esm": "^3.0.0",
     "husky": "^7.0.4",
+    "nodemon": "^2.0.20",
     "vue": ">=2.6.0 <3.0.0 || >=3.0.0-rc.1 <3.0.0",
     "vue-class-component": "*",
     "vuepress": "^1.9.7"
