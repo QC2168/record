@@ -4,18 +4,12 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1",
     "dev": "nodemon --ext md,vue --watch ./docs/.vuepress/config.ts --exec vuepress dev docs",
     "build": "vuepress build docs",
     "commit": "git-cz"
   },
-  "husky": {
-    "hooks": {
-      "commit-msg": "commitlint -E HUSKY_GIT_PARAMS"
-    }
-  },
-  "author": "",
-  "license": "ISC",
+  "author": "QC2168",
+  "license": "MIT",
   "devDependencies": {
     "@commitlint/cli": "^16.1.0",
     "@commitlint/config-conventional": "^16.0.0",
