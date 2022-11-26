@@ -11,7 +11,6 @@ export default defineConfig4CustomTheme({
     config.node.set("node", true);
     config.node.set("process", true);
   },
-
   themeConfig: {
     navbar: true,
     logo: "/assets/avatar.jpg",
@@ -53,4 +52,16 @@ export default defineConfig4CustomTheme({
       },
     ],
   },
+  plugins: [
+//   @ts-ignore
+    "@vuepress/last-updated",
+//   @ts-ignore
+    "@vuepress/nprogress",
+    [
+      "@vuepress-reco/vuepress-plugin-kan-ban-niang",
+      {
+        clean: true,
+      },
+    ],
+  ],
 });

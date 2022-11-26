@@ -5,6 +5,8 @@ specifiers:
   '@commitlint/config-conventional': ^16.0.0
   '@commitlint/prompt': ^16.1.0
   '@types/node': '*'
+  '@vuepress-reco/vuepress-plugin-kan-ban-niang': ^1.0.5
+  '@vuepress/plugin-nprogress': ^1.9.7
   chalk: ^2.0.0
   commander: ^2.0.0
   commitizen: ^4.2.4
@@ -19,6 +21,7 @@ specifiers:
   vuepress-theme-reco: ^1.6.13
 
 dependencies:
+  '@vuepress-reco/vuepress-plugin-kan-ban-niang': 1.0.5
   glob: 8.0.3
   vuepress-theme-reco: 1.6.13_itcttzcdoz4niavuso72sdtxay
 
@@ -27,6 +30,7 @@ devDependencies:
   '@commitlint/config-conventional': 16.0.0
   '@commitlint/prompt': 16.1.0_@types+node@17.0.15
   '@types/node': 17.0.15
+  '@vuepress/plugin-nprogress': 1.9.7
   chalk: 2.4.2
   commander: 2.20.3
   commitizen: 4.2.4_@types+node@17.0.15
@@ -1907,6 +1911,10 @@ packages:
       - debug
       - supports-color
       - utf-8-validate
+    dev: false
+
+  /@vuepress-reco/vuepress-plugin-kan-ban-niang/1.0.5:
+    resolution: {integrity: sha512-ufqpOw0zhLxv3PvoYlHTsjmG4CFiCaQ8dnf950Ov7JmajKgpAMarZ3ObB+xi5ex0sgetxU82YSf+CptQceXQIw==}
     dev: false
 
   /@vuepress-reco/vuepress-plugin-pagation/1.6.13:
