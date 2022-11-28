@@ -1,3 +1,9 @@
+---
+title: JS进阶-实现promise
+tags: [JavaScript]
+---
+
+
 ### 手写一个Promise
 
 在日常开发中，我们常常会使用到`Promise`，而熟悉了解`Promise`原理的同学并不多，在面试中也可能被问到与`Promise`相关的面试题。今天我将带着大家一起实现一个简易版的`Promise`。

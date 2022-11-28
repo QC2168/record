@@ -1,3 +1,10 @@
+---
+title: antd动态主题
+tags: [JavaScript]
+---
+
+> 温馨提示，本文中的方案只适合采用ant design v4版本 ~
+> 
 ## 实现效果
 ![1](https://raw.githubusercontent.com/QC2168/note-img/main/1.gif)
 ## 实现原理

@@ -1,6 +1,9 @@
-# GIT commit提交规范
+---
+title: GIT commit提交规范
+tags: [other]
+---
 
-「这是我参与2022首次更文挑战的第20天，活动详情查看：[2022首次更文挑战](https://juejin.cn/post/7052884569032392740)」
+# GIT commit提交规范
 
 阅读本文章你将收获到：
 

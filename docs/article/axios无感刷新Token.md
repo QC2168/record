@@ -1,3 +1,8 @@
+---
+title: axios无感刷新Token
+tags: [JavaScript]
+---
+
 ### 什么是JWT
 
 `JWT`是全称是`JSON WEB TOKEN`，是一个开放标准，用于将各方数据信息作为JSON格式进行对象传递，可以对数据进行可选的数字加密，可使用`RSA`或`ECDSA`进行公钥/私钥签名。

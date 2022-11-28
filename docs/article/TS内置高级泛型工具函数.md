@@ -1,3 +1,10 @@
+---
+title: TS内置高级泛型工具函数
+tags: [interview]
+---
+
+### 前言
+
 如今，越来越多的项目使用了`TypeScript`进行编写，我们都知道`TypeScript`是`JavaScript`的超集，它为JavaScript提供了强大的类型和语法增强功能，能在项目开发的过程中大大减少错误的产生。而`TypeScript`也内置了很多的工具类型，接下来，我将带着大家学习`TypeScript`中的工具类型。
 
 ### Partial

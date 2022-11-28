@@ -5,6 +5,5 @@
 - HTML&CSS
 - JavaScript
 - Vue
-- React
 - 计算机网络
 - [面试题](/interview/index)

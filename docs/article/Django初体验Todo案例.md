@@ -243,5 +243,3 @@ def delete(request):
 当然，这只是简单使用`jdango`，如果你想继续学习请移步[`Django`](https://www.djangoproject.com/start/overview/)
 
 ![image-20220417204347333](https://raw.githubusercontent.com/QC2168/note-img/main/202204172043384.png)
-
-### 

@@ -1,3 +1,9 @@
+---
+title: 一文学会什么是promise
+tags: [JavaScript]
+---
+
+
 ### 认识Promise
 
 `Promise`是异步编程的解决方案，在`Promise`没有出现之前，是通过回调函数来解决异步的问题。

@@ -1,4 +1,4 @@
-一文搞懂Proxy和Reflect中的receiver到底是什么东西
+# 一文搞懂Proxy和Reflect中的receiver到底是什么东西
 
 在`Proxy`和`Reflect`对象中的`get`、set方法的第三个参数是`receiver`，今天本文将讲述这个`receiver`到底是什么？
 

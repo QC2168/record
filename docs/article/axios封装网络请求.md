@@ -1,3 +1,8 @@
+---
+title: axios封装思想+API集中管理+无感刷新Token
+tags: [interview]
+---
+
 #### 前言
 
 本文将使用`typescript`类的方式来封装`axios`，使得在日常开发中减少代码的耦合性，方便后续维护。

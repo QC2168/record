@@ -1,3 +1,9 @@
+---
+title: eval和function的区别
+tags: [JavaScript]
+---
+
+
 ## eval和function的区别
 
 ## eval

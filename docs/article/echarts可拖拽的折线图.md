@@ -1,3 +1,9 @@
+---
+title: echarts可拖拽的折线图.md
+tags: [JavaScript]
+---
+
+
 > 本文将讲述实现可拖拽的折线图思路与部分代码分享，想直接看代码请[点这里]( https://github.com/QC2168/echart-drag-line)
 
 ### 需求

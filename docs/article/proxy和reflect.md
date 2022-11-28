@@ -1,3 +1,8 @@
+---
+title: Proxy和Reflect
+tags: [JavaScript]
+---
+
 ### 什么是Proxy
 
 `Proxy`对象用于创建一个对象的代理，是用于监听一个对象的相关操作。代理对象可以监听我们对原对象的操作。

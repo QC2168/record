@@ -1,3 +1,10 @@
+---
+title: JS进阶-实现bind
+tags: [JavaScript]
+---
+
+
+
 在`JavaScript`函数式编程中，`Function`的原型上有这么三个方法它们是用于改变`this`的指向的，说到这里相信大家都知道分别是哪三个方法了（`bind`、`call`、`apply`）。
 
 ### 为什么需要这些方法

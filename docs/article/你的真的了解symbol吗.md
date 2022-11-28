@@ -1,3 +1,9 @@
+---
+title: 你真的了解Symbol吗
+tags: [JavaScript]
+---
+
+
 # 你真的了解Symbol吗
 ### 什么是Symbol
 
