@@ -6,17 +6,17 @@ hero:
   actions:
     - theme: alt
       text: 文章
-      link: /article
+      link: /article/index
     - theme: alt
       text: 面试
-      link: /interview
+      link: /interview/index
     - theme: alt
       text: 代码封装
-      link: /snippet
+      link: /snippets/index
     - theme: alt
       text: 我的开源
-      link: /source
+      link: /utils/index
     - theme: alt
       text: 今天学了什么
-      link: /til
+      link: /til/index
 ---
