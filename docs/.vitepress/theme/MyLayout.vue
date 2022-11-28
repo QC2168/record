@@ -8,12 +8,15 @@ const { frontmatter } = data;
 
 <template>
   <Layout>
-    <template #doc-before>
-      <div>
-        📁 标签
-          <span class="tag" v-for="item in frontmatter.tags" :key="item">{{
-            item
-          }}</span>
+    <template v-if="frontmatter?.tags?.length" #doc-before>
+      <div>📁 标签</div>
+      <div class="flex mt-2">
+        <span
+          v-for="item in frontmatter.tags"
+          :key="item"
+          class="text-xs inline-block py-1 px-2.5 leading-none text-center whitespace-nowrap align-baseline font-bold bg-gray-200 dark:bg-gray-700 text-gray-700 dark:text-gray-200 rounded"
+          >{{ item }}</span
+        >
       </div>
     </template>
 
@@ -21,10 +24,5 @@ const { frontmatter } = data;
   </Layout>
 </template>
 <style scoped>
-.tag {
-  padding: 3px 6px;
-  font-size: 10px;
-  border-radius: 50px;
-  border: 1px solid gray;
-}
+@import "./index.css";
 </style>
