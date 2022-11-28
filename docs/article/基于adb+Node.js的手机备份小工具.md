@@ -4,9 +4,9 @@ tags: [JavaScript,node,adb]
 ---
 
 
-### 基于adb+Node.js的手机备份小工具
+## 基于adb+Node.js的手机备份小工具
 
-### 前言
+## 前言
 
 随着科技的发展我们日常中拍摄的图片和视频清晰度不断提升，但这也有一个较大的缺点那就是他们的体积也越来越大。还记得以前刚开始使用智能手机的时候那会一张照片只不过才`2-5MB`，而现在一张照片已经达到了`15-20MB`，甚至更大。
 
@@ -20,19 +20,19 @@ tags: [JavaScript,node,adb]
 
 我使用了`Node.js`和`adb`制作了这一个脚本，并命名为`MIB`
 
-### 原理
+## 原理
 
 这个小工具是利用手机上的`adb`调试，通过`shell`命令读取手机中的文件信息和复制，移动手机中的文件实现的。
 
-### 执行流程
+## 执行流程
 
 我画了一个简易流程图，`MIB`首先会从读取配置文件（没有则创建配文件），根据配置文件读取需要备份的节点路径并进行文件备份操作。直到节点结束。
 
 <img src="https://raw.githubusercontent.com/QC2168/note-img/main/202204092358542.png" alt="image-20220409235830477" style="zoom: 40%;" />
 
-### 开发过程
+## 开发过程
 
-#### 安装所需环境
+## 安装所需环境
 
 1. 下载`adb`包，用于执行各种设备操作
 2. 下载`Node.js`，这个我相信兄弟们的电脑上都已经有了
@@ -45,7 +45,7 @@ tags: [JavaScript,node,adb]
 >
 > 有兴趣的小伙伴可以去`github`上看项目源码 https://github.com/QC2168/mib
 
-#### 读取配置文件
+## 读取配置文件
 
 ```typescript
 export const getConfig = (): ConfigType => {
@@ -87,7 +87,7 @@ export const selectDevice = async ():Promise<string|false> => {
 };
 ```
 
-#### 遍历备份节点
+## 遍历备份节点
 
 选择设备之后，进入遍历节点信息，并执行拷贝文件到指定路径（配置文件中的`output`属性）
 
@@ -166,14 +166,14 @@ const move = (backupQueue: FileNodeType[], outputDir: string): void => {
 };
 ```
 
-### 脚本功能
+## 脚本功能
 
 - [x] `USB`连接备份数据
 - [x] 无线连接备份数据
 - [x] 多设备备份选择
 - [x] 单节点全量备份
 
-### 使用
+## 使用
 
 在终端中输入以下命令进行全局安装`mib`。
 
@@ -237,7 +237,7 @@ npm i @qc2168/mib -g
 }
 ```
 
-#### 执行备份
+## 执行备份
 
 在控制台中，直接输入`mib`即可触发脚本，无需其他参数。
 

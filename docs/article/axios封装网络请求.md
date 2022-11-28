@@ -3,7 +3,7 @@ title: axios封装思想+API集中管理+无感刷新Token
 tags: [interview]
 ---
 
-#### 前言
+## 前言
 
 本文将使用`typescript`类的方式来封装`axios`，使得在日常开发中减少代码的耦合性，方便后续维护。
 
@@ -14,7 +14,7 @@ tags: [interview]
   - 定义网络请求中的`data`数据类型
   - 如何配置`vite`的环境变量
 
-#### 安装
+## 安装
 
 在项目根目录中执行以下命令，安装`axios`和`antd-mobile`。
 
@@ -36,7 +36,7 @@ yarn add antd-mobile@next axios
 pnpm add antd-mobile@next axios
 ```
 
-#### axios基本使用方法
+## axios基本使用方法
 
 ```javascript
 axios.request(config)
@@ -58,7 +58,7 @@ axios.patch(url[, data[, config]])
 
 这样子直接使用是没有问题的，但缺点是耦合度太高了，在使用时相同的配置选项需要多次传入，且后续维护也很不方便。
 
-#### 封装目标
+## 封装目标
 
 - 将直接常用的参数，使用一个`Api`类进行封装。如果需要日后更换一些常用的配置选项可直接在`Api`中进行修改
 - 集中管理`Api`，方便后续管理网络`Api`
@@ -80,7 +80,7 @@ mkdir network
 └─request.ts
 ```
 
-#### 编写网络请求库
+## 编写网络请求库
 
 在`request.ts`中新建一个`Api`类，并导出它。
 
@@ -90,7 +90,7 @@ export default class Api{
 }
 ```
 
-##### 需求
+## 需求
 
 在编写这个类之前，我们要设计好这个类要帮我们做些什么事。
 
@@ -98,7 +98,7 @@ export default class Api{
 - 网络拦截器（请求与响应）
 - 请求时的`loading`
 
-##### 类型接口编写
+## 类型接口编写
 
 在`request.ts`中定义接收的参数类型，在原生的`AxiosRequestConfig`接口添加`loading`和`interceptor`属性用于是否显示`loadingToast`和是否配置网络拦截器。
 
@@ -117,7 +117,7 @@ export interface Interceptor {
 }
 ```
 
-##### 封装常用配置
+## 封装常用配置
 
 在`constructor`函数中接收常用的配置项，并初始化`AxiosInstance`。
 
@@ -139,7 +139,7 @@ export default class Api {
 
 > ?? 是ES2020中的空值合并运算符，它被用于为变量分配默认值。
 
-##### 封装拦截器
+## 封装拦截器
 
 两个拦截器我们不在类中写死，要将处理的函数作为参数传入。
 
@@ -210,7 +210,7 @@ InterceptorManager.prototype.forEach = function forEach(fn) {
 
 基本的网络配置我们已经封装好了，接下来处理网络请求返回的数据。
 
-##### 定义接口返回的数据类型
+## 定义接口返回的数据类型
 
 在前面创建的`types/index.ts`中导出一个`ResponseDataType`类型（这步根据后端返回的数据来定）
 
@@ -239,7 +239,7 @@ export default class Api {
 }
 ```
 
-##### 使用API Class
+## 使用API Class
 
 在`api/index.ts`中导入`Api`以及`ApiType`接口。
 
@@ -247,7 +247,7 @@ export default class Api {
 import Api, {ApiType} from '../request';
 ```
 
-##### 配置环境变量
+## 配置环境变量
 
 通常我们会将项目中开发环境和生成环境进行区分，减少在开发过程中进行地址切换，在`src`根目录下创建`.env.development`、`.env.production`、`env.d.ts`文件
 
@@ -289,7 +289,7 @@ const option: ApiType = {
 const ApiInstance = new Api(option);
 ```
 
-##### 创建网络数据请求方法
+## 创建网络数据请求方法
 
 在`types/index.ts`中定义`swiper`接口返回的数据类型
 
@@ -323,7 +323,7 @@ import {getSwiper} from '../../network/api';
 const swiperData: SwiperDataType[] = await getSwiper();
 ```
 
-#### 最后
+## 最后
 
 对于网络请求的封装还有很多，本文简单的对一些功能进行了封装，方便后续在项目中使用。在实际项目中更多的是使用拦截器及搭配其他Api进行使用。后续我也会对这个版本的网络请求再添加一些功能的封装。
 

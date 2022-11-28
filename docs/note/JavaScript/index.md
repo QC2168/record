@@ -2,13 +2,13 @@
 
 
 
-### 全局代码执行
+## 全局代码执行
 
 
 
-### 变量环境 / 记录
+## 变量环境 / 记录
 
-#### 早期ECMA的版本规范
+## 早期ECMA的版本规范
 
 AO / GO
 
@@ -20,7 +20,7 @@ ECMAScript5 之前
 
 每一个执行上下文会被关联到一个变量对象（Variable object，VO），在源代码中的变量和函数声明会被作为属性添加到VO中。对于函数来说，参数也会被添加到VO中
 
-#### 最新ECMA的版本规范
+## 最新ECMA的版本规范
 
 Variable Environment 变量环境 
 
@@ -28,13 +28,13 @@ Variable Environment 变量环境
 
 
 
-### 认识内存管理
+## 认识内存管理
 
 不管什么样的编程语言，在代码执行过程中都是需要给他分配内存的，不同的是某些编程语言需要我们手动的管理内存，某些编程语言会可以自动帮助我们管理内存
 
-#### **磁盘 TO 内存 TO CPU**
+## **磁盘 TO 内存 TO CPU**
 
-##### 内存管理生命周期
+## 内存管理生命周期
 
 1. 分配申请你需要的内存（申请）
 2. 使用分配的内存（存放数据，比如对象等）
@@ -49,7 +49,7 @@ Variable Environment 变量环境
 
 
 
-##### 垃圾回收
+## 垃圾回收
 
 - **内存大小有限**，当内存不再需要时，需要**对其进行释放**，以便**腾出更多内存**空间
 - 在手动管理内存的语言中，我们需要**通过一些方式来进行内存释放**，例如free函数：
@@ -68,7 +68,7 @@ Variable Environment 变量环境
     - 这个算法很好解决了循环引用问题
     - js引擎比较广泛的采用标记清除算法，当然类似于V8引擎为了进行更好优化，它在算法实现细节上也会结合一些其他算法，进行选择
 
-### 理解JavaScript函数
+## 理解JavaScript函数
 
 JavaScript中函数是一等公民，也即是说具有最高的优先权（即函数优先），是它就可以去任何值可以去的地方，按照正确的姿势，很少有限制。
 
@@ -90,7 +90,7 @@ JavaScript中函数是一等公民，也即是说具有最高的优先权（即�
 
 
 
-### JavaScript中闭包的定义
+## JavaScript中闭包的定义
 
 - 计算机科学中的定义
   - 闭包（Closure），称为**词法闭包**（Lexical Closure）或者**函数闭包**（function closure）
@@ -108,9 +108,9 @@ JavaScript中函数是一等公民，也即是说具有最高的优先权（即�
   - 从广义的角度来说，JavaScript中的函数都是闭包
   - 从狭义的角度来说，JavaScript中一个函数，如果访问了外层作用域的变量，那么它就是一个闭包
 
-### 闭包内存泄漏
+## 闭包内存泄漏
 
-### 闭包内存回收
+## 闭包内存回收
 
 ![image-20211228210643885](https://raw.githubusercontent.com/QC2168/note-img/main/202112282106110.png)
 
@@ -124,14 +124,14 @@ setTimeout(() => {
 
 ![image-20211228211726580](https://raw.githubusercontent.com/QC2168/note-img/main/202112282117754.png)
 
-### arguments
+## arguments
 
 - arguments是一个对应传递给函数的参数的类数组（`array-like`）对象
 - array-like意味着它不是一个数组类型，而是一个对象类型
   - 但它却拥有一些特性，比如length比如可以通过index来访问
   - 但它却没有数组的一些方法，比如`forEach`、`map`等
 
-### 理解JavaScript纯函数
+## 理解JavaScript纯函数
 
 函数式编程中有个非常重要的概念叫纯函数，JavaScript符合函数式编程的范式，所以也有纯函数的概念
 
@@ -153,14 +153,14 @@ setTimeout(() => {
 
 
 
-#### 副作用的理解
+## 副作用的理解
 
 - 副作用英文为side effect，这里表示在**执行一个函数**时，除了返回函数值之外，还对**调用函数产生了附加的影响**，比如**修改全局变量**，**修改参数**，**改变外部的存储**
 - 副作用往往是产生BUG的温床
 
 
 
-#### 纯函数
+## 纯函数
 
 - slice 截取数组的时候不会对原数组进行任何
 
@@ -184,9 +184,9 @@ setTimeout(() => {
     console.log(names); // [ 'df', 'zs' ]
     ```
 
-#### 练习纯函数的案例
+## 练习纯函数的案例
 
-##### foo
+## foo
 
 ```javascript
 // foo是纯函数
@@ -198,7 +198,7 @@ function foo(num1,num2){
 }
 ```
 
-##### bar
+## bar
 
 ```javascript
 // bar不是纯函数
@@ -214,7 +214,7 @@ console.log(name);
 // abc
 ```
 
-##### baz
+## baz
 
 ```javascript
 // baz不是一个纯函数
@@ -234,7 +234,7 @@ console.log(obj);
 // { name: 'hxh', age: 100 }
 ```
 
-##### test
+## test
 
 ```javascript
 // test是一个纯函数
@@ -253,7 +253,7 @@ console.log(obj);
 // { name: 'hxh', age: 18 }
 ```
 
-##### 特殊
+## 特殊
 
 ```javascript
 function printInfo(info){
@@ -263,14 +263,14 @@ function printInfo(info){
 }
 ```
 
-#### 纯函数的优点
+## 纯函数的优点
 
 - 纯函数在函数式编程中非常**重要**
   - 可以**安心的编写和使用**（不会影响外部的数据）
   - 在**写纯函数的时候**保证了函数的纯度，**只单纯实现自己的业务逻辑**即可，**不需要关心**传入的内容是**任何获取**或者**依赖其他外部变量**是否已经发生了改变
   - 在**用的时候**，确定**你的输入内容不会被任意篡改**，并且**自己确定的输入**，一定会**有确定的输出**
 
-### JavaScript柯里化
+## JavaScript柯里化
 
 - 柯里化也是属于函数式编程里面一个非常重要的概念
 
@@ -285,7 +285,7 @@ function printInfo(info){
 
   
 
-##### 柯里化过程
+## 柯里化过程
 
 拆分函数参数
 
@@ -310,14 +310,14 @@ function foo(a){
 foo()
 ```
 
-##### 柯里化的作用
+## 柯里化的作用
 
-###### 让函数的职责单一
+## 让函数的职责单一
 
 - 在函数式编程中，一个函数只**处理一个问题**，而不是将**很多个问题交给一个函数来处理**（**单一职责原则**）
 - 我们是否就可以**将每次传入的参数在单一的函数中进行处理**，处理完之后在下一个函数中再使用处理后的结果
 
-###### 例子一
+## 例子一
 
 假如，我们需要经常把一个数字5和另外一个数字进行相加操作。
 
@@ -341,7 +341,7 @@ console.log(res);
 console.log(adder5(10));
 ```
 
-###### 例子二
+## 例子二
 
 在项目中我们封装了一个常用的方法log，在正常使用的情况下，前面两个参数传入是一致的，此时我们可以使用柯里化来优化以下代码段
 
@@ -364,7 +364,7 @@ defineLog('DEBUG')('找到一个BUG')
 defineLog('DEBUG')('找到一个BUG')
 ```
 
-##### 实现柯里化
+## 实现柯里化
 
 ```javascript
 function hyCurrying(fn) {
@@ -399,7 +399,7 @@ var r3=curryAdd(10, 20)(30);
 
 
 
-### 组合函数
+## 组合函数
 
 组合函数在`JavaScript`开发过程中一种对函数的使用技巧、模式，假使你现在要处理一项业务，需要调用到两个函数，而这两个函数是依次调用的，那么我们可以将这个函数组合起来（这个过程就是组合函数（`compose function`））
 
@@ -443,7 +443,7 @@ var res2=newFn(count)
 console.log(res2); // 400
 ```
 
-#### 实现组合函数
+## 实现组合函数
 
 ```javascript
 function MyCompose(...fns) {
@@ -482,7 +482,7 @@ function square(num) {
 console.log(MyCompose(double, square)(10));
 ```
 
-#### 结合律
+## 结合律
 
 结合律 （英文为 `associativity`），函数的组合要满足结合律，例如`a`、`b`、`c`三个函数进行组合，可以将`a`和`b`进行组合，或者是`b`和`c`进行组合。这个特性计算结合律。
 
@@ -492,7 +492,7 @@ let ass1 = compose(compose(a,b),c);
 let ass2 = compose(composea,(b,c));
 ```
 
-#### pointfree
+## pointfree
 
 `pointfree`是一种编程风格，这种风格也被称之为`Tacit programming`，`point`代表形参，意思是没有形参的编程风格。
 
@@ -508,7 +508,7 @@ var word = compose(toUpperCase);
 
 它省去了对参数命名的麻烦，代码也更加简洁优雅。`pointfree`是基础函数的组合的高级函数，这些高级函数往往应用在我们的业务中。
 
-#### Debug
+## Debug
 
 从上面的知识中，我们知道组合函数是多个函数的组合，当组合函数返回的结果与预期不符合时，如何去调试它？
 
@@ -531,9 +531,9 @@ var res2 = newFn(10);
 // 400
 ```
 
-### with语句
+## with语句
 
-### eval语句
+## eval语句
 
 eval是一个特殊的函数，它可以将传入的字符串当JavaScript代码来运行
 
@@ -547,7 +547,7 @@ console.log(1+1); // 2
   - eval是一个字符串，有被篡改的可能
   - eval执行必须经过js解释器，不能被js引擎优化
 
-### 严格模式
+## 严格模式
 
 - 在ECMAScript5标准中，JavaScript提出了严格模式的概念（Strict Mode）
   - 是一个有限制性的JavaScript模式，从而**使代码隐式的脱离了懒散（sloppy）模式**
@@ -557,18 +557,18 @@ console.log(1+1); // 2
   - 严格模式让**js引擎在执行代码时可以进行更多的优化**（不需要对一些特殊的语法进行处理）
   - 严格模式禁用了**在ECMAScript未来版本中可以会定义的一些语法**（保留字class const let和关键字function var new）（保留字会升级成关键字）
 
-#### 如何开启严格模式
+## 如何开启严格模式
 
 - 在JS文件中开启严格模式
   - 在文件开头写`use strict`
 - 在单个function开启严格模式
   - 在函数的开头写`use strict`
 
-#### 严格模式的限制
+## 严格模式的限制
 
 
 
-### 面向对象
+## 面向对象
 
 - 面向对象是现实的抽象方式
 - 对象是JavaScript中一个非常重要的概念，这是因为对象可以将多个相关的数据封装到一起，更好的描述一个事务
@@ -577,7 +577,7 @@ console.log(1+1); // 2
   - key是标识符的名称，value可以是任意类型，也可以是对象或者函数
   - 如果值是函数，我们称为对象的方法
 
-### Object.defineProperty
+## Object.defineProperty
 
 该方法会直接在一个对象上定义一个新属性，或者修改一个对象的现有属性，并返回此对象
 
@@ -593,9 +593,9 @@ MDN：https://developer.mozilla.org/zh-CN/docs/Web/JavaScript/Reference/Global_O
 
 
 
-#### 属性描述符
+## 属性描述符
 
-#### 数据属性描述符
+## 数据属性描述符
 
 - configurable表示属性是否通过delete删除属性，是否可以修改它的特性，或者是否可以将它修改为存取属性描述符
   - 当我们直接在一个对象上定义某个属性时，这个属性的configurable为true
@@ -638,7 +638,7 @@ obj.address='潮汕'
 console.log(obj);// { name: '_island', age: 18, address: '广州市' }
 ```
 
-#### 定义多个属性描述符
+## 定义多个属性描述符
 
 可以`Object.defineProperties`属性定义多个属性描述符，每个属性以对象的形式进行定义。
 
@@ -682,7 +682,7 @@ var obj = {
 };
 ```
 
-#### 存取属性描述符
+## 存取属性描述符
 
 - configurable表示属性是否通过delete删除属性，是否可以修改它的特性，或者是否可以将它修改为存取属性描述符
   - 当我们直接在一个对象上定义某个属性时，这个属性的configurable为true
@@ -725,7 +725,7 @@ function foo(){
 }
 ```
 
-#### 获取属性描述符
+## 获取属性描述符
 
 ```javascript
 var obj = {
@@ -791,7 +791,7 @@ console.log(Object.getOwnPropertyDescriptors(obj));
 // }
 ```
 
-#### 额外的Object方法
+## 额外的Object方法
 
 - `Object.preventExtensions()`方法让一个对象变的不可扩展，也就是永远不能再添加新的属性。
 - `Object.seal()`方法封闭一个对象，阻止添加新属性并将所有现有属性标记为不可配置。当前属性的值只要原来是可写的就可以改变。
@@ -823,7 +823,7 @@ console.log(obj.name); // _island
 
 
 
-### 工厂模式
+## 工厂模式
 
 是一种常见的设计模式，通过该工厂方法产生想要的对象
 
@@ -849,13 +849,13 @@ console.log(p1, p2, p3);
 
 ```
 
-### 构造函数
+## 构造函数
 
 - 别名为构造器constructor，是一种特殊的方法，用来初始化对象时会调用的函数
 - 在JavaScript中的构造函数有点不太一样
 - 构造函数的首字母一般是大写
 
-#### 通过new调用函数
+## 通过new调用函数
 
 1. 在内存中创建一个新的对象（空对象）
 2. 这个对象内部的prototype属性会被赋值为该构造函数的prototype属性
@@ -876,7 +876,7 @@ new foo()
 // 通过new去调用函数和通过普通方式调用函数有什么区别
 ```
 
-#### 使用new去创建一个新的对象
+## 使用new去创建一个新的对象
 
 ```javascript
 // 规范 构造函数的首字母一般是大写
@@ -902,7 +902,7 @@ console.log(p1.eating===p2.eating);
 console.log(p1.running===p2.running);
 ```
 
-#### 原型
+## 原型
 
 - 每个对象都有原型 (隐式原型)
 
@@ -936,7 +936,7 @@ ECMA5之后,提供了一个方法来获取这个原型
 console.log(Object.getPrototypeOf(obj));
 ```
 
-#### 原型的作用
+## 原型的作用
 
 当我们从一个对象中获取一个属性,它会触发到[[get]]操作
 1.在当前对象中，去查找对应的属性，如果找到了就直接用
@@ -948,7 +948,7 @@ obj.__proto__.age=20
 console.log(obj.age);
 ```
 
-#### 函数的原型
+## 函数的原型
 
 在JavaScript中，函数也是一个对象，也有prototype隐式原型
 
@@ -969,7 +969,7 @@ console.log(f1.__proto__===foo.prototype); // true
 console.log(f2.__proto__===foo.prototype); // true
 ```
 
-#### 函数原型上的属性
+## 函数原型上的属性
 
 ```javascript
 function foo(){
@@ -1021,7 +1021,7 @@ Object.defineProperty(obj,'constructor',{
 })
 ```
 
-#### 原型和构造函数创建对象
+## 原型和构造函数创建对象
 
 在之前，我们创建对象，每个对象都是一个独立的内存空间，这样会出现一个问题也就是方法都是相同的。它们没有必要重新开辟一块新的空间
 
@@ -1048,14 +1048,14 @@ var p2=new Person('abc',18,1.7,'广州市')
 console.log(p1.name);
 ```
 
-### 面向对象
+## 面向对象
 
 - 面向对象有三大特性
   - 封装，把属性和方法封装到一个类中
   - 继承，面向对象中非常重要的，可以减少重复代码数量，也是多态前提（纯面向对象中）
   - 多态，不同对象在执行时表现出不同的形态
 
-### JavaScript原型链
+## JavaScript原型链
 
 当我们从一个对象上获取一个属性，它会触发到[[get]]操作
 
@@ -1080,13 +1080,13 @@ obj.__proto__.__proto__.__proto__={
 console.log(obj.name);
 ```
 
-### 原型链的尽头 
+## 原型链的尽头 
 
 其实在`obj`的原型就是我们最顶层的原型
 
 从`object`创建出来的对象的原型都是`[object null prototype]{}`
 
-#### 关于`[object null prototype]{}`
+## 关于`[object null prototype]{}`
 
 - 该对象有原型属性，它已经指向null了（最顶层原型）
 - 该对象上有很多默认的属性和方法
@@ -1097,9 +1097,9 @@ console.log(obj.name);
 obj.__proto__===Object.prototype  // true
 ```
 
-### 继承
+## 继承
 
-#### 继承的作用
+## 继承的作用
 
 在没有继承的时候，我们的代码是下面这样子的，会有很多的冗余代码。
 
@@ -1138,19 +1138,19 @@ Teacher.prototype.studying=function(){
 }
 ```
 
-#### 借用构造函数
+## 借用构造函数
 
-#### 父类原型给子类使用
+## 父类原型给子类使用
 
-#### 原生式继承
+## 原生式继承
 
-#### 寄生式继承
+## 寄生式继承
 
 - 寄生式继承是与原型式继承紧密相关的一种思想，并且同样由道格拉斯 克罗克福德提出和推广的
 - 寄生式继承的思路是结合原型类继承和工厂模式的一种方式
 - 即创建一个封装继承过程的函数，该函数在内部以某种方式来增强对象，最后再将这个对象返回
 
-### ES6
+## ES6
 
 > 又称，es2015，ecma2015
 
@@ -1164,7 +1164,7 @@ Teacher.prototype.studying=function(){
 
 在`ES6`（`ECMAScript6`）之前，`JavaScript`语法中是不支持类的，导致面向对象编程方法无法直接使用，但我们可以通过function来实现模拟出类，而随着`JavaScript`的更新，在`ES6`出现了中出现`class`关键字，可以用于定义类。接下来让我们看看它的如何使用的。
 
-### class
+## class
 
 下面我们来看看如何使用`class`关键字声明一个类。
 
@@ -1188,7 +1188,7 @@ function Animal(){
 }
 ```
 
-### 类的构造函数
+## 类的构造函数
 
 每一个类都可以有一个自己的构造函数，这个名称是固定的`constructor`，当我们通过`new`调用一个类时，这个类就会调用自己的`constructor`方法（构造函数）。
 
@@ -1226,9 +1226,9 @@ console.log(Animal === Animal.prototype.constructor); // true
 
 其实，在类上的所有方法都会放在`prototype`属性上。
 
-### 类中的属性
+## 类中的属性
 
-#### 实例属性
+## 实例属性
 
 实例的属性必须定义在类的方法里，就如上面的例子，我们在构造函数中定义`name`这个属性。
 
@@ -1242,7 +1242,7 @@ class Animal{
 }
 ```
 
-#### 静态属性
+## 静态属性
 
 当我们把一个属性赋值给类本身，而不是赋值给它`prototype`，这样子的属性被称之为静态属性（`static`）。
 
@@ -1256,7 +1256,7 @@ class Foo{
 console.log(Foo.name);
 ```
 
-#### 私有属性
+## 私有属性
 
 私有属性只能在类中读取、写入，不能通过外部引用私有字段。
 
@@ -1295,9 +1295,9 @@ console.log(Object.getOwnPropertyDescriptors(a))
 
 > 公共和私有字段声明是JavaScript标准委员会[TC39](https://tc39.es/)提出的[实验性功能（第3阶段）](https://github.com/tc39/proposal-class-fields)。浏览器中的支持是有限的，但是可以通过[Babel](https://babeljs.io/)等系统构建后使用此功能。
 
-### 类中的方法
+## 类中的方法
 
-#### 实例方法
+## 实例方法
 
 在`ES6`之前，我们定义类中的方法是类中的原型上进行定义的，防止类中的方法重复在多个对象上。
 
@@ -1318,7 +1318,7 @@ class Animal{
 }
 ```
 
-#### 静态方法
+## 静态方法
 
 静态方法与上面提到的静态属性是一样的，在方法前面使用`static`关键字进行声明，之后调用这个方法时不需要通过类的实例来调用，可以直接通过类名来调用它。
 
@@ -1333,7 +1333,7 @@ var a2 = Animal.createName("_island");
 console.log(a2); // _island
 ```
 
-#### 私有方法
+## 私有方法
 
 在面向对象中，私有方法是一个常见需求，但是在ES6中没有提供，我们可以通过某个方法来实现它。
 
@@ -1348,7 +1348,7 @@ class Foo {
 
 > 需要注意的是，通过下划线开头通常我们会局限它是一个私有方法，但是在类的外部还是可以正常调用到这个方法的
 
-### 类的继承
+## 类的继承
 
 `extends`关键字用于扩展子类，创建一个类作为另外一个类的一个子类。
 
@@ -1356,7 +1356,7 @@ class Foo {
 
 这对比之前在`ES5`中修改原型链实现继承的方法的可读性要强很多，而且写法很简洁。
 
-#### extends的使用
+## extends的使用
 
 ```javascript
 class Animal{
@@ -1369,7 +1369,7 @@ class dog extends Animal {
 }
 ```
 
-#### 继承类的属性和方法
+## 继承类的属性和方法
 
 下面这个例子，我们定义了`dog`这个类，通过`extends`关键字继承了`Animal`类的属性和方法。
 
@@ -1402,7 +1402,7 @@ d.speaking(); // tom speaking
 console.log(d.name); // tom
 ```
 
-#### Super
+## Super
 
 **super**关键字用于访问和调用一个对象的父对象上的函数。
 
@@ -1455,7 +1455,7 @@ var d = new dog("tom",4);
 d.speaking(); // tom eating tom speaking
 ```
 
-### Getter 和 Setter
+## Getter 和 Setter
 
 在类内部也可以使用`get`和`set`关键字，对应某个属性设置存值和取值函数，拦截属性的存取行为。
 
@@ -1480,13 +1480,13 @@ a.age = 4;
 console.log(a.age); //4
 ```
 
-### 关于class扩展
+## 关于class扩展
 
-#### 严格模式
+## 严格模式
 
 在类和模块的内部，默认是严格模式，所以不需要使用`use strict`指定运行模式。只要你的代码写在类或模块之中，就只有严格模式可用。
 
-#### name属性
+## name属性
 
 `ES6`中的类只是`ES5`构造函数的一层包装，所以函数的许多属性都被`class`继承了，包括`name`属性。
 
@@ -1497,7 +1497,7 @@ class Animal{
 console.log(Animal.name); // Animal
 ```
 
-#### 变量提升
+## 变量提升
 
 `class`不存在变量提升，这与我们在`ES5`中实现类的不同的，`function`关键字会存在变量提升。
 
@@ -1508,13 +1508,13 @@ class Foo {}
 
 在`ES6`之后，我们在定义类以及它内部的属性方法，还有继承操作的语法变得非常简洁且易懂，`class`是一个语法糖，其内部还是通过`ES5`中的语法来实现的。且有些浏览器不支持`class`语法，我们可以通过`babel`来进行转换。
 
-### ES6知识点
+## ES6知识点
 
-### 什么是ES6
+## 什么是ES6
 
 `ES6`是`ECMAScript 6.0`是简称，其实它在2015年6月就发布出来了，所以又称`ES2015`，目的是使`JavaScript`这一门语言可以来编写更加复杂的大型应用。
 
-### let 和 const
+## let 和 const
 
 `ES6`中新增了`let`和`const`用于声明变量、常量。我们知道通过`var`关键字声明的变量都会在`window`对象上。而使用`let`和`const`关键字声明的变量、常量只局限在当前作用域内使用，且没有作用域提升。
 
@@ -1523,7 +1523,7 @@ let age = 18;
 const num = 10;
 ```
 
-### 数据解构
+## 数据解构
 
 一个从数组或者对象中方便获取数据的方法（`Destructuring`）。
 
@@ -1543,7 +1543,7 @@ console.log(name); // _island
 console.log(age); // 18
 ```
 
-### 字符串模板
+## 字符串模板
 
 在`ES6`中我们可以在字符串中使用变量和表达式。使得字符串和变量之间拼接起来的语法更加优雅。
 
@@ -1556,7 +1556,7 @@ console.log('I live in '+city) // I live in Guangzhou
 console.log(`I live in ${city}`) // I live in Guangzhou
 ```
 
-### 函数的默认参数
+## 函数的默认参数
 
 在`ES6`中，我们可以给函数的参数定义一个默认值，当这个参数没有被传入时则使用这个默认参数。
 
@@ -1586,7 +1586,7 @@ foo() // name is _island  age is 18
 foo('abc',17)// name is abc  age is 17
 ```
 
-### 函数剩余参数
+## 函数剩余参数
 
 `ES6`中引用了`rest parameter`，可以将不定数量的参数放到一个数组中。在函数最后的一个参数放入`...args`，在函数体中`args`是一个数组。
 
@@ -1612,7 +1612,7 @@ sum(1,2,3,4,5,6,7,8,9,10)
   - `rest`参数是一个数组，而`argument`对象是伪数组
   - 剩余参数必须放在最后面
 
-### 箭头函数
+## 箭头函数
 
 在`ES6`中新增箭头函数，因为它的定义用的就箭头。我们看看它的用法。
 
@@ -1638,7 +1638,7 @@ const foo = (m, n) => {
 };
 ```
 
-#### 箭头函数的简写
+## 箭头函数的简写
 
 ```javascript
 // 函数体里只有一条函数时可以这样子写，并默认将这条语句返回(省略return)
@@ -1648,25 +1648,25 @@ const foo = (m, n) => console.log(m + n);
 const foo = name=>console.log(name);
 ```
 
-#### 箭头函数注意事项
+## 箭头函数注意事项
 
 - 箭头函数不能作为构造函数使用
 - 箭头函数没有原型
 - 箭头函数内没有`arguments`
 - 箭头函数不能使用`yield`关键字
 
-#### 关于箭头函数的指向问题
+## 关于箭头函数的指向问题
 
 - 箭头函数没有`this`，它的`this`是它的父级
 - `this`是在定义箭头函数时绑定的
 
-#### Class关键字
+## Class关键字
 
 关于`class`关键字，我在另外一篇文章中有详细介绍Class的用法和相关扩展知识点。
 
 > [点击直达 JS进阶 | 详解ES6中的Class](https://juejin.cn/post/7058477703262896159)
 
-### 数值的表示
+## 数值的表示
 
 在`ES6`中支持了进制的字面量，需要在数字前面添加对应的标识符号。
 
@@ -1678,7 +1678,7 @@ const num4 = 0x100; // 十六进制
 console.log(num1, num2, num3, num4); // 100 4 64 256
 ```
 
-### 字符串方法
+## 字符串方法
 
 `ES6`中字符串对象的新增方法（常用方法）
 
@@ -1692,7 +1692,7 @@ console.log(num1, num2, num3, num4); // 100 4 64 256
 | `trimStart`  | 返回消除之后的字符串 | 消除字符串开头的空格         |
 | `trimEnd`    | 返回消除之后的字符串 | 消除字符串尾部的空格         |
 
-#### includes
+## includes
 
 `includes`方法用于判断字符串中是否有子串，返回布尔值。
 
@@ -1704,7 +1704,7 @@ const s1 = str.includes("hello");
 console.log(s1); // true
 ```
 
-#### startsWith
+## startsWith
 
 `startsWith`方法用于判断字符串是否以指定字符开头。
 
@@ -1714,7 +1714,7 @@ const ish = str.startsWith("h");
 console.log(ish); // true
 ```
 
-#### endsWith
+## endsWith
 
 `endsWith`方法用于判断字符串是否以指定字符结尾。
 
@@ -1724,7 +1724,7 @@ const isd = str.endsWith("d");
 console.log(isd); // true
 ```
 
-#### padStart
+## padStart
 
 `padStart`方法用于从起始开始补全字符串。返回补全之后的字符串，不会修改原字符串。
 
@@ -1733,7 +1733,7 @@ const str4 = "100";
 console.log(str4.padStart(6, "000")); // 000100
 ```
 
-#### padEnd
+## padEnd
 
 `endsWith`方法用于从尾部补全字符串。返回补全之后的字符串，不会修改原字符串。
 
@@ -1744,11 +1744,11 @@ console.log(str5.padEnd(6, "000")); // 200000
 
 > `padStart` / `padEnd` 如果原字符串的长度，等于或大于最大长度，则字符串补全不生效，返回原字符串。
 
-#### trimStart
+## trimStart
 
 `trimStart`用于消除字符串开头的空格，返回消除之后的字符串，不会修改原字符串。
 
-#### trimEnd
+## trimEnd
 
 `trimStart`用于消除字符串尾部的空格，返回消除之后的字符串，不会修改原字符串。
 
@@ -1758,9 +1758,9 @@ console.log(str6.trimStart()); // '_island  '
 console.log(str6.trimEnd()); // '  _island'
 ```
 
-### ES6新增数据结构
+## ES6新增数据结构
 
-#### Symbol
+## Symbol
 
 `Symbol`是`ES6`中新增的一个基本数据类型之一，它是一个函数。每一个从`Symbol`函数返回的`Symbol`值都是独一无二的，`symbol`值作为对象属性的标识符，也是唯一的用途的。
 
@@ -1770,7 +1770,7 @@ const s2 = Symbol()
 console.log(s1 === s2); // false
 ```
 
-##### symbol作为key
+## symbol作为key
 
 第一种方式，直接在对象的字面量中添加。
 
@@ -1802,7 +1802,7 @@ Object.defineProperty(obj,s4,{
 })
 ```
 
-##### 通过symbol获取对应的值
+## 通过symbol获取对应的值
 
 需要用数组方式来获取，不能通过点语法，否则会获取到字符串key。
 
@@ -1824,7 +1824,7 @@ let sym = Symbol('a')
 console.log(sym.description); // 'a'
 ```
 
-##### 遍历symbol
+## 遍历symbol
 
 在使用`for`遍历、`object.keys`中是获取不到`symbol`健的，对此`object`还提供了`getOwnPropertySymbols`方法，用于获取对象中所有symbol的key。
 
@@ -1835,11 +1835,11 @@ for(const skey of sKeys){
 }
 ```
 
-##### 全局symbol对象注册
+## 全局symbol对象注册
 
 有时，我们可能需要多个`symbol`的值是一致的，我们可以通过`symbol`提供的静态方法`for`方法传入一样的描述符来使它们的值一致。
 
-##### Symbol.for
+## Symbol.for
 
 该方法会在使用给定键搜索运行时符号注册表中的现有符号，并在找到时返回它。否则，使用此键在全局符号注册表中创建一个新符号。
 
@@ -1849,7 +1849,7 @@ const sb=Symbol.for('cc')
 console.log(sa===sb); //true
 ```
 
-##### Symbol.keyFor
+## Symbol.keyFor
 
 该方法用于获取全局`symbol`的描述符。
 
@@ -1858,7 +1858,7 @@ const key =Symbol.keyFor(sb)
 console.log(key); // c
 ```
 
-#### Set
+## Set
 
 `Set`对象（类似数组）允许你存放任何数据类型，但里面的值不能重复。
 
@@ -1875,7 +1875,7 @@ s1.add(20)
 console.log(s1) // Set(4) { 10, 20, 30, 40 }
 ```
 
-##### Set常用方法
+## Set常用方法
 
 | 方法     | 返回值            | 说明                      |
 | -------- | ----------------- | ------------------------- |
@@ -1885,7 +1885,7 @@ console.log(s1) // Set(4) { 10, 20, 30, 40 }
 | `has`    | `boolean`         | `Set`对象中是否存在这个值 |
 | `clear`  | 无                | 清空`Set`对象中的值       |
 
-#### WeakSet
+## WeakSet
 
 `WeakSet`是类似`Set`的另外一种数据结构，内部数据也不能有重复值。
 
@@ -1893,7 +1893,7 @@ console.log(s1) // Set(4) { 10, 20, 30, 40 }
   - `WeakSet`只能存放对象类型，不能存放基本数据类型
   - `WeakSet`对元素是弱引用
 
-##### 基本使用
+## 基本使用
 
 ```javascript
 const weakSet = new WeakSet();
@@ -1904,7 +1904,7 @@ let obj = {
 weakSet.add(obj);
 ```
 
-##### WeakSet常用方法
+## WeakSet常用方法
 
 | 方法     | 返回值        | 说明                          |
 | -------- | ------------- | ----------------------------- |
@@ -1912,13 +1912,13 @@ weakSet.add(obj);
 | `delete` | `boolean`     | 删除元素                      |
 | `has`    | `boolean`     | `weakset`对象中是否存在这个值 |
 
-##### 关于遍历
+## 关于遍历
 
 `WeakSet`不能被遍历，因为它只是对对象进行弱引用，如果遍历去获取元素，有可能导致对象不能被`GC`回收。
 
 所以`WeakSet`中的对象是不能获取的
 
-#### Map
+## Map
 
 `ES6`新增的数据结构，用于存储映射关系。我们知道在`JavaScript`中对象中是不能用对象来作为`key`的。（假如我们把对象作为`key`，其内部会将对象转换为字符串`[object object]`）
 
@@ -1948,7 +1948,7 @@ console.log(map); // Map(2) { { name: '_island' } => 'a', { name: 'QC2125' } => 
 const map2 = new Map([[obj1,'a'],[obj2,'b']])
 ```
 
-##### Map常用方法
+## Map常用方法
 
 | 方法     | 返回值            | 说明                      |
 | -------- | ----------------- | ------------------------- |
@@ -1959,7 +1959,7 @@ const map2 = new Map([[obj1,'a'],[obj2,'b']])
 | `has`    | `boolean`         | `Set`对象中是否存在这个值 |
 | `clear`  | 无                | 清空`Set`对象中的值       |
 
-##### 遍历Map
+## 遍历Map
 
 通过`foreach`语句遍历`Map`
 
@@ -1975,7 +1975,7 @@ for ([val, key] of map2) {
 }
 ```
 
-#### WeakMap
+## WeakMap
 
 和`Map`类似，也是以键值对的形式存在的
 
@@ -1983,7 +1983,7 @@ for ([val, key] of map2) {
   - `WeakMap`的`key`只能使用对象，不接受其他的类型作为`key`
   - `WeakMap`的`key`对对象是弱引用
 
-##### 基本使用
+## 基本使用
 
 ```javascript
 const weakMap = new WeakMap();
@@ -1991,7 +1991,7 @@ weakMap.set(obj, "a");
 console.log(weakMap.get(obj)); // a
 ```
 
-##### WeakMap常用方法
+## WeakMap常用方法
 
 | 方法     | 返回值        | 说明                           |
 | -------- | ------------- | ------------------------------ |
@@ -1999,13 +1999,13 @@ console.log(weakMap.get(obj)); // a
 | `delete` | `boolean`     | 删除元素                       |
 | `has`    | `boolean`     | `weaksmap`对象中是否存在这个值 |
 
-##### 关于遍历
+## 关于遍历
 
 和`WeakSet`一样，正因为它是弱引用，`WeakMap`的`key`是不可枚举的，如果`key`可枚举那其列表将会受`GC`影响。
 
-### ES7语法
+## ES7语法
 
-#### array includes
+## array includes
 
 `includes`方法用于判断一个元素是否存在于一个数组中
 
@@ -2047,7 +2047,7 @@ if (names.includes(NaN)) {
 }
 ```
 
-#### 求幂运算符
+## 求幂运算符
 
 求幂运算符（`**`）返回将第一个操作数加到第二个操作数的幂的结果。它等效于`Math.pow`，你可以理解它就和+、-运算符一样。
 
@@ -2065,7 +2065,7 @@ const result2 = 3 ** 3;
 
 也可以使用`BigInts`作为操作数。
 
-##### 什么是BigInt
+## 什么是BigInt
 
 是一种内置对象，它可以是任意大的整数。它解决了`Number`类型的限制。
 
@@ -2087,13 +2087,13 @@ BigInt("9007199254740998"); // 9007199254740998n
 console.log(typeof 9007199254740998n) // bigint
 ```
 
-##### 与Number的区别
+## 与Number的区别
 
 - `BigInt`不能使用`Math`对象中的方法
 - 不能和`Nunber`进行运算
 - `BigInt`转`Number`类型可能出现失去精度
 
-### ES8语法
+## ES8语法
 
 `ES8`又称`ES2017`，在`ES6`之后的语法我们都统称为`ES6+`，下面我们来看看`ES8`中新增的新语法。它们都是一些非常实用的功能
 
@@ -2104,7 +2104,7 @@ console.log(typeof 9007199254740998n) // bigint
 - `Object.getOwnPropertyDescriptors`
 - `async`
 
-#### Object values
+## Object values
 
 该方法可以获取对象中所有的value值。
 
@@ -2117,7 +2117,7 @@ const obj = {
 console.log(Object.values(obj)); // [ '_island', 18 ]
 ```
 
-#### Object entries
+## Object entries
 
 该方法用于将一个对象的可枚举健值转换为一个数组。方便后续遍历数据
 
@@ -2131,9 +2131,9 @@ const obj = {
 console.log(Object.entries(obj)); // [ [ 'name', '_island' ], [ 'age', 18 ] ]
 ```
 
-#### 字符串填充
+## 字符串填充
 
-#### 函数参数的逗号
+## 函数参数的逗号
 
 `ES8`之后，可以在函数的参数后面尾随逗号。
 
@@ -2145,7 +2145,7 @@ function foo(m,n,){
 foo(20,30,)
 ```
 
-#### Object getOwnPropertyDescriptors
+## Object getOwnPropertyDescriptors
 
 该方法用来获取一个对象的所有自身属性的描述符。
 
@@ -2176,7 +2176,7 @@ console.log(Object.getOwnPropertyDescriptors(obj));
 // }
 ```
 
-#### async
+## async
 
 `async`函数是一个异步函数，且需要搭配`await`关键字使用。它可以使`Promise`的异步执行的像同步代码一样执行。
 
@@ -2190,7 +2190,7 @@ async function foo() {
 foo(); // ok
 ```
 
-### ES9的语法
+## ES9的语法
 
 Async iterators
 
@@ -2198,9 +2198,9 @@ Object spread operators
 
 Promis finally
 
-### ES10语法
+## ES10语法
 
-#### 数组降维
+## 数组降维
 
 `Array.flat`方法会将一个数组进行降维操作，并合成一个新的数组返回。（如果没有参数传入，默认降维深度为`1`）
 
@@ -2213,7 +2213,7 @@ const newNums2 = nums.flat(2);
 console.log(newNums2); // [1, 2, 3, 4, 5, 6, 7, 8]
 ```
 
-####  遍历降维
+##  遍历降维
 
 `Array.flatMap`方法会将传入的函数映射到数组中的每一个元素。并返回每个元素的结果集合，再进行`flat`操作（降维深度为`1`）。
 
@@ -2226,7 +2226,7 @@ const newNums3 = nums2.flatMap((item) => {
 console.log(newNums3); // [ 2, 4, 6, 8, 12 ]
 ```
 
-##### 和Array.map()的对比
+## 和Array.map()的对比
 
 在一般情况下使用`map`和`flatMap`方法好像都可以。我们看下面这个案例，可以更好了解到`flatMap`的作用。
 
@@ -2256,7 +2256,7 @@ console.log(newMsg2);
 // ]
 ```
 
-#### Object fromEntries
+## Object fromEntries
 
 Object.fromEntries方法用于将一个`key-value`的二维数组转换为一个对象。
 
@@ -2270,7 +2270,7 @@ const obj = Object.fromEntries(arr);
 console.log(obj); // { name: '_island', age: 18 }
 ```
 
-#### trim
+## trim
 
 在`ES10`中对字符串对象新增了`trimStart`、`trimEnd`方法，用于处理字符串前、后的空格内容。
 
@@ -2280,7 +2280,7 @@ console.log(str6.trimStart()); // '_island  '
 console.log(str6.trimEnd()); // '  _island'
 ```
 
-#### Symbol description
+## Symbol description
 
 在`ES10`中，`Symbol`类型可以声明时传入一个`Symbol`描述符。
 
@@ -2288,7 +2288,7 @@ console.log(str6.trimEnd()); // '  _island'
 const s1 = Symbol("Symbol描述符");
 ```
 
-#### 可选的Catch的参数
+## 可选的Catch的参数
 
 在过去try语句中catch子句必须接受一个错误参数，而在ES10中，我们可以不创建这个错误参数也可以正常允许。
 
@@ -2299,7 +2299,7 @@ try{}catch(e){}
 try{}catch{}
 ```
 
-#### 更友好的String.toString
+## 更友好的String.toString
 
 `ES10`之后，`toString`方法会返回精确的字符，这包括空格和注释。
 
@@ -2312,11 +2312,11 @@ console.log(foo.toString()); // function foo(){}
 console.log(foo.toString()); // function /* comment */ foo /* another comment */() {}
 ```
 
-### ES11
+## ES11
 
-##### BigInt
+## BigInt
 
-##### 空值合并
+## 空值合并
 
 可选链
 
@@ -2328,7 +2328,7 @@ promise.allSettled
 
 import mate
 
-### ES12
+## ES12
 
 FinalizationRegistry
 
@@ -2340,9 +2340,9 @@ WeakRef
 
 replaceAll
 
-### Proxy
+## Proxy
 
-#### 监听对象操作
+## 监听对象操作
 
 某些场景下，需要监听一个对象的操作，当这个操作触发时执行另外的一个函数，就像vue2中的watchApi，它可以监听data数据中某个属性的改变并操作指定的函数。
 
@@ -2378,7 +2378,7 @@ console.log(obj.name);
 - `Object.defineProperty`的设计初衷并不是为了去监听拦截一个对象中的属性
 - 也实现不了更加丰富的操作，比如添加、删除属性
 
-#### 认识Proxy
+## 认识Proxy
 
 `Proxy`对象用于创建一个对象的代理，是用于监听一个对象的相关操作。代理对象可以监听我们对原对象的操作。
 
@@ -2400,7 +2400,7 @@ console.log(objProxy);
 
 打印出来可以看到的是一个`Proxy`对象。下面我们开始看看`Proxy`中的捕获器对象。
 
-#### 捕获器
+## 捕获器
 
 Proxy捕获共有`13`个，它们用于我们对对象、函数的方法调用监听。
 
@@ -2485,7 +2485,7 @@ getPrototypeOf: function () {
 },
 ```
 
-#### 对象监听案例
+## 对象监听案例
 
 在`ES5`之前，我们监听对象的操作方式是通过`Object.defineProperty`方法来实现的。我们看下面这个案例。
 
@@ -2556,15 +2556,15 @@ console.log(objProxy.name);
 // QC2125
 ```
 
-### Reflect
+## Reflect
 
 `Reflect`是一个对象，翻译过来是反射的意思，它提供了很多操作`JavaScript`对象的方法， 是为了弥补`Object`中对象的一些缺陷。且所有属性和方法都是静态的
 
-#### 为什么会有Reflect
+## 为什么会有Reflect
 
 在早期，`JavaScript`这门语言中的一些内部方法都被部署到了`Object`这个对象上。就例如`getPrototype`、`deinfeProperty`等`API`、类似`in`、`delete`操作符都放到了`Object`对象上了。但`Object`作为一个构造函数（`Reflect`并非一个构造函数，不能通过new关键字调用），这些方法放到它身上并不合适，所以在`ES6`之后的内部新方法会部署到`Reflect`对象中。
 
-#### 使用Reflect对象操作Object对象
+## 使用Reflect对象操作Object对象
 
 Reflect对象让我们操作`Object`对象不再是通过点语法了，而是变成了函数行为。
 
@@ -2591,7 +2591,7 @@ console.log("name" in obj); // true
 console.log(Reflect.has(obj, "name")); // true
 ```
 
-#### Reflect中的方法
+## Reflect中的方法
 
 | 对象中的方法                       | 说明                     |
 | ---------------------------------- | ------------------------ |
@@ -2613,7 +2613,7 @@ console.log(Reflect.has(obj, "name")); // true
 
 在返回值方便`Reflect`对象中的方法设计的更加合理。比如`defineProperty`方法，如果没有将属性设置成功，在`Reflect`中会返回`boolean`值，而`Object`对象中如果没有定义成功则会抛出`TypeError`。
 
-#### Reflect搭配Proxy
+## Reflect搭配Proxy
 
 `Reflect`对象中的方法和上一篇文章将到的`Proxy`对象的方法的对应的，`Proxy`对象中的方法也能在`Reflect`对象中调用。
 
@@ -2683,7 +2683,7 @@ console.log(objProxy.name);
 
 传入在我们获取代理对象中的`name`属性时，当`Reflect`有`receiver`参数传入时，获取属性值时会获取到`receiver`中的，所以会触发`defineProperty`捕获器，如果没有传入`receiver`参数，则不会触发`defineProperty`捕获器。
 
-#### 总结
+## 总结
 
 - `Reflect`对象中集合了`JavaScript`内部方法
 - 操作`Object`对象的方式变成了函数行为
@@ -2693,7 +2693,7 @@ console.log(objProxy.name);
 
 
 
-### 迭代器
+## 迭代器
 
 迭代器，是确使用户可在容器对象（`container`，例如链表、数组）上遍历的对象，使用该接口无需关心对象的内部实现细节
 
@@ -2716,7 +2716,7 @@ console.log(objProxy.name);
 - value
   - 迭代器返回的任何`JavaScript`值，`done`为`true`时可省略
 
-#### 实现迭代器
+## 实现迭代器
 
 ```javascript
 // 数组
@@ -2739,7 +2739,7 @@ console.log(namesIterator.next()); // { done: true, value: undefined }
 
 ```
 
-#### 可迭代对象
+## 可迭代对象
 
 迭代器和可迭代对象是不同概念
 
@@ -2765,7 +2765,7 @@ const iterableObj = {
 };
 ```
 
-#### 可迭代对象的应用场景
+## 可迭代对象的应用场景
 
 - 在JavaScript中语言 for...of、spread syntax、yield*、Destructuring assign
 - 创建对象时 new Map、new WeakMap、new Set、new WeakSet
@@ -2791,7 +2791,7 @@ const set2 = new Set(123);
 obj = { ...obj };
 ```
 
-#### 中断迭代器
+## 中断迭代器
 
 迭代器在某些情况下会子没有完全迭代的情况下中断
 
@@ -2819,7 +2819,7 @@ obj = { ...obj };
 }
 ```
 
-#### 自定义类的可迭代
+## 自定义类的可迭代
 
 类中也可以定义迭代器，在类中添加`[Symbol.iterator]`，它和对象中的`[Symbol.iterator]`的定义方法是一样的。
 
@@ -2858,7 +2858,7 @@ classroom.entry("jj2");
 console.log(classroom);
 ```
 
-### 生成器
+## 生成器
 
 生成器是`ES6`中新增的一个函数控制，使用的方案，它可以让我们更加灵活的控制函数什么时候继续执行、暂停执行等。
 
@@ -2938,7 +2938,7 @@ const n = yield value1
 console.log(generator.next(10)); // { value: 2000, done: false }
 ```
 
-#### 终止生成器
+## 终止生成器
 
 生成器中还有一个`return`属性，用于终止生成器。也可以传入指定参数作为返回值。
 
@@ -2963,7 +2963,7 @@ console.log(generator.next()); // { value: 100, done: false }
 console.log(generator.return(666)); // { value: 666, done: true }
 ```
 
-#### 生成器抛出异常
+## 生成器抛出异常
 
 当生成器返回了你不正确的数据时，可以使用`throw`方法使得它抛出异常。
 
@@ -2995,7 +2995,7 @@ console.log(generator.next()); // { value: 200, done: false }
 console.log(generator.throw()); // { value: 300, done: false }
 ```
 
-#### 生成器替代迭代器
+## 生成器替代迭代器
 
 在上面我们生成器是通过一个函数返回出一个对象来实现的，但这种写法平时写得很少，也可以使用生成器来替代它。
 
@@ -3031,7 +3031,7 @@ console.log(RangeIterator.next()); // { value: 13, done: false }
 
 
 
-### 异步函数
+## 异步函数
 
 - asnyc关键字用于声明一个异步函数
   - async是asynchronous单词的缩写，代表异步的意思
@@ -3039,7 +3039,7 @@ console.log(RangeIterator.next()); // { value: 13, done: false }
 
 
 
-### 什么是进程和线程
+## 什么是进程和线程
 
 - 进程（`process`）计算机已经运行的程序，是操作系统管理程序的一种方式
 - 线程（`thread`）操作系统能够运行运算调度的最小单位，通常情况下它包含在进程中
@@ -3066,7 +3066,7 @@ setTimeout(()=>{
 console.log('script end');
 ```
 
-### 宏任务微任务
+## 宏任务微任务
 
 > 宏任务（`macro task`）事件包括有：`setTimeout`、`setInterval`、`I/O`、`postMessage`、`MessageChanel`、`setImmediate`、`UI rendering`
 >
@@ -3074,7 +3074,7 @@ console.log('script end');
 
 **规范：JavaScript引擎在执行任何的宏任务之前，都需要先保证微任务队列已经被清空**
 
-#### 执行机制
+## 执行机制
 
 - 优先级
   - `main script`代码先执行
@@ -3185,11 +3185,11 @@ console.log("script end");
   bar2
   ```
 
-#### 总结
+## 总结
 
 `JavaScript`是单线程的，采用单线程的事件循环方式管理异步任务，通过任务队列来处理异步任务。为了用户的体验微任务会被优先执行。
 
-### Node事件循环
+## Node事件循环
 
  在`Node`中事件循环是由`libuv`实现的，`libuv`是一个使用C++编写的多平台异步IO库，最初是为Node开发的，现在也被应用到了Luvit、Julia、pyui中。
 
@@ -3199,7 +3199,7 @@ console.log("script end");
 
 - 定时器 Timers
 
-#### Node的宏任务和微任务
+## Node的宏任务和微任务
 
 在Node中，Node的事件循环更为复杂，但也分有微任务和宏任务，且不只是微任务队列和宏任务队列
 

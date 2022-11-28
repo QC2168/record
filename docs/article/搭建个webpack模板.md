@@ -3,11 +3,11 @@ title: 搭建个webpack模板
 tags: [JavaScript,webpack]
 ---
 
-#### 前言
+## 前言
 
 最近在看`vue`源码解析的教程视频，每一章讲解都使用到了`webpack`，我们就要从零开始搭建脚手架，这样子太费时间了，本文将简述如何去搭建一个`webpack`模板，也是方便我们后续开发或者练习时使用。（即是即拉即用，无需每次使用都去配置一遍）。
 
-#### 什么是webpack
+## 什么是webpack
 
 `webpack`是目前前端开发中最火的模块打包工具，只需要通过简单的配置，便可以完成模块的加载和打包。
 
@@ -15,7 +15,7 @@ tags: [JavaScript,webpack]
 
 ![image-20210620160811018](https://raw.githubusercontent.com/QC2168/note-img/main/202203161654712.png)
 
-#### 初始化项目
+## 初始化项目
 
 ```bash
 npm init -y 	// 初始化项目
@@ -33,7 +33,7 @@ npm install webpack webpack-cli --save-dev
 
 ![](https://raw.githubusercontent.com/QC2168/note-img/main/202203161654713.png)
 
-#### 配置快捷脚本
+## 配置快捷脚本
 
 在项目的`package.json`文件中的scripts对象中添加一句`"build": "webpack"`，稍后我们可以使用`npm run build`来把项目跑起来。
 
@@ -43,7 +43,7 @@ npm install webpack webpack-cli --save-dev
   },
 ```
 
-#### 项目目录结构
+## 项目目录结构
 
 我们在根目录下创建一个`src`，作为项目的根目录。
 
@@ -81,7 +81,7 @@ webpack-template
 └─ tsconfig.json    
 ```
 
-#### 创建项目配置文件
+## 创建项目配置文件
 
 在根目录下创建一个`webpack.config.ts`文件，`webpack`会根据该配置文件定义的属性进行处理。
 
@@ -100,7 +100,7 @@ webpack-template
 └─ webpack.config.ts  
 ```
 
-#####  编写config文件
+##  编写config文件
 
 ```typescript
 // webpack.config.ts
@@ -128,7 +128,7 @@ npm install --save-dev css-loader style-loader sass-loader sass ts-loader typesc
 
 在`webpack.config.ts`中配置安装好的`loader`和`plugins`。
 
-##### 配置loader
+## 配置loader
 
 `loader`的一些相关配置。
 
@@ -163,7 +163,7 @@ npm install --save-dev css-loader style-loader sass-loader sass ts-loader typesc
     }
 ```
 
-##### 配置plugins
+## 配置plugins
 
 `plugins`的一些相关配置。
 
@@ -183,7 +183,7 @@ npm install --save-dev css-loader style-loader sass-loader sass ts-loader typesc
 
 ![3](https://raw.githubusercontent.com/QC2168/note-img/main/202203161654714.png)
 
-#### 配置多页面
+## 配置多页面
 
 为什么这里要配置多页面？
 
@@ -281,11 +281,11 @@ entry: {
 
 ![5](https://raw.githubusercontent.com/QC2168/note-img/main/202203161654716.png)
 
-#### 配置代码规范
+## 配置代码规范
 
 具备基本工程素养的同学都会注重编码规范，而代码风格检查（Code Linting，简称 Lint）是保障代码规范一致性的重要手段，
 
-#####  EditorConfig
+##  EditorConfig
 
 `EditorConfig`是用来配置格式化代码的，这个格式化代码一定要和`ESlint`中的配置相符，否则会出现格式化后的代码不符合`ESlint`中的规则，从而不能正常的打包项目。
 
@@ -314,7 +314,7 @@ trim_trailing_whitespace = false
 
 ![6](https://raw.githubusercontent.com/QC2168/note-img/main/202203161654717.png)
 
-##### ESlint
+## ESlint
 
 `ESlint`是一款开源的代码检查工具，找有问题的模式或者代码，并且不依赖于具体的编码风格。对大多数编程语言来说都会有代码检查，一般来说编译程序会内置检查工具。
 
@@ -399,7 +399,7 @@ sure ！！
 
 执行`npm run lint`，修复当前项目中所有的问题。
 
-#####  husky
+##  husky
 
 husky 是一个 `Git Hook` 工具。主要实现提交前 `eslint` 校验和 `commit` 信息的规范校验。我们项目已经具有了编码规范检测，但某些时候，有可能遗漏了一两个规范警告提示，甚至是视而不见！关闭检测工具按照自己原来的编码规范来书写代码。为了解决这个问题，我们需要限制“有问题”的代码的提交，来保证GIT仓库中的代码全都是符合`ESlint`规范的，这个时候我们需要用到`husky`了。
 
@@ -417,7 +417,7 @@ npx husky-init && npm install
 
 这个`pre-commit`是一个hook文件，作用是当我们执行`git commit`的时候，会先对项目执行一遍`eslint --fix --ext .js,.ts src`，如果`ESlint`通过，即`commit`成功，否则停止`commit`。
 
-#####  lint-staged
+##  lint-staged
 
 `lint-staged` 是一个在`git`暂存文件上运行`linters`的工具，当我们运行`eslint`或`stylelint`的命令时，只会检查我们通过`git add`添加到暂存区的文件，可以避免我们每次检查都把整个项目的代码都检查一遍。
 
@@ -445,17 +445,17 @@ npx lint-staged
 
 ![19](https://raw.githubusercontent.com/QC2168/note-img/main/202203161654721.png)
 
-#### 调试环境
+## 调试环境
 
 在实际开发中，我们不可能一直通过`build`指令将项目进行合并打包再打开查看，这样子会使得开发调试效率非常之慢。我们给我们提供了一个叫`webpack-dev-server`的插件，它可以给我们提供一个临时服务器，可以将我们项目打包后的文件放到这个服务器中供我们开发者进行浏览，调试
 
-##### 安装`webpack-dev-server`插件
+## 安装`webpack-dev-server`插件
 
 ```bash
 npm install --save-dev webpack-dev-server @types/webpack-dev-server
 ```
 
-##### 配置插件
+## 配置插件
 
 引入插件，在配置类型方面，我们需要做出一些修改，原本我们的配置对象模块中用的是`webpack`包中的`config`类型，但现在我们需要用到另外一个模块（`webpack-dev-server`）要在配置对象中配置`devServer`属性，而`webpack`中的`config`中没有`devServer`这个类型的属性，我们定义一个`Configuration`接口作为配置文件的类型，让它继承下`webpack`包中的`config`，当它底下有`devServer`的时候则对应上`WebpackDevServerConfiguration`
 
@@ -524,17 +524,17 @@ const config: Configuration = {
 
 关于`webpack-dev-server`该插件还有很多的配置项，这里我们只是做了简单的配置，如果你想了解更多的配置，[请移至插件配置文档](https://github.com/webpack/webpack-dev-server#usage)
 
-#### 网络请求
+## 网络请求
 
 在传统的页面中，更新页面的内容需要刷新整个页面，但在前端开发中，往往离不开网络数据的请求，我们需要调用后端写好的API进行数据请求，将数据内容渲染到页面中。这里我们使用`axios`这个第三方请求库
 
-##### 安装`axios`
+## 安装`axios`
 
 ```bash
 npm install axios
 ```
 
-##### 直接请求 （ 不推荐 ）
+## 直接请求 （ 不推荐 ）
 
 最简单粗暴的方法，你可以直接通过`axios`对`URL`进行`get` `post`的请求，但不建议这样子操作，在日常开发我们会将请求回来的数据进行处理再交给对应的组件去处理渲染，如果你直接通过以下方式来请求，那么你的项目中每个请求可能会出现很多重复的代码，你也许会说将这些重复的代码进行一个封装处理，但这不是最好方法，`axios`给我们提供了拦截器功能，在请求发送前和请求响应后可以统一处理后再交给对应的页面处理，这样子可以大大降低代码的耦合度以及方便后续开发中对代码的维护，还可以对`API`集中管理 **请继续往下看**
 
@@ -545,7 +545,7 @@ axios.get(url[, config]).then()
 axios.post(url[, data[, config]])..then()
 ```
 
-##### 配置全局网络请求实例
+## 配置全局网络请求实例
 
 在`src`文件夹下创建`network`文件夹，作为项目网络请求的管理文件夹，在其下面创建`request.ts`文件，配置项目全局`axios`实例。
 
@@ -598,7 +598,7 @@ export default (response: AxiosResponse) => {
 };
 ```
 
-##### API集中管理
+## API集中管理
 
 在项目中，我们常常会使用到很多的`API`地址，我们需要将这些集中起来管理，按页面来分类之后将每一个API封装成对应的一个API请求函数，之后我们在对应的页面调用就可以直接拿到数据处理了，后面如果`API`地址有更改我们也可以从对应页面中的文件进行修改，这给我们开发带了很大的好处！
 
@@ -619,7 +619,7 @@ export const homePageArticle = () => request({
 });
 ```
 
-##### 使用API
+## 使用API
 
 在页面中，我们引入封装好的`API`函数，使用`async await`将函数再包装一层，请求回来的数据将在这个函数中进行二次处理，例如将数据进行一个大小写转换，长度分割等操作。
 
@@ -639,7 +639,7 @@ getDataHomeTopNav();
 getDataHomePageArticle();
 ```
 
-#### 最后
+## 最后
 
 本文从初始化项目开始到项目结构搭建，多页面的配置再到代码提交规范这些平时常用到的一些配置选项都集成到了`webpack-template`中,手把手地带领大家将一个空的文件夹构建一个前端开发项目模板，目的也是方便我们平时使用`webpack`环境时，减少繁琐的配置从而节约时间。
 

@@ -3,27 +3,28 @@ title: 如何在项目中引入百度地图API
 tags: [JavaScript]
 ---
 
-#### 前言
+## 如何在项目中引入百度地图API
+## 前言
 
 百度地图`JavaScript API`是一套由`JavaScript`语言编写的应用程序接口，可帮助您在网站中构建功能丰富、交互性强的地图应用，支持`PC`端和移动端基于浏览器的地图应用开发，且支持`HTML5`特性的地图开发。
 
-#### 文档地址
+## 文档地址
 
 百度地图`JavaScript SDK`：https://lbsyun.baidu.com/index.php?title=jspopular
 
-#### 使用方法
+## 使用方法
 
-##### 申请密钥
+## 申请密钥
 
 百度地图应用管理平台：https://lbsyun.baidu.com/apiconsole/key?application=key#/home
 
-##### 创建应用
+## 创建应用
 
 如下图，点击创建应用，为你的项目创建一个应用。用于使用百度地图`API`。
 
 ![1](https://raw.githubusercontent.com/QC2168/note-img/main/202203161638550.png)
 
-##### 应用信息
+## 应用信息
 
 设置你的应用名称，以及应用的类型（浏览端）。
 
@@ -33,7 +34,7 @@ tags: [JavaScript]
 
 ![3](https://raw.githubusercontent.com/QC2168/note-img/main/202203161638552.png)
 
-##### 引入API
+## 引入API
 
 在项目的`index.html`中，添加以下代码引入百度地图`API`。
 
@@ -86,7 +87,7 @@ externals: {
 
 接下面在项目中就可以直接使用啦！
 
-##### 渲染地图
+## 渲染地图
 
 创建一个container容器，用于渲染地图。
 

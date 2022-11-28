@@ -4,8 +4,9 @@ tags: [JavaScript]
 ---
 
 
-# 你真的了解Symbol吗
-### 什么是Symbol
+## 你真的了解Symbol吗
+
+## 什么是Symbol
 
 `Symbol`是`ES6`中新增的一种基本数据类型，它是一个函数，会返回一个`Symbol`类型的值，每一个`Symbol`函数返回的值都是唯一的，它们可以被作为对象属性的标识符。
 
@@ -13,7 +14,7 @@ tags: [JavaScript]
 
 > 注意Symbol不算是一个完整的构造函数，因为它不能使用new关键字进行调用
 
-### 语法
+## 语法
 
 ```javascript
 
@@ -21,7 +22,7 @@ Symbol([description])
 
 ```
 
-### typeof
+## typeof
 
 ```javascript
 
@@ -30,7 +31,7 @@ typeof Symbol(); // Symbol
 ```
 
 > description是Symbol的标识符，是可选的（该特性是在ES10新增的）
-### 上手Symbol基本用法
+## 上手Symbol基本用法
 
 👇 使用`Symbol`值作为对象的key 👇
 
@@ -78,7 +79,7 @@ info[Symbol('age')] = 20
 从这个例子中，我们在info对象中设置了两个age属性，一个是Symbol符号定义，另外一个是通过字面量的方式定义。按ES6之前的写法在没有Symbol的情况下我们是没法在一个对象在设定同名的属性，而在这个例子中我们利用Symbol的唯一性给info对象再定义一个age属性。当你要获取对应的值时只需要通过对应的Symbol获取即可。
 > Symbol('age') ：Symbol函数接收一个参数description，它是可选的，用来对Symbol的描述，可用于调试但不是访问 Symbol 本身。
 
-### 获取对象中的Symbol
+## 获取对象中的Symbol
 
 在`ES6`中，新增了`Object.getOwnPropertySymbols()`方法，用于获取一个对象中的`Symbol`属性的数组。
 
@@ -116,10 +117,10 @@ console.log(Object.keys(info))
 
 ```
 
-### 全局Symbol
+## 全局Symbol
 
 在前面的例子中我们定义的`s1`是一个本地的`Symbol`，如果你的项目中在运行时需要共享和复用`Symbol`实例，这就需要使用到`Symbol.for`和`Symbol.keyFor`方法了
-### Symbol.for
+## Symbol.for
 `Symbol.for`方法，它接收一个`key`值，用于从`Symbol`注册表中获取对应的`Symbol`并返回，如果没有找到就创建一个新的`Symbol`与这个`key`进行关联，并放入全局`Symbol`注册表中。
 
 ```javascript
@@ -136,7 +137,7 @@ const getFooGlob=Symbol.keyFor('foo')
 ```
 > Symbol.for()和Symbol()不同之处是前者创建的Symbol都会存入到全局Symbol注册表中，在获取时如果有该Symbol时会返回该Symbol，否则创建。后者则是每次都会创建一个不同的Symbol实例。
 
-### Symbol.keyFor
+## Symbol.keyFor
 
 `Symbol.keyFor`方法用于获取全局`Symbol`注册表中与某个`Symbol`关联的键，它接收一个参数`sym`用于需要查找键值的某个`Symbol`，该方法会返回一个查找到`Symbol`的`key`值，否则返回`undefined`
 
@@ -155,15 +156,15 @@ console.log(Symbol.keyFor(localFoo))
 
 ```
 
-### Symbol.length
+## Symbol.length
 
 `Symbol`也有`length`属性，值为`0`。
 
-### 使用场景
+## 使用场景
 
 在实际项目开发中，有哪些情景会使用到`Symbol`呢？
 
-#### 模拟private
+## 模拟private
 
 利用Symbol模拟private属性，让其外部无法访问到。
 ```javascript
@@ -178,7 +179,7 @@ export default class Foo{
 ```
 > 在ES12中新增`Private Class Fields and Methods`，可以使得属性或方法无法被外界访问
 
-#### 单例模式
+## 单例模式
 
 ```javascript
 // Person.js
@@ -200,7 +201,7 @@ export default window[key]
 
 ```
 
-#### 代替魔法字符串
+## 代替魔法字符串
 
 例如你的项目中有一个角色选择功能，你可能会根据它们的标识来判断做一些对应事件。
 
@@ -242,7 +243,7 @@ if(type === UserType.PATIENT){
 > 所有的内置符号属性都是不可写，不可枚举，不可配置的,它们就是全局函数Symbol的普通字符串属性，指向一个符号的实例
 
 > 注意 在提到ECMAScript 规范时，经常会引用符号在规范中的名称，前缀为@@。比如@@iterator 指的就是Symbol.iterator
-### Symbol.iterator
+## Symbol.iterator
 
 `iterator`是一个迭代器，当对象拥有了这一个迭代器之后可以使用`for...of`语句进行遍历。
 在`Array`实例对象中存在`[Symbol.iterator]`属性，因此它可以使用`for...of`进行遍历。
@@ -272,7 +273,7 @@ sum(...numbers)
 ```
 > 如果你还不熟悉什么是扩展运算符可以[点击这里](https://developer.mozilla.org/zh-CN/docs/Web/JavaScript/Reference/Operators/Spread_syntax)
 
-#### 引出关于对象的扩展问题
+## 引出关于对象的扩展问题
 
 但日常开发中我们也经常会在对象中使用`...扩展运算符`，按上面的说法`JavaScript`中的对象是不存在`[Symbol.iterator]`属性的，那么为什么在对象也是使用...扩展运算符？
 
@@ -290,7 +291,7 @@ z; // { a: 3, b: 4 }
 
 (Object Rest/Spread Properties)[https://github.com/tc39/proposal-object-rest-spread]
 
-### Symbol.asyncIterator
+## Symbol.asyncIterator
 `asyncIterator`是一个异步迭代器，配合着`for-await-of`语句使用。
 当使用`for-await-of`语句循环对象时，内部会调用`asyncIterator`这个函数，遍历异步可迭代对象以及同步可迭代对象。
 
@@ -316,7 +317,7 @@ z; // { a: 3, b: 4 }
     asyncCount()
 ```
 
-### Symbol.hasInstance
+## Symbol.hasInstance
 `Symbol.hasInstance`用于判断某对象是否为某构造器的实例。因此你可以用它自定义 `instanceof` 操作符在某个类上的行为。
 
 当我们用`instanceof`操作符，会调用`Symbol.hasInstance`函数来确定关系。
@@ -345,7 +346,7 @@ let b = new Bar()
 console.log(b instanceof Bar) // false
 console.log(Bar[Symbol.hasInstance](b)) // false
 ```
-### Symbol.species
+## Symbol.species
 `Symbol.species`用于当使用`Array.prototype.Map()`时生成派生对象的构造方法，取代原有的对象。除了`Map`方法，在`filter`、`slice`等方法也部署了`Symbol.species`。
 
 ```javascript
@@ -370,7 +371,7 @@ b.map(i=>i) instanceof Array; // true
 
 ```
 
-### Symbol.match
+## Symbol.match
 `Symbol.match`用于匹配正则表达式而不是字符串，当调用`String.prototype.match()`时，会先去调用该函数。
 
 ```javascript
@@ -386,7 +387,7 @@ console.log('/foo/'.startsWith(regexp1)); // true
 > `Symbol.match`还用于标识对象是否具有正则表达式的行为，例如String中的startsWith、endsWith方法都会去检测第一个参数是否为正则表达式，如果是就抛出TypeError，你可以使用Symbol.match修改它的行为。
 
 
-### Symbol.isConcatSpreadable
+## Symbol.isConcatSpreadable
 `Symbol.isConcatSpreadable`用于配置某些对象作为`Array.prototype.concat()`方法时是否展开其数组元素。
 
 ```javascript
@@ -400,7 +401,7 @@ arr2[Symbol.isConcatSpreadable]=false
 console.log(arr1.concat(arr2)) //  [1, 2, 3, Array(3)]
 
 ```
-### Symbol.toStringTag
+## Symbol.toStringTag
 
 `Symbol.toStringTag`由内置方法`Object.prototype.toString()`使用，当通过`toString()`方法获取时，会检索由`Symbol.toString`指定的实例标识符，默认情况下为`Object`，在内置类型已经指定了这个值，但自定义实例默认是`undefined`，可以在自定义类添加`Symbol.toStringTag`属性即可添加上你的实例标识符。
 
@@ -432,7 +433,7 @@ console.log(b[Symbol.toStringTag]) // bar
 
 ```
 
-### Symbol.toPrimitive
+## Symbol.toPrimitive
 
 `Symbol.toPrimitive`用于当一个对象被转换成数据类型时会调用该函数。
 
@@ -451,7 +452,7 @@ const foo = {
 console.log(String(foo)) // bar
 
 ```
-### Symbol.unscopables
+## Symbol.unscopables
 
 `Symbol.unscopables`用于解除对象属性在`with`语句中的绑定。
 ```javascript
@@ -473,7 +474,7 @@ with(foo){
 
 > 不推荐使用with语句，所以也就不推荐使用Symbol.unscopables
 
-### Symbol.replace
+## Symbol.replace
 
 当该对象被`String.prototype.replace`方法调用时会调用`Symbol.replace`，会返回该方法的返回值。
 

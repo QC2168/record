@@ -3,7 +3,7 @@ title: vite项目优化
 tags: [JavaScript]
 ---
 
-### 前言
+## 前言
 
 作者最近在开发的项目有一个使用到了`vite`构建工具，在构建项目时，当时看到这个就是我的天！这个包怎么这么大！于是，我对他做了一场小手术。
 
@@ -15,7 +15,7 @@ tags: [JavaScript]
 
 ![download](https://raw.githubusercontent.com/QC2168/note-img/main/202204012128638.jpg)
 
-### 配置路由懒加载
+## 配置路由懒加载
 
 当打包构建应用时，`JavaScript` 包会变得非常大，影响页面加载。这时，我们可以将这些组件拆分出来，变成多个chunk，当用户首次进入页面时才会加载对应的文件。避免一次性将所有组件请求下来。
 
@@ -31,7 +31,7 @@ export default [
 ] as Array<RouteRecordRaw>;
 ```
 
-### 分析构建
+## 分析构建
 
 安装`rollup-plugin-visualizer`插件，该插件用于分析依赖大小占比。
 
@@ -59,7 +59,7 @@ export default defineConfig({
 
 ![image-20220330165653454](https://raw.githubusercontent.com/QC2168/note-img/main/202204011715900.png)
 
-### 代码压缩
+## 代码压缩
 
 安装`vite-plugin-compress`插件，对项目中的代码进行`gzip`压缩或`brotli`压缩
 
@@ -84,7 +84,7 @@ export default defineConfig({
 
 ![image-20220330171007111](https://raw.githubusercontent.com/QC2168/note-img/main/202204011715901.png)
 
-### 图片压缩
+## 图片压缩
 
 安装`vite-plugin-imagemin`插件，对项目中的图片进行压缩处理。
 
@@ -133,11 +133,11 @@ export default defineConfig({
 });
 ```
 
-### 优化包体积
+## 优化包体积
 
 在`vue3`中，许多的`Api`都是可以被`tree-shake`优化，也即是你的项目中使用到了某些`API`只打包这些被使用到的`API`，减少包的体积。在选择第三方库时，尽量使用ES版本就比如`lodash-es`和`lodash`，前者是`ES6`格式的代码可以被`tree-shake`，而`lodash`则是全部引入，体积较大。
 
-### 兼容性优化
+## 兼容性优化
 
 目前，大部分的浏览器支持了`ESM`，但部分旧版浏览器不支持`ESM`，此时就需要使用`@vitejs/plugin-legacy`来兼容这些旧版的浏览器。[详细请戳这里](https://github.com/vitejs/vite/tree/main/packages/plugin-legacy#readme)
 

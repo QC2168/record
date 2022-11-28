@@ -1,4 +1,4 @@
-### ES8语法
+## ES8语法
 
 `ES8`又称`ES2017`，在`ES6`之后的语法我们都统称为`ES6+`，下面我们来看看`ES8`中新增的新语法。它们都是一些非常实用的功能：
 
@@ -9,7 +9,7 @@
 - `Object.getOwnPropertyDescriptors`
 - `async function`
 
-#### Object values
+## Object values
 
 该方法可以获取对象中所有的`value`值。
 
@@ -22,7 +22,7 @@ const obj = {
 console.log(Object.values(obj)); // [ '_island', 18 ]
 ```
 
-#### Object entries
+## Object entries
 
 该方法用于将一个对象的可枚举健值转换为一个数组。方便后续遍历数据。
 
@@ -36,9 +36,9 @@ const obj = {
 console.log(Object.entries(obj)); // [ [ 'name', '_island' ], [ 'age', 18 ] ]
 ```
 
-#### 字符串填充
+## 字符串填充
 
-##### padStart
+## padStart
 
 `padStart`方法用于从起始开始补全字符串。返回补全之后的字符串，不会修改原字符串。
 
@@ -47,7 +47,7 @@ const str4 = "100";
 console.log(str4.padStart(6, "000")); // 000100
 ```
 
-##### padEnd
+## padEnd
 
 `endsWith`方法用于从尾部补全字符串。返回补全之后的字符串，不会修改原字符串。
 
@@ -58,7 +58,7 @@ console.log(str5.padEnd(6, "000")); // 200000
 
 > `padStart` / `padEnd` 如果原字符串的长度，等于或大于最大长度，则字符串补全不生效，返回原字符串。
 
-#### 函数参数的逗号
+## 函数参数的逗号
 
 ES8之后，可以在函数的参数后面尾随逗号。
 
@@ -70,7 +70,7 @@ function foo(m,n,){
 foo(20,30,)
 ```
 
-#### Object getOwnPropertyDescriptors
+## Object getOwnPropertyDescriptors
 
 该方法用来获取一个对象的所有自身属性的描述符。
 
@@ -101,7 +101,7 @@ console.log(Object.getOwnPropertyDescriptors(obj));
 // }
 ```
 
-#### async function
+## async function
 
 `async`函数是一个异步函数，且可以搭配`await`关键字使用。它可以使`Promise`的异步执行的像同步代码一样执行。
 

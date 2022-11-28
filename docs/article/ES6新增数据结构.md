@@ -1,10 +1,10 @@
-### 前言
+## 前言
 
 下面我们聊一聊在`ES6`中新增的数据结构有哪些，它们是如何使用的。
 
-### ES6新增数据结构
+## ES6新增数据结构
 
-#### Symbol
+## Symbol
 
 `Symbol`是`ES6`中新增的一个基本数据类型之一，它是一个函数。每一个从`Symbol`函数返回的`Symbol`值都是独一无二的，`symbol`值作为对象属性的标识符，也是唯一的用途的。
 
@@ -14,7 +14,7 @@ const s2 = Symbol()
 console.log(s1 === s2); // false
 ```
 
-##### symbol作为key
+## symbol作为key
 
 第一种方式，直接在对象的字面量中添加。
 
@@ -46,7 +46,7 @@ Object.defineProperty(obj,s4,{
 })
 ```
 
-##### 通过symbol获取对应的值
+## 通过symbol获取对应的值
 
 需要用数组方式来获取，不能通过点语法，否则会获取到字符串`key`。
 
@@ -70,7 +70,7 @@ let sym = Symbol('a')
 console.log(sym.description); // 'a'
 ```
 
-##### 遍历symbol
+## 遍历symbol
 
 在使用`for`遍历、`object.keys`中是获取不到`symbol`健的，对此`object`还提供了`getOwnPropertySymbols`方法，用于获取对象中所有symbol的key。
 
@@ -81,11 +81,11 @@ for(const skey of sKeys){
 }
 ```
 
-##### 全局symbol对象注册
+## 全局symbol对象注册
 
 有时，我们可能需要多个`symbol`的值是一致的，我们可以通过`symbol`提供的静态方法`for`方法传入一样的描述符来使它们的值一致。
 
-##### Symbol.for
+## Symbol.for
 
 该方法会在使用给定键搜索运行时符号注册表中的现有符号，并在找到时返回它。否则，使用此键在全局符号注册表中创建一个新符号。
 
@@ -95,7 +95,7 @@ const sb=Symbol.for('cc')
 console.log(sa===sb); //true
 ```
 
-##### Symbol.keyFor
+## Symbol.keyFor
 
 该方法用于获取全局`symbol`的描述符。
 
@@ -104,7 +104,7 @@ const key =Symbol.keyFor(sb)
 console.log(key); // c
 ```
 
-#### Set
+## Set
 
 `Set`对象（类似数组）允许你存放任何数据类型，但里面的值不能重复。
 
@@ -121,7 +121,7 @@ s1.add(20)
 console.log(s1) // Set(4) { 10, 20, 30, 40 }
 ```
 
-##### Set常用方法
+## Set常用方法
 
 | 方法     | 返回值            | 说明                      |
 | -------- | ----------------- | ------------------------- |
@@ -131,7 +131,7 @@ console.log(s1) // Set(4) { 10, 20, 30, 40 }
 | `has`    | `boolean`         | `Set`对象中是否存在这个值 |
 | `clear`  | 无                | 清空`Set`对象中的值       |
 
-#### WeakSet
+## WeakSet
 
 `WeakSet`是类似`Set`的另外一种数据结构，内部数据也不能有重复值。
 
@@ -139,7 +139,7 @@ console.log(s1) // Set(4) { 10, 20, 30, 40 }
   - `WeakSet`只能存放对象类型，不能存放基本数据类型
   - `WeakSet`对元素是弱引用
 
-##### 基本使用
+## 基本使用
 
 ```javascript
 const weakSet = new WeakSet();
@@ -150,7 +150,7 @@ let obj = {
 weakSet.add(obj);
 ```
 
-##### WeakSet常用方法
+## WeakSet常用方法
 
 | 方法     | 返回值        | 说明                          |
 | -------- | ------------- | ----------------------------- |
@@ -158,13 +158,13 @@ weakSet.add(obj);
 | `delete` | `boolean`     | 删除元素                      |
 | `has`    | `boolean`     | `weakset`对象中是否存在这个值 |
 
-##### 关于遍历
+## 关于遍历
 
 `WeakSet`不能被遍历，因为它只是对对象进行弱引用，如果遍历去获取元素，有可能导致对象不能被`GC`回收。
 
 所以`WeakSet`中的对象是不能获取的
 
-#### Map
+## Map
 
 `ES6`新增的数据结构，用于存储映射关系。我们知道在`JavaScript`中对象中是不能用对象来作为`key`的。（假如我们把对象作为`key`，其内部会将对象转换为字符串`[object object]`）
 
@@ -194,7 +194,7 @@ console.log(map); // Map(2) { { name: '_island' } => 'a', { name: 'QC2125' } => 
 const map2 = new Map([[obj1,'a'],[obj2,'b']])
 ```
 
-##### Map常用方法
+## Map常用方法
 
 | 方法     | 返回值            | 说明                      |
 | -------- | ----------------- | ------------------------- |
@@ -205,7 +205,7 @@ const map2 = new Map([[obj1,'a'],[obj2,'b']])
 | `has`    | `boolean`         | `Set`对象中是否存在这个值 |
 | `clear`  | 无                | 清空`Set`对象中的值       |
 
-##### 遍历Map
+## 遍历Map
 
 通过`foreach`语句遍历`Map`
 
@@ -221,7 +221,7 @@ for ([val, key] of map2) {
 }
 ```
 
-#### WeakMap
+## WeakMap
 
 和`Map`类似，也是以键值对的形式存在的
 
@@ -229,7 +229,7 @@ for ([val, key] of map2) {
   - `WeakMap`的`key`只能使用对象，不接受其他的类型作为`key`
   - `WeakMap`的`key`对对象是弱引用
 
-##### 基本使用
+## 基本使用
 
 ```javascript
 const weakMap = new WeakMap();
@@ -237,7 +237,7 @@ weakMap.set(obj, "a");
 console.log(weakMap.get(obj)); // a
 ```
 
-##### WeakMap常用方法
+## WeakMap常用方法
 
 | 方法     | 返回值        | 说明                           |
 | -------- | ------------- | ------------------------------ |
@@ -245,6 +245,6 @@ console.log(weakMap.get(obj)); // a
 | `delete` | `boolean`     | 删除元素                       |
 | `has`    | `boolean`     | `weaksmap`对象中是否存在这个值 |
 
-##### 关于遍历
+## 关于遍历
 
 和`WeakSet`一样，正因为它是弱引用，`WeakMap`的`key`是不可枚举的，如果`key`可枚举那其列表将会受`GC`影响。

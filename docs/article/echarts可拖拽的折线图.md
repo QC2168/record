@@ -6,7 +6,7 @@ tags: [JavaScript]
 
 > 本文将讲述实现可拖拽的折线图思路与部分代码分享，想直接看代码请[点这里]( https://github.com/QC2168/echart-drag-line)
 
-### 需求
+## 需求
 
 最近遇到一个需求，做一个可视化图表页面，里面有一个折线图可以说是这个页面中实现起来比较复杂，具体需求如下：
 
@@ -28,11 +28,11 @@ tags: [JavaScript]
 
 ![img](https://raw.githubusercontent.com/QC2168/note-img/main/202203151615022.gif)
 
-### 实现
+## 实现
 
 我们先在代码中实现这一步功能，创建一个div元素并将他将给`echart.init`。（这个不用多说了吧，不会的同学我把链接放这了[快速上手](https://echarts.apache.org/handbook/zh/get-started/)）
 
-#### 创建绘制容器
+## 创建绘制容器
 
 ```
 <template>
@@ -40,7 +40,7 @@ tags: [JavaScript]
 </template>
 ```
 
-#### 创建虚拟数据的文件
+## 创建虚拟数据的文件
 
 ```typescript
 // useData.ts
@@ -185,7 +185,7 @@ onMounted(() => {
 
 ![image-20220315184958857](https://raw.githubusercontent.com/QC2168/note-img/main/202203151849982.png)
 
-#### 添加可拖拽的圆点
+## 添加可拖拽的圆点
 
 `EChart`提供了多种鼠标事件类型，像平时我们常用的`click`、`mousedown`、`mousemove`...等事件在`Echart`中都可以监听得到。
 
@@ -231,7 +231,7 @@ type EventParams = {
 
 在得知用户点击的位置的同时，我们得能通过`params.data`属性得到用户当前线上中的`data`数据。有了`data`数据我们就可以使用`echart.convertToPixel`方法得到转换后的`canvas`坐标系。
 
-#### 绘制圆点
+## 绘制圆点
 
 `echart`支持用户绘制原生图形元素组件（`option.graphic`）
 
@@ -324,7 +324,7 @@ Chart.on('mouseup', function (params: EventParamsType) {
 
 
 
-#### 沿着线的点
+## 沿着线的点
 
 在上面，已经提到了假设我们采用`GraphicComponent`组件的拖拽功能是无法让这个圆点保持在折线上的。于是思考了一下有没有什么障眼法可以让用户认为当前鼠标上的圆点是这个被拖动的圆点？
 
@@ -367,7 +367,7 @@ Chart.on('mousedown', function (params: EventParamsType) {
 
 ![4](https://raw.githubusercontent.com/QC2168/note-img/main/202203211709250.gif)
 
-#### 实现`label`标签
+## 实现`label`标签
 
 `label`标签的思想和绘制圆点一样，同样是使用`graphic`的text元素。
 
@@ -517,6 +517,6 @@ Chart.on('mousedown', function (params: EventParamsType) {
 
 ![程序员有哪些专用的聊天表情包啊……？ - 知乎](https://raw.githubusercontent.com/QC2168/note-img/main/202204021520205.jpeg)
 
-### 总结
+## 总结
 
 怎么说吧，这个需求整体来说不是很难也不是很简单，但是在实现的过程我也发生了一些小问题需要去解决。重复地试了各种方法最终给整了出来。

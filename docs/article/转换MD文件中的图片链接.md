@@ -1,4 +1,9 @@
-### Python批量替换markdown文件中的图片的URL
+---
+title: Python批量替换markdown文件中的图片的URL
+tags: [utils]
+---
+
+## Python批量替换markdown文件中的图片的URL
 
 创建一个`.py`文件，将下面代码复制到该文件，并修改对应内容后跑起来即可。
 ```python

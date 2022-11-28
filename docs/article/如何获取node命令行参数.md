@@ -101,7 +101,7 @@ console.log(params)
 // { name: 'zhangsan', age: '18' }
 ```
 当然，上面这个只是简单的获取参数的函数，也没有一些边界情况（例如出现`foo=bar=baz`参数等情况）。
-### 相关的解析库
+## 相关的解析库
 在`github`上也有一些成熟的命令行参数解析库，感兴趣的同学也可以看看源码🍔🍔
 
 - [mri](https://github.com/lukeed/mri)

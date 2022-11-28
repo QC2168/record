@@ -3,7 +3,7 @@ title: HTTP协商缓存
 tags: [interview,network]
 ---
 
-### 浏览器缓存机制
+## 浏览器缓存机制
 
 我们都知道当我们在浏览器中打开一个页面时，浏览器会根据你输入的URL到对应的服务器上请求你想要的数据资源。但这个过程中可能页面可能需要等待一段时间（白屏时间）才能渲染到你的页面中。
 
@@ -11,15 +11,15 @@ tags: [interview,network]
 
 而这一篇文章将聊聊什么的`HTTP`强缓存和协商缓存
 
-### 基本原理
+## 基本原理
 
 在浏览器加载资源的时候，首先会根据请求头的`expires`和`cache-control`判断是否命中强缓存策略，判断是否向远程服务器请求资源还是去本地获取缓存资源。
 
-### 强缓存
+## 强缓存
 
 在浏览器中，强缓存分为`Expires`（http1.0规范）、`cache-control`（http1.1规范）两种。
 
-#### Expires
+## Expires
 
 `Expires`是`http1.0`的规范，用于表示资源的过期时间的请求头字段，值是一个绝对时间，是由服务器端返回的。
 
@@ -27,7 +27,7 @@ tags: [interview,network]
 
 > expires是根据本地时间来判断的，假设客户端和服务器时间不同，会导致缓存命中误差
 
-#### Cache-control
+## Cache-control
 
 上面我们提到了`Expires`有个缺点，当客户端本地时间被修改时浏览器会直接向服务器请求新的资源，为了解决这个问题，在`http1.1`规范中，提出了`cache-control`字段，且**这个字段优先级高于上面提到的`Expires`**，值是相对时间。
 
@@ -42,7 +42,7 @@ tags: [interview,network]
 | no-store |      | 缓存只能被客户端浏览器缓存，不能被代理服务器缓存             |
 | no-cache |      | 储存在本地缓存区中，只是在与原始服务器进行新鲜度再验证之前，缓存不能将其提供给客户端使用 |
 
-### 协商缓存
+## 协商缓存
 
 上面提到的强缓存都是由本地浏览器在确定是否使用缓存，当浏览器没有命中强缓存时就会向浏览器发送请求，验证协商缓存是否命中，如果缓存命中则返回304状态码，否则返回新的资源数据。
 
@@ -57,7 +57,7 @@ tags: [interview,network]
 
 ![Untitled Diagram (1)](C:/Users/ABC/Downloads/Untitled Diagram (1).png)
 
-#### 结合强缓存具体请求流程
+## 结合强缓存具体请求流程
 
 1. 当浏览器发起一个资源请求时，浏览器会先判断本地是否有缓存记录，如果没有会向浏览器请求新的资源，并记录服务器返回的`last-modified`。
 2. 如果有缓存记录，先判断强缓存是否存在（`cache-control`优先于`expires`，后面会说），如果强缓存的时间没有过期则返回本地缓存资源（状态码为200）
@@ -65,7 +65,7 @@ tags: [interview,network]
 4. 如果没有`Etag`字段，服务器会对比客户端传过来的`if-modified-match`，如果这两个值是一致的，此时响应头不会带有`last-modified`字段（因为资源没有变化，`last-modified`的值也不会有变化）。客户端304状态码之后读取本地缓存。如果`last-modified`。
 5. 如果`Etag`和服务器端上的不一致，重新获取新的资源，并进行协商缓存返回数据。
 
-#### 为什么需要ETag
+## 为什么需要ETag
 
 它的出现主要是解决`last-modified`几个比较难以解决的问题
 
@@ -73,7 +73,7 @@ tags: [interview,network]
 2. 可能有些文件修改比较频繁，秒级以内修改的，`If-Modified-Since` 能检查到的粒度是秒级的，使用 `Etag` 就能够保证这种需求下客户端在 1 秒内能刷新多次。
 3. 有些服务器不能精确获取文件的最后修改时间
 
-### 状态码区别
+## 状态码区别
 
 - 200 请求成功，服务器返回全新的数据
 - 200 `from memory cache / from disk cache` 本地强缓存还在有效期，直接使用本地缓存
@@ -82,7 +82,7 @@ tags: [interview,network]
 > from memory cache 是页面刷新的时候内存取的
 > from disk cache 页面tab关闭后从磁盘取的
 
-### 缓存优先级
+## 缓存优先级
 
 `expires`和`cache-control`如果同时存在时，`cache-control`会覆盖`expires`，`expires`无效，无论是否过期，。即 `Cache-control > expires`
 
@@ -96,7 +96,7 @@ tags: [interview,network]
 
 > paragma -> Cache-control -> expires -> Etag -> last-modified
 
-### 启发式缓存
+## 启发式缓存
 
 这个会缓存策略是浏览器默认的，如果发送一个网络请求没有`expires`、`cache-control`，但是又有`last-modified`字段，那么在这种情况下浏览器会有一个默认缓存策略`（currentTime - last-modified ）*0.1`
 
@@ -104,12 +104,12 @@ tags: [interview,network]
 
 [HTTP Heuristic Caching (Missing Cache-Control and Expires Headers) Explained](https://paulcalvano.com/2018-03-14-http-heuristic-caching-missing-cache-control-and-expires-headers-explained/)
 
-### 其他补充
+## 其他补充
 
 -  协商缓存想要配合强缓存使用，如果不开启强缓存使用，协商缓存没有意义
 - 大部分`web`服务器默认开启协商缓存，且是同时开启`last-modified`和`Etag`
 
-### 注意场景
+## 注意场景
 
 1. 分布式系统里`last-modified`需要保持一致，以免负载到不同的机器导致比对失败，从而返回新资源
 2. 分布式系统尽量关闭掉`Etag`，因为每一台服务器生成的`Etag`是不同的
