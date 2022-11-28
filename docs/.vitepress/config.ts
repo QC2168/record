@@ -18,9 +18,9 @@ export default defineConfig({
     },
     nav: [
       { text: "首页", link: "/" },
-      { text: "文章", link: "/article" },
-      { text: "片段", link: "/snippet" },
-      { text: "面试", link: "/interview" },
+      { text: "文章", link: "/article/index" },
+      { text: "片段", link: "/snippets/index" },
+      { text: "面试", link: "/interview/index" },
     ],
     socialLinks: [
       { icon: 'github', link: 'https://github.com/QC2168' }
