@@ -14,7 +14,7 @@ const { frontmatter } = data;
         <span
           v-for="item in frontmatter.tags"
           :key="item"
-          class="text-xs inline-block py-1 px-2.5 leading-none text-center whitespace-nowrap align-baseline font-bold bg-gray-200 dark:bg-gray-700 text-gray-700 dark:text-gray-200 rounded"
+          class="text-xs mr-2 inline-block py-1 px-2.5 leading-none text-center whitespace-nowrap align-baseline font-bold bg-gray-200 dark:bg-gray-700 text-gray-700 dark:text-gray-200 rounded"
           >{{ item }}</span
         >
       </div>
