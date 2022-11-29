@@ -1,8 +1,3 @@
----
-title: HTTP协商缓存
-tags: [interview,network]
----
-
 ## 浏览器缓存机制
 
 我们都知道当我们在浏览器中打开一个页面时，浏览器会根据你输入的URL到对应的服务器上请求你想要的数据资源。但这个过程中可能页面可能需要等待一段时间（白屏时间）才能渲染到你的页面中。
@@ -19,7 +14,7 @@ tags: [interview,network]
 
 在浏览器中，强缓存分为`Expires`（http1.0规范）、`cache-control`（http1.1规范）两种。
 
-## Expires
+### Expires
 
 `Expires`是`http1.0`的规范，用于表示资源的过期时间的请求头字段，值是一个绝对时间，是由服务器端返回的。
 
@@ -27,9 +22,9 @@ tags: [interview,network]
 
 > expires是根据本地时间来判断的，假设客户端和服务器时间不同，会导致缓存命中误差
 
-## Cache-control
+### Cache-control
 
-上面我们提到了`Expires`有个缺点，当客户端本地时间被修改时浏览器会直接向服务器请求新的资源，为了解决这个问题，在`http1.1`规范中，提出了`cache-control`字段，且**这个字段优先级高于上面提到的`Expires`**，值是相对时间。
+上面我们提到了`Expires`有个缺点，当客户端本地时间和服务器时间不一致时会产生误差，浏览器会直接向服务器请求新的资源，为了解决这个问题，在`http1.1`规范中，提出了`cache-control`字段，且**这个字段优先级高于上面提到的`Expires`**，值是相对时间。
 
 在`cache-control`中有常见的几个响应属性值，它们分别是
 
@@ -39,8 +34,9 @@ tags: [interview,network]
 | s-maxage |      | 和max-age一样，但这个是设定代理服务器的缓存时间              |
 | private  |      | 内容只缓存到私有缓存中(仅客户端可以缓存，代理服务器不可缓存) |
 | public   |      | 所有内容都将被缓存(客户端和代理服务器都可缓存)               |
-| no-store |      | 缓存只能被客户端浏览器缓存，不能被代理服务器缓存             |
+| no-store |      | 不缓存任何数据            |
 | no-cache |      | 储存在本地缓存区中，只是在与原始服务器进行新鲜度再验证之前，缓存不能将其提供给客户端使用 |
+
 
 ## 协商缓存
 
@@ -55,9 +51,10 @@ tags: [interview,network]
 
 这么说可能不太明白，我画了一个请求流程图，看一下就很快可以明白什么是协商缓存啦
 
-![Untitled Diagram (1)](C:/Users/ABC/Downloads/Untitled Diagram (1).png)
 
-## 结合强缓存具体请求流程
+![Untitled Diagram (1).png](https://p1-juejin.byteimg.com/tos-cn-i-k3u1fbpfcp/8360da6fa1af4f89abeedc27f6f552e3~tplv-k3u1fbpfcp-watermark.image?)
+
+### 结合强缓存具体请求流程
 
 1. 当浏览器发起一个资源请求时，浏览器会先判断本地是否有缓存记录，如果没有会向浏览器请求新的资源，并记录服务器返回的`last-modified`。
 2. 如果有缓存记录，先判断强缓存是否存在（`cache-control`优先于`expires`，后面会说），如果强缓存的时间没有过期则返回本地缓存资源（状态码为200）
@@ -65,7 +62,7 @@ tags: [interview,network]
 4. 如果没有`Etag`字段，服务器会对比客户端传过来的`if-modified-match`，如果这两个值是一致的，此时响应头不会带有`last-modified`字段（因为资源没有变化，`last-modified`的值也不会有变化）。客户端304状态码之后读取本地缓存。如果`last-modified`。
 5. 如果`Etag`和服务器端上的不一致，重新获取新的资源，并进行协商缓存返回数据。
 
-## 为什么需要ETag
+### 为什么需要ETag
 
 它的出现主要是解决`last-modified`几个比较难以解决的问题
 
@@ -86,7 +83,7 @@ tags: [interview,network]
 
 `expires`和`cache-control`如果同时存在时，`cache-control`会覆盖`expires`，`expires`无效，无论是否过期，。即 `Cache-control > expires`
 
-强缓存和协商缓存如果同时存在时，会去先对比强缓存是否还再有效期，如果强缓存生效则对比协商缓存，即`强缓存 > 协商缓存`
+强缓存和协商缓存如果同时存在时，会去先对比强缓存是否还再有效期，如果强缓存还在有效期内则直接使用强缓存，否则协商缓存生效，即`强缓存 > 协商缓存`
 
 协商缓存`Etag`和`last-modified`同时存在时，会先比较`Etag`，`last-modified`无效，即`Etag > last-modified`
 
