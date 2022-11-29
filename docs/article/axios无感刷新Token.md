@@ -173,7 +173,7 @@ export default async (error: AxiosError<ResponseDataType>) => {
     clearAuth();
     }
     // 判断当前是否为刷新状态中（防止多个请求导致多次调refresh接口）
-    if (isRefresh) {
+    if (!isRefresh) {
       // 设置当前状态为刷新中
       isRefresh = true;
       // 如果重发次数超过，直接退出登录
