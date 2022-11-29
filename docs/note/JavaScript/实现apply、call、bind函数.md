@@ -1,4 +1,4 @@
-### 实现apply、call、bind函数
+## 实现apply、call、bind函数
 
 ![image-20220102161416445](https://raw.githubusercontent.com/QC2168/note-img/main/202201021614548.png)
 
@@ -6,7 +6,7 @@ apply call bind 绑定的this对象，在内部保存的是内存地址
 
 > 注意：练习函数、this、调用关系，不考虑一些边界情况，其实它底层实现是C++代码，但这里我们通过JavaScript来模拟这些函数
 
-#### call实现
+## call实现
 
 ```javascript
 Function.prototype.mycall = function (thisArg, ...args) {
@@ -26,7 +26,7 @@ Function.prototype.mycall = function (thisArg, ...args) {
 };
 ```
 
-#### apply实现
+## apply实现
 
 ```javascript
 Function.prototype.myapply = function (thisArg, args=[]) {
@@ -51,7 +51,7 @@ function sum(num1, num2) {
 }
 ```
 
-#### bind实现
+## bind实现
 
 ```javascript
 Function.prototype.mybind = function (thisArg, ...argArray) {
@@ -75,4 +75,4 @@ Function.prototype.mybind = function (thisArg, ...argArray) {
 
 ```
 
-### 
+## 

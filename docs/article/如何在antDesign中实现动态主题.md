@@ -1,3 +1,10 @@
+---
+title: 如何在antDesign中实现动态主题
+tags: [JavaScript]
+---
+
+## 如何在antDesign中实现动态主题
+> 温馨提示，本文中的方案只适合采用ant design v4版本 ~
 ## 实现效果
 ![1](https://raw.githubusercontent.com/QC2168/note-img/main/1.gif)
 ## 实现原理
@@ -33,7 +40,7 @@ pnpm add antd
 > 例如`prefixCls`值设置为`dark`, 那么`ant-table-cell`将会被转换为`dark-table-cell`
 和效果图上一样,我们使用单选框进行主题的切换,以及一个`table`组件来显示效果.
 这里我直接将组件代码贴出来
-### App
+## App
 ```tsx
 // App.tsx
 
@@ -75,7 +82,7 @@ function App() {
 export default App;
 ```
 
-###  table组件
+##  table组件
 
 ```tsx
 // src/components/index.tsx

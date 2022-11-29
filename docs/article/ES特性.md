@@ -2,7 +2,7 @@
 
 `ES6`是`ECMAScript 6.0`是简称，其实它在2015年6月就发布出来了，所以又称`ES2015`，目的是使`JavaScript`这一门语言可以来编写更加复杂的大型应用。
 
-### let 和 const
+## let 和 const
 
 `ES6`中新增了`let`和`const`用于声明变量、常量。我们知道通过`var`关键字声明的变量都会在`window`对象上。而使用`let`和`const`关键字声明的变量、常量只局限在当前作用域内使用，且没有作用域提升。
 
@@ -11,7 +11,7 @@ let age = 18;
 const num = 10;
 ```
 
-### 数据解构
+## 数据解构
 
 一个从数组或者对象中方便获取数据的方法（`Destructuring`）。
 
@@ -31,7 +31,7 @@ console.log(name); // _island
 console.log(age); // 18
 ```
 
-### 字符串模板
+## 字符串模板
 
 在`ES6`中我们可以在字符串中使用变量和表达式。使得字符串和变量之间拼接起来的语法更加优雅。
 
@@ -44,7 +44,7 @@ console.log('I live in '+city) // I live in Guangzhou
 console.log(`I live in ${city}`) // I live in Guangzhou
 ```
 
-### 函数的默认参数
+## 函数的默认参数
 
 在`ES6`中，我们可以给函数的参数定义一个默认值，当这个参数没有被传入时则使用这个默认参数。
 
@@ -74,7 +74,7 @@ foo() // name is _island  age is 18
 foo('abc',17)// name is abc  age is 17
 ```
 
-### 函数剩余参数
+## 函数剩余参数
 
 `ES6`中引用了`rest parameter`，可以将不定数量的参数放到一个数组中。在函数最后的一个参数放入`...args`，在函数体中`args`是一个数组。
 
@@ -100,7 +100,7 @@ sum(1,2,3,4,5,6,7,8,9,10)
   - `rest`参数是一个数组，而`argument`对象是伪数组
   - 剩余参数必须放在最后面
 
-### 箭头函数
+## 箭头函数
 
 在`ES6`中新增箭头函数，因为它的定义用的就箭头。我们看看它的用法。
 
@@ -126,7 +126,7 @@ const foo = (m, n) => {
 };
 ```
 
-#### 箭头函数的简写
+## 箭头函数的简写
 
 ```javascript
 // 函数体里只有一条函数时可以这样子写，并默认将这条语句返回(省略return)
@@ -136,25 +136,25 @@ const foo = (m, n) => console.log(m + n);
 const foo = name=>console.log(name);
 ```
 
-#### 箭头函数注意事项
+## 箭头函数注意事项
 
 - 箭头函数不能作为构造函数使用
 - 箭头函数没有原型
 - 箭头函数内没有`arguments`
 - 箭头函数不能使用`yield`关键字
 
-#### 关于箭头函数的指向问题
+## 关于箭头函数的指向问题
 
 - 箭头函数没有`this`，它的`this`是它的父级
 - `this`是在定义箭头函数时绑定的
 
-#### Class关键字
+## Class关键字
 
 关于`class`关键字，我在另外一篇文章中有详细介绍Class的用法和相关扩展知识点。
 
 > [点击直达 JS进阶 | 详解ES6中的Class](https://juejin.cn/post/7058477703262896159)
 
-### 数值的表示
+## 数值的表示
 
 在`ES6`中支持了进制的字面量，需要在数字前面添加对应的标识符号。
 
@@ -166,7 +166,7 @@ const num4 = 0x100; // 十六进制
 console.log(num1, num2, num3, num4); // 100 4 64 256
 ```
 
-### 字符串方法
+## 字符串方法
 
 `ES6`中字符串对象的新增方法（常用方法）
 
@@ -175,7 +175,7 @@ console.log(num1, num2, num3, num4); // 100 4 64 256
 | `startsWith` | 布尔值 | 判断字符串是否以指定字符开头 |
 | `endsWith`   | 布尔值 | 判断字符串是否以指定字符结尾 |
 
-#### startsWith
+## startsWith
 
 `startsWith`方法用于判断字符串是否以指定字符开头。
 
@@ -185,7 +185,7 @@ const ish = str.startsWith("h");
 console.log(ish); // true
 ```
 
-#### endsWith
+## endsWith
 
 `endsWith`方法用于判断字符串是否以指定字符结尾。
 
@@ -199,7 +199,7 @@ console.log(isd); // true
 
 `ES7`又称`ES2016`，在`ES6`之后的语法我们都统称为`ES6+`，下面我们来看看`ES7`中新增的新语法。
 
-#### array includes
+## array includes
 
 `includes`方法用于判断一个元素是否存在于一个数组中
 
@@ -241,7 +241,7 @@ if (names.includes(NaN)) {
 }
 ```
 
-#### 求幂运算符
+## 求幂运算符
 
 求幂运算符（`**`）返回将第一个操作数加到第二个操作数的幂的结果。它等效于`Math.pow`，你可以理解它就和+、-运算符一样。
 
@@ -271,7 +271,7 @@ const result2 = 3 ** 3;
 - `Object.getOwnPropertyDescriptors`
 - `async function`
 
-#### Object values
+## Object values
 
 该方法可以获取对象中所有的`value`值。
 
@@ -284,7 +284,7 @@ const obj = {
 console.log(Object.values(obj)); // [ '_island', 18 ]
 ```
 
-#### Object entries
+## Object entries
 
 该方法用于将一个对象的可枚举健值转换为一个数组。方便后续遍历数据。
 
@@ -298,9 +298,9 @@ const obj = {
 console.log(Object.entries(obj)); // [ [ 'name', '_island' ], [ 'age', 18 ] ]
 ```
 
-#### 字符串填充
+## 字符串填充
 
-##### padStart
+## padStart
 
 `padStart`方法用于从起始开始补全字符串。返回补全之后的字符串，不会修改原字符串。
 
@@ -309,7 +309,7 @@ const str4 = "100";
 console.log(str4.padStart(6, "000")); // 000100
 ```
 
-##### padEnd
+## padEnd
 
 `endsWith`方法用于从尾部补全字符串。返回补全之后的字符串，不会修改原字符串。
 
@@ -320,7 +320,7 @@ console.log(str5.padEnd(6, "000")); // 200000
 
 > `padStart` / `padEnd` 如果原字符串的长度，等于或大于最大长度，则字符串补全不生效，返回原字符串。
 
-#### 函数参数的逗号
+## 函数参数的逗号
 
 ES8之后，可以在函数的参数后面尾随逗号。
 
@@ -332,7 +332,7 @@ function foo(m,n,){
 foo(20,30,)
 ```
 
-#### Object getOwnPropertyDescriptors
+## Object getOwnPropertyDescriptors
 
 该方法用来获取一个对象的所有自身属性的描述符。
 
@@ -363,7 +363,7 @@ console.log(Object.getOwnPropertyDescriptors(obj));
 // }
 ```
 
-#### async function
+## async function
 
 `async`函数是一个异步函数，且可以搭配`await`关键字使用。它可以使`Promise`的异步执行的像同步代码一样执行。
 
@@ -382,7 +382,7 @@ foo(); // ok
 
 ## ES9
 
-#### 对象属性扩展运算符
+## 对象属性扩展运算符
 在ES6中新增了 ... 扩展运算符，这一特性需要对象拥有iterator属性才被使用。在ES9新增了对对象的扩展运算符，相比Object.assign可以更短的语法浅克隆一个对象
 
 ```javascript
@@ -399,7 +399,7 @@ console.log({...data}) // {name: '_island', age: 18}
 > [Object literal notation vs JSON](https://developer.mozilla.org/zh-TW/docs/Web/JavaScript/Reference/Operators/Object_initializer#object_literal_notation_vs_json)
 
 
-#### Promise.finally
+## Promise.finally
 
 Promise新增finally方法，与try-catch一样，无论结果是否成功或者失败，都执行finally中的代码块。
 ```javascript
@@ -409,7 +409,7 @@ p1.then().finally(()=>console.log('finally')) // finally
 
 ```
 
-#### 异步迭代
+## 异步迭代
 
 在For中可以使用await关键字，运行异步的代码块
 
@@ -428,7 +428,7 @@ console.log('end')
 
 `ES10`又称`ES2019`，在`ES6`之后的语法我们都统称为`ES6+`，下面我们来看看`ES10`中新增的新语法。它们分别有：数组降维、键值列表转对象、字符串去除前/后空格等实际开发中实用功能。
 
-#### 数组降维
+## 数组降维
 
 `Array.flat`方法会将一个数组进行降维操作，并合成一个新的数组返回。（如果没有参数传入，默认降维深度为`1`）
 
@@ -441,7 +441,7 @@ const newNums2 = nums.flat(2);
 console.log(newNums2); // [1, 2, 3, 4, 5, 6, 7, 8]
 ```
 
-####  遍历降维
+##  遍历降维
 
 `Array.flatMap`方法会将传入的函数映射到数组中的每一个元素。并返回每个元素的结果集合，再进行`flat`操作（降维深度为`1`）。
 
@@ -454,7 +454,7 @@ const newNums3 = nums2.flatMap((item) => {
 console.log(newNums3); // [ 2, 4, 6, 8, 12 ]
 ```
 
-##### 和Array.map()的对比
+## 和Array.map()的对比
 
 在一般情况下使用`map`和`flatMap`方法好像都可以。我们看下面这个案例，可以更好了解到`flatMap`的作用。
 
@@ -484,7 +484,7 @@ console.log(newMsg2);
 // ]
 ```
 
-#### Object fromEntries
+## Object fromEntries
 
 `Object.fromEntries`方法用于将一个`key-value`的二维数组转换为一个对象。
 
@@ -498,7 +498,7 @@ const obj = Object.fromEntries(arr);
 console.log(obj); // { name: '_island', age: 18 }
 ```
 
-#### String trim
+## String trim
 
 在`ES10`中对字符串对象新增了`trimStart`、`trimEnd`方法，用于处理字符串前、后的空格内容。
 
@@ -508,7 +508,7 @@ console.log(str6.trimStart()); // '_island  '
 console.log(str6.trimEnd()); // '  _island'
 ```
 
-#### Symbol description
+## Symbol description
 
 在`ES10`中，`Symbol`类型可以声明时传入一个`Symbol`描述符。
 
@@ -516,7 +516,7 @@ console.log(str6.trimEnd()); // '  _island'
 const s1 = Symbol("Symbol描述符");
 ```
 
-#### 可选的Catch的参数
+## 可选的Catch的参数
 
 在过去`try`语句中`catch`子句必须接受一个错误参数，而在`ES10`中，我们可以不创建这个错误参数也可以正常允许。
 
@@ -527,7 +527,7 @@ try{}catch(e){}
 try{}catch{}
 ```
 
-#### 更友好的String.toString 
+## 更友好的String.toString 
 
 `ES10`之后，`toString`方法会返回精确的字符，这包括空格和注释。
 
@@ -542,7 +542,7 @@ console.log(foo.toString()); // function /* comment */ foo /* another comment */
 
 ## ES11
 
-#### 什么是BigInt（ES11）
+## 什么是BigInt（ES11）
 
 是`ES11`中新增的一种基本数据类型，它可以是任意大的整数。它解决了`Number`类型的限制。
 
@@ -564,14 +564,14 @@ BigInt("9007199254740998"); // 9007199254740998n
 console.log(typeof 9007199254740998n) // bigint
 ```
 
-##### 与Number的区别
+## 与Number的区别
 
 - `BigInt`不能使用`Math`对象中的方法
 - 不能和`Nunber`进行运算
 - `BigInt`转`Number`类型可能出现失去精度
 
 
-#### 异步导入模块
+## 异步导入模块
 
 ```javascript
 
@@ -583,7 +583,7 @@ import("module.js").then((module) => {
 
 ```
 
-#### 导入导出全部模块
+## 导入导出全部模块
 
 ```javascript
 
@@ -594,7 +594,7 @@ export * as Api from './Api.js'
 
 ```
 
-#### 可选链
+## 可选链
 
 ```javascript
 
@@ -613,7 +613,7 @@ let region=info.address&&info.address.region
 let region2=info.address?region
 ```
 
-#### 空值合并运算符
+## 空值合并运算符
 
 空值合并操作符（`??`）是一个逻辑操作符，当左侧的操作数为 `null` 或者 `undefined` 时，返回其右侧操作数，否则返回左侧操作数。（引用`MDN`）
 
@@ -633,7 +633,7 @@ let region2=info.address?region
 从上面可以得出当`''` 或 `0`是一个有效的值时，`||`将无法达到我们预想的效果。
 
 
-#### Promise.AllSettled
+## Promise.AllSettled
 
 `AllSettled`传入一组`Promise`对象，直到所有`Promise`的状态已经`fulfilled`或`rejected`后，再返回一个存放对应状态的对象数组。存放每个传入的`Promise`的结果
 
@@ -659,7 +659,7 @@ console.log(res)
 // ]
 
 ```
-#### String.matchAll
+## String.matchAll
 
 `matchAll`返回一个被正则表达式匹配到的结果及分组数据的数组
 
@@ -683,7 +683,7 @@ console.log(array);
 
 ## ES12
 
-#### Array.at
+## Array.at
 
 ```javascript
 
@@ -694,7 +694,7 @@ console.log(arr[arr.length-1]) // 5
 console.log(arr.at(-1)) // 5
 
 ```
-#### String.replaceAll
+## String.replaceAll
 
 `replaceAll`用于批量替换字符串中指定的字符，并返回一个新的字符串。
 
@@ -705,12 +705,12 @@ console.log(arr.at(-1)) // 5
 
 ```
 > 和replace一样，第一个参数也可以使用正则表达式，当必须给/g标志。
-#### promise.any
-#### WeakRef
-#### ||=
-#### &&=
-#### ??=
-#### FinalizationRegistry
+## promise.any
+## WeakRef
+## ||=
+## &&=
+## ??=
+## FinalizationRegistry
 
 `FinalizationRegistry` 对象可以让你在对象被垃圾回收时请求一个回调。
 
@@ -734,7 +734,7 @@ let foo = 1
 foo=null
 
 ```
-#### 数字分割符
+## 数字分割符
 
 对于大量数我们可能很难直接看出它的数量，所以在`ES12`中引入通过下划线来分割数字。
 
@@ -743,6 +743,6 @@ let distanceToSun = 91772000000;
 // es12
 let distanceToSun = 91_772_000_000;
 ```
-#### Array.sort 性能
+## Array.sort 性能
 
 

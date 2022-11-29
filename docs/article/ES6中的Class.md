@@ -9,7 +9,7 @@
 
 在`ES6`（`ECMAScript6`）之前，`JavaScript`语法中是不支持类的，导致面向对象编程方法无法直接使用，但我们可以通过function来实现模拟出类，而随着`JavaScript`的更新，在`ES6`出现了中出现`class`关键字，可以用于定义类。接下来让我们看看它的如何使用的。
 
-### class
+## class
 
 下面我们来看看如何使用`class`关键字声明一个类。
 
@@ -33,7 +33,7 @@ function Animal(){
 }
 ```
 
-### 类的构造函数
+## 类的构造函数
 
 每一个类都可以有一个自己的构造函数，这个名称是固定的`constructor`，当我们通过`new`调用一个类时，这个类就会调用自己的`constructor`方法（构造函数）。
 
@@ -71,9 +71,9 @@ console.log(Animal === Animal.prototype.constructor); // true
 
 其实，在类上的所有方法都会放在`prototype`属性上。
 
-### 类中的属性
+## 类中的属性
 
-#### 实例属性
+## 实例属性
 
 实例的属性必须定义在类的方法里，就如上面的例子，我们在构造函数中定义`name`这个属性。
 
@@ -87,7 +87,7 @@ class Animal{
 }
 ```
 
-#### 静态属性
+## 静态属性
 
 当我们把一个属性赋值给类本身，而不是赋值给它`prototype`，这样子的属性被称之为静态属性（`static`）。
 
@@ -101,7 +101,7 @@ class Foo{
 console.log(Foo.name);
 ```
 
-#### 私有属性
+## 私有属性
 
 私有属性只能在类中读取、写入，不能通过外部引用私有字段。
 
@@ -141,9 +141,9 @@ console.log(Object.getOwnPropertyDescriptors(a))
 
 > 公共和私有字段声明是JavaScript标准委员会[TC39](https://tc39.es/)提出的[实验性功能（第3阶段）](https://github.com/tc39/proposal-class-fields)。浏览器中的支持是有限的，但是可以通过[Babel](https://babeljs.io/)等系统构建后使用此功能。
 
-### 类中的方法
+## 类中的方法
 
-#### 实例方法
+## 实例方法
 
 在`ES6`之前，我们定义类中的方法是类中的原型上进行定义的，防止类中的方法重复在多个对象上。
 
@@ -164,7 +164,7 @@ class Animal{
 }
 ```
 
-#### 静态方法
+## 静态方法
 
 静态方法与上面提到的静态属性是一样的，在方法前面使用`static`关键字进行声明，之后调用这个方法时不需要通过类的实例来调用，可以直接通过类名来调用它。
 
@@ -179,7 +179,7 @@ var a2 = Animal.createName("_island");
 console.log(a2); // _island
 ```
 
-#### 私有方法
+## 私有方法
 
 在面向对象中，私有方法是一个常见需求，但是在ES6中没有提供，我们可以通过某个方法来实现它。
 
@@ -194,7 +194,7 @@ class Foo {
 
 > 需要注意的是，通过下划线开头通常我们会局限它是一个私有方法，但是在类的外部还是可以正常调用到这个方法的
 
-### 类的继承
+## 类的继承
 
 `extends`关键字用于扩展子类，创建一个类作为另外一个类的一个子类。
 
@@ -202,7 +202,7 @@ class Foo {
 
 这对比之前在`ES5`中修改原型链实现继承的方法的可读性要强很多，而且写法很简洁。
 
-#### extends的使用
+## extends的使用
 
 ```javascript
 class Animal{
@@ -215,7 +215,7 @@ class dog extends Animal {
 }
 ```
 
-#### 继承类的属性和方法
+## 继承类的属性和方法
 
 下面这个例子，我们定义了`dog`这个类，通过`extends`关键字继承了`Animal`类的属性和方法。
 
@@ -248,7 +248,7 @@ d.speaking(); // tom speaking
 console.log(d.name); // tom
 ```
 
-#### Super
+## Super
 
 **super**关键字用于访问和调用一个对象的父对象上的函数。
 
@@ -301,7 +301,7 @@ var d = new dog("tom",4);
 d.speaking(); // tom eating tom speaking
 ```
 
-### Getter 和 Setter
+## Getter 和 Setter
 
 在类内部也可以使用`get`和`set`关键字，对应某个属性设置存值和取值函数，拦截属性的存取行为。
 
@@ -326,13 +326,13 @@ a.age = 4;
 console.log(a.age); //4
 ```
 
-### 关于class扩展
+## 关于class扩展
 
-#### 严格模式
+## 严格模式
 
 在类和模块的内部，默认是严格模式，所以不需要使用`use strict`指定运行模式。只要你的代码写在类或模块之中，就只有严格模式可用。
 
-#### name属性
+## name属性
 
 `ES6`中的类只是`ES5`构造函数的一层包装，所以函数的许多属性都被`class`继承了，包括`name`属性。
 
@@ -343,7 +343,7 @@ class Animal{
 console.log(Animal.name); // Animal
 ```
 
-#### 变量提升
+## 变量提升
 
 `class`不存在变量提升，这与我们在`ES5`中实现类的不同的，`function`关键字会存在变量提升。
 
@@ -352,7 +352,7 @@ new Foo(); // ReferenceError
 class Foo {}
 ```
 
-### 总结
+## 总结
 
 在`ES6`之后，我们在定义类以及它内部的属性方法，还有继承操作的语法变得非常简洁且易懂，`class`是一个语法糖，其内部还是通过`ES5`中的语法来实现的。且有些浏览器不支持`class`语法，我们可以通过`babel`来进行转换。
 

@@ -1,14 +1,21 @@
+---
+title: JS进阶-实现bind
+tags: [JavaScript]
+---
+
+## JS进阶-实现bind
+
 在`JavaScript`函数式编程中，`Function`的原型上有这么三个方法它们是用于改变`this`的指向的，说到这里相信大家都知道分别是哪三个方法了（`bind`、`call`、`apply`）。
 
-### 为什么需要这些方法
+## 为什么需要这些方法
 
 这是因为在JavaScript这一门语言中，它的this指向是动态并非固定的，这时候我们就需要做三个方法来辅助我们来改变this的指向。
 
-### bind
+## bind
 
 > `bind()` 方法创建一个新的函数，在 `bind()` 被调用时，这个新函数的 `this` 被指定为 `bind()` 的第一个参数，而其余参数将作为新函数的参数，供调用时使用。（引用`MDN`）
 
-#### bind的用法
+## bind的用法
 
 ```javascript
 let foo = {
@@ -32,7 +39,7 @@ bindBar(); // 100
 
 通过上面对`bind`函数的介绍结合代码例子，相信你已经明白了bind函数的使用方法，`bindBar`即是`bind`函数返回的一个新函数。它是指向永远的指向了`foo`这个对象上。
 
-#### 手写bind函数
+## 手写bind函数
 
 ```javascript
 Function.prototype.mybind = function (thisArg, ...argArray) {
@@ -97,7 +104,7 @@ let newBar=new bar();
 
 由于使用了`new`关键字，此时的`this`是执行了`newBar`对象。。
 
-#### new绑定补充
+## new绑定补充
 
 当我们使用了`new`关键字去调用一个函数时会发生些什么事情？
 
@@ -105,7 +112,7 @@ let newBar=new bar();
 2. 使用第一步创建的对象（也就是`this`）和传入的参数给构造器执行
 3. 如果构造器没有返回对象，则返回第一步创建的对象
 
-#### 接着优化下bind函数
+## 接着优化下bind函数
 
 ```javascript
 Function.prototype.mybind = function (thisArg, ...argArray) {
@@ -151,7 +158,7 @@ Function.prototype.mybind = function (thisArg, ...argArray) {
 
 这里创建了一个中转函数`fNOP`，先将当前`bind`函数的`this`赋值给空函数的原型对象，在通过`new`关键字调用`fNOP`函数，目的是为了避免在修改`proxyFn`原型时也把绑定的函数原型一起被修改。
 
-#### 最终bind函数代码
+## 最终bind函数代码
 
 ```javascript
 Function.prototype.mybind = function (thisArg, ...argArray) {

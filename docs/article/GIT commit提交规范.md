@@ -1,6 +1,9 @@
-# GIT commit提交规范
+---
+title: GIT commit提交规范
+tags: [other]
+---
 
-「这是我参与2022首次更文挑战的第20天，活动详情查看：[2022首次更文挑战](https://juejin.cn/post/7052884569032392740)」
+# GIT commit提交规范
 
 阅读本文章你将收获到：
 
@@ -8,7 +11,7 @@
 - `angular commit`规范
 - 如何在项目中约束`commit message`
 
-### 前言
+## 前言
 
 在编写这一篇文章时，说明我已经意识到我的每一次`git commit`应该要有一个规范，明确表达我的每一次`commit`的目的，且在规范`log`的同时也有助于他人`review`，还能有效输出项目的`CHANGELOG.md`。
 
@@ -24,7 +27,7 @@
 
 其实，它们都遵循了`conventional commits`（约定式提交）的一种提交规范，也是本文的主题。
 
-### Conventional Commits
+## Conventional Commits
 
 ![image-20220208143859217](https://raw.githubusercontent.com/QC2168/note-img/main/202202081438535.png)
 
@@ -54,7 +57,7 @@
 
 ![image-20220208150623469](https://raw.githubusercontent.com/QC2168/note-img/main/202202081506627.png)
 
-### Angular Commit规范
+## Angular Commit规范
 
 目前，我们用得最多的是`Angular`规范，同样遵循着`conventional commit`，可以说是它的一个衍生版本，`angular`规范的`message`格式是这样子的。
 
@@ -97,11 +100,11 @@
 
     - 页脚注释 通常用于放`issues`
 
-### commitlint
+## commitlint
 
 接下来我们要认识一个新的工具叫`commitlint`，从它的命名我们就得知它是一个约束提交的工具库。
 
-#### 安装commitlint
+## 安装commitlint
 
 项目级安装`commitlint`和`husky`，`commlint`用于对`commit message`进行格式校验，`husky`则易用`git hook`。
 
@@ -113,7 +116,7 @@ pnpm add -D @commitlint/config-conventional @commitlint/cli husky
 yarn add -D @commitlint/config-conventional @commitlint/cli husky 
 ```
 
-#### 配置commitlint
+## 配置commitlint
 
 在项目根目录中新建一个`commitlint.config.js`文件，配置`commitlint`。
 
@@ -124,7 +127,7 @@ module.exports = {extends: ['@commitlint/config-conventional']};
 
 > `commitlint`是规范`commit message`信息，不能约束其内容
 
-#### 激活hooks
+## 激活hooks
 
 在终端执行以下命令，初始化`git hooks`的配置
 
@@ -146,7 +149,7 @@ pnpm exec commitlint --edit $1
 
 现在，当你在`git commit`时，会触发到`commit-msg`这个`hooks`，执行`commitlint`进行`commit message`校验。当检验不通过时，则不能完成本次`commit`操作。
 
-### commitizen
+## commitizen
 
 当我们约束了`commit message`之后，我们就必须符合它的提交规范才能正常完成提交，但每次提交必须一个一个字手打出来吗？
 
@@ -154,7 +157,7 @@ pnpm exec commitlint --edit $1
 
 我们需要为`commitizen`提供一个适配器，使`commitizen`按我们指定的规范生成`commit message`，这里我们选择`cz-conventional-changelog`，也是`commitizen`首选适配器。
 
-#### 安装commitizen
+## 安装commitizen
 
 项目级安装`commitizen`、`cz-conventional-changelog`。
 
@@ -162,7 +165,7 @@ pnpm exec commitlint --edit $1
 pnpm add -D commitizen cz-conventional-changelog
 ```
 
-#### 配置commitizen
+## 配置commitizen
 
 在项目根目录中创建一个`.czrc`文件（`commitizen`配置文件）。
 
@@ -187,7 +190,7 @@ pnpm add -D commitizen cz-conventional-changelog
 
 执行`pnpm commit / pnpm exec cz`命令后，会显示一个交互式的命令行界面，你需要根据实际情况选择对应的选项，最终生成一个`commit message`并提交。可代替`git commit`。
 
-#### 运行commit执行cz
+## 运行commit执行cz
 
 也可以在开发者在终端执行`git commit`命令时调用`cz`，在项目根目录中的`.husky`目录下创建`prepare-commit-msg`文件，用于用户执行`commit`之前运行`cz`。
 
@@ -196,7 +199,7 @@ pnpm add -D commitizen cz-conventional-changelog
 exec < /dev/tty && git cz --hook || true
 ```
 
-### 最终效果
+## 最终效果
 
 ```powershell
 E:\project\viteProjects\hkzf>pnpm commit
@@ -224,11 +227,11 @@ cz-cli@4.2.4, cz-conventional-changelog@3.2.0
 
 本质上还是调用了`git commit`命令只不过是帮我们约束了`commit message`的格式再`commit`。我们也可以对`commitizen`的交互界面做出自定义配置，下面我们将交互界面的语言替换成简体中文版，更符合国人的使用。
 
-### cz-customizable
+## cz-customizable
 
 `cz-customizable`也是一个适配器，它可以帮助我们达到你想要的规范效果。
 
-### 安装
+## 安装
 
 项目级安装`cz-customizable`。
 
@@ -236,7 +239,7 @@ cz-cli@4.2.4, cz-conventional-changelog@3.2.0
 pnpm add -D cz-customizable
 ```
 
-### 配置
+## 配置
 
 在项目根目录创建`.cz-config.js`配置文件，为`cz-customizable`配置工作模式。官方也提供了一份参考的配置文件：[`cz-config-EXAMPLE.js`](https://github.com/leoforfree/cz-customizable/blob/master/cz-config-EXAMPLE.js)（参考），我们使用汉化版的配置文件。
 
@@ -286,11 +289,11 @@ module.exports = {
 }
 ```
 
-### 效果
+## 效果
 
 ![image-20220209214905892](https://raw.githubusercontent.com/QC2168/note-img/main/202202092149184.png)
 
-### 总结
+## 总结
 
 本文简单介绍了约定式提交，并引入了当前项目中使用最多的`angular`团队的规范。并将这个规范约束带到项目中应用。`commit message`规范是非常重要的，约束得每一次`commit`的格式。
 

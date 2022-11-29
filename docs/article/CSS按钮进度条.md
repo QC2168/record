@@ -1,4 +1,10 @@
-#### 前言
+---
+title: CSS按钮进度条
+tags: [CSS]
+---
+
+
+## 前言
 
 在一些前端项目中，它们会涉及文件的上传 / 下载 功能，当文件在进行上传 / 下载时，我们该怎么更好的向用户进行进度反馈呢？我们常见的有弹窗式进度条、吸顶式进度条 ...
 
@@ -6,19 +12,19 @@
 
 **话不多说，先看看成品再码**
 
-#### 实现效果
+## 实现效果
 
 ![1](https://raw.githubusercontent.com/QC2168/note-img/main/202203161632523.gif)
 
-#### 原理
+## 原理
 
 创建一个`div`作为按钮的总体，在按钮里边放入`3`个`div`，分别是进度条元素，图标元素，文本元素，我们将按钮设置为相对定位，将进度条元素设置为绝对定位，利用`top`和`left`值来控制进度条，让我们用码实现！
 
 ![2](https://raw.githubusercontent.com/QC2168/note-img/main/202203161632524.png)
 
-#### 用码实现
+## 用码实现
 
-##### 码出基本样式
+## 码出基本样式
 
 ```html
 <div class="button">
@@ -82,7 +88,7 @@
 
 ![4](https://raw.githubusercontent.com/QC2168/note-img/main/202203161632526.png)
 
-#### 码出下载效果
+## 码出下载效果
 
 我们使用`JavaScript`中`querySelectorAll`方法，获取`.button`和`.progress`元素，及`.text`元素。
 
@@ -127,7 +133,7 @@ setTimeout(() => {
 
 ![7](https://raw.githubusercontent.com/QC2168/note-img/main/202203161632529.gif)
 
-##### 引入图标
+## 引入图标
 
 在`HTML`中引入 `font awesome`这个图标库。
 
@@ -180,7 +186,7 @@ i {
 
 加了这个动效之后，用户是不是更有点击欲啦？
 
-##### 动态更换图标
+## 动态更换图标
 
 同样，我们使用`JavaScript`中`querySelectorAll`方法，获取`icon`元素。
 
@@ -224,7 +230,7 @@ btn.addEventListener('click', () => {
 
 ![10](https://raw.githubusercontent.com/QC2168/note-img/main/202203161632532.gif)
 
-#### 最后
+## 最后
 
 本文带着大家从零实现到一个进度条按钮，使用前端三件套`HTML` `CSS` `JavaScript`以及到`CSS`动画。还有引入的`font awesome`库。希望大家能从中有所收获，写出更好更炫酷的动画效果、
 

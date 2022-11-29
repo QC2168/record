@@ -1,14 +1,14 @@
-### Django是什么
+## Django是什么
 
 `Django`是一个采用MTV的框架模式的web应用框架， 最初被设计用于具有快速开发需求的新闻类站点，目的是要实现简单快捷的网站开发。
 
-### 初体验Django
+## 初体验Django
 
 今天的主题是使用`Django`制作一个`TodoList`的案例，可以说是来初入门`Django`这一门框架的开始。在啃这一篇文章之前，你需要具备`Python`的基础语法，否则啃起来可能有点压力。
 
 ![image-20220417204347333](https://raw.githubusercontent.com/QC2168/note-img/main/202204172043384.png)
 
-### 创建一个新的项目
+## 创建一个新的项目
 
 在终端中敲一下命令，在当前目录下创建一个`django`项目，这里面包含项目实例需要的设置项集合，包括数据库配置、`Django` 配置和应用程序配置。
 
@@ -16,7 +16,7 @@
 django-admin startproject mysite
 ```
 
-### 启动项目
+## 启动项目
 
 将当前目录切换至`mysite`下，敲一下命令，会在本地的`8000`端口开启一个站点服务。
 
@@ -24,7 +24,7 @@ django-admin startproject mysite
 python manage.py runserver
 ```
 
-### 创建TodoList应用
+## 创建TodoList应用
 
 这里的应用可以理解功能划分，而上面创建的项目是多个功能的网站。
 
@@ -43,7 +43,7 @@ INSTALLED_APPS = [
 ]
 ```
 
-### 创建数据库
+## 创建数据库
 
 默认情况下，`django`使用项目下的`db.sqlite3`作为默认数据库，由于我们只是创建一个简单的项目，直接选择它是最好的方法。
 
@@ -79,7 +79,7 @@ python manage.py migrate
 
 ![image-20220417212404879](https://raw.githubusercontent.com/QC2168/note-img/main/202204172124977.png)
 
-### 创建路由
+## 创建路由
 
 在`todolist`文件夹下创建`urls.py`文件，当我们在请求这个项目中的某个地址时，`django`会遍历每一个路由的地址，直到与当前请求的`url`匹配上为止。（如果没有匹配上会抛出异常）
 
@@ -112,7 +112,7 @@ urlpatterns = [
 ]
 ```
 
-### 创建视图&模板
+## 创建视图&模板
 
 视图即是我们看到是页面内容，创建一个`index.html`文件夹在`todolist/template/todolist/index.html`
 
@@ -243,5 +243,3 @@ def delete(request):
 当然，这只是简单使用`jdango`，如果你想继续学习请移步[`Django`](https://www.djangoproject.com/start/overview/)
 
 ![image-20220417204347333](https://raw.githubusercontent.com/QC2168/note-img/main/202204172043384.png)
-
-### 

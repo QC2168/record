@@ -1,4 +1,9 @@
-### 什么是Proxy
+---
+title: Proxy和Reflect
+tags: [JavaScript]
+---
+
+## 什么是Proxy
 
 `Proxy`对象用于创建一个对象的代理，是用于监听一个对象的相关操作。代理对象可以监听我们对原对象的操作。
 
@@ -20,7 +25,7 @@ console.log(objProxy);
 
 打印出来可以看到的是一个`Proxy`对象。下面我们开始看看`Proxy`中的捕获器对象。
 
-#### Proxy捕获器
+## Proxy捕获器
 
 在实例化`Proxy`对象时，第二个参数传入的是捕获器集合，我们在其对象内定义一个`get`捕获器，用于监听获取对象值的操作。
 
@@ -102,7 +107,7 @@ getPrototypeOf: function () {
 
 
 
-#### this指向的问题
+## this指向的问题
 
 `Proxy`对象可以对我们的目标对象进行访问，但没有做任何拦截时，也不能保证与目标对象的行为一致，因为目标对象内部的`this`会自动改变为`Proxy`代理对象。我们看下面这个例子就知道了。
 
@@ -119,7 +124,7 @@ console.log(obj.foo()); // false
 console.log(objProxy.foo()); // true
 ```
 
-#### 对象监听案例
+## 对象监听案例
 
 某些场景下，需要监听一个对象的操作，当这个操作触发时执行另外的一个函数，就像`vue2`中的`watchApi`，它可以监听`data`数据中某个属性的改变并操作指定的函数。
 
@@ -192,21 +197,21 @@ console.log(objProxy.name);
 // QC2125
 ```
 
-#### 小结
+## 小结
 
 - `Reflect`对象中集合了`JavaScript`内部方法
 - 操作`Object`对象的方式变成了函数行为
 - `Reflect`对象中的方法返回结果更加合理
 
-### 什么是Reflect
+## 什么是Reflect
 
 `Reflect`是一个对象，翻译过来是反射的意思，它提供了很多操作`JavaScript`对象的方法， 是为了弥补`Object`中对象的一些缺陷。且所有属性和方法都是静态的。
 
-#### 为什么会有Reflect
+## 为什么会有Reflect
 
 在早期，`JavaScript`这门语言中的一些内部方法都被部署到了`Object`这个对象上。就例如`getPrototype`、`deinfeProperty`等`API`、类似`in`、`delete`操作符都放到了`Object`对象上了。但`Object`作为一个构造函数（`Reflect`并非一个构造函数，不能通过new关键字调用），这些方法放到它身上并不合适，所以在`ES6`之后的内部新方法会部署到`Reflect`对象中。
 
-#### 使用Reflect对象操作Object对象
+## 使用Reflect对象操作Object对象
 
 Reflect对象让我们操作`Object`对象不再是通过点语法了，而是变成了函数行为。
 
@@ -233,7 +238,7 @@ console.log("name" in obj); // true
 console.log(Reflect.has(obj, "name")); // true
 ```
 
-#### Reflect中的方法
+## Reflect中的方法
 
 | 对象中的方法                       | 说明                      |
 | ---------------------------------- | ------------------------- |
@@ -255,7 +260,7 @@ console.log(Reflect.has(obj, "name")); // true
 
 在返回值方便`Reflect`对象中的方法设计的更加合理。比如`defineProperty`方法，如果没有将属性设置成功，在`Reflect`中会返回`boolean`值，而`Object`对象中如果没有定义成功则会抛出`TypeError`。
 
-#### Reflect搭配Proxy
+## Reflect搭配Proxy
 
 `Reflect`对象中的方法和上一篇文章将到的`Proxy`对象的方法的对应的，`Proxy`对象中的方法也能在`Reflect`对象中调用。
 
@@ -325,6 +330,6 @@ console.log(objProxy.name);
 
 传入在我们获取代理对象中的`name`属性时，当`Reflect`有`receiver`参数传入时，获取属性值时会获取到`receiver`中的，所以会触发`defineProperty`捕获器，如果没有传入`receiver`参数，则不会触发`defineProperty`捕获器。
 
-#### 小结
+## 小结
 
 `proxy`是一个的代理对象，它可以代理我们对原目标的操作。相比`Object.defineProperty`方法，`Proxy`监听的事件更加方法。
