@@ -523,7 +523,9 @@ kill -s 9 进程号
 127.0.0.1:6379> bgsave
 Background saving started
 ```
-![image-20200518165224346](C:\Users\qiancheng\AppData\Roaming\Typora\typora-user-images\image-20200518165224346.png)
+
+--- 图片丢失
+
 
 注意：bgsave是使用fork函数生成子进程来完成任务的，save是马上执行
 
@@ -608,7 +610,7 @@ RDB缺点
 
 ## AOF写数据过程
 
-![image-20200518174853162](C:\Users\qiancheng\AppData\Roaming\Typora\typora-user-images\image-20200518174853162.png)
+--- 图片丢失
 
 ## AOF写数据三种策略
 
