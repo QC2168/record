@@ -109,7 +109,7 @@ const { frontmatter } = data;
 ---
 title: 2022年了你还不知道pnpm么
 editLink: true
-tags: [OTHER]
+tags: [other]
 ---
 
 ## 这是标题
