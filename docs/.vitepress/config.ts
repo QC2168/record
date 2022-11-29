@@ -2,10 +2,8 @@ import { defineConfig } from "vitepress";
 import path from "path";
 import { autoTagChildren } from "./autoSidebar";
 export default defineConfig({
-  title: "记录站",
-  description: "欢迎来到我的站点",
+  base: process.env.NODE_ENV === "production" ? "/record/" : "",
   themeConfig: {
-    logo: "./assets/avatar.jpg",
     siteTitle: false,
     sidebar: {
       "/article/": autoTagChildren(
@@ -19,8 +17,7 @@ export default defineConfig({
       { text: "片段", link: "/snippets/index" },
       { text: "面试", link: "/interview/index" },
     ],
-    socialLinks: [
-      { icon: 'github', link: 'https://github.com/QC2168' }
-    ],
-    lastUpdatedText:"更新时间",  },
+    socialLinks: [{ icon: "github", link: "https://github.com/QC2168" }],
+    lastUpdatedText: "更新时间",
+  },
 });
