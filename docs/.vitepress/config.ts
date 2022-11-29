@@ -1,7 +1,6 @@
-import { defineConfig } from 'vitepress'
-import getChildren from "./autoSidebar";
+import { defineConfig } from "vitepress";
 import path from "path";
-
+import { autoTagChildren } from "./autoSidebar";
 export default defineConfig({
   title: "记录站",
   description: "欢迎来到我的站点",
@@ -9,12 +8,10 @@ export default defineConfig({
     logo: "./assets/avatar.jpg",
     siteTitle: false,
     sidebar: {
-      "/article/": [
-        {
-          text: "文章列表", // 必要的
-          items: getChildren(path.join(__dirname, "../article"), "article"),
-        },
-      ],
+      "/article/": autoTagChildren(
+        "article",
+        path.join(__dirname, "../article")
+      ),
     },
     nav: [
       { text: "首页", link: "/" },
@@ -25,6 +22,5 @@ export default defineConfig({
     socialLinks: [
       { icon: 'github', link: 'https://github.com/QC2168' }
     ],
-    lastUpdatedText:"更新时间",
-  },
+    lastUpdatedText:"更新时间",  },
 });
