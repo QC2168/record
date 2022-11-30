@@ -19,8 +19,6 @@ const { frontmatter } = data;
         >
       </div>
     </template>
-
-    <template #aside-outline-before>目录</template>
   </Layout>
 </template>
 <style>
