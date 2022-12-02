@@ -1,9 +1,9 @@
 <script setup>
-import DefaultTheme from "vitepress/theme";
-import { useData } from "vitepress";
-const data = useData();
-const { Layout } = DefaultTheme;
-const { frontmatter } = data;
+import DefaultTheme from 'vitepress/theme'
+import { useData } from 'vitepress'
+const data = useData()
+const { Layout } = DefaultTheme
+const { frontmatter } = data
 </script>
 
 <template>

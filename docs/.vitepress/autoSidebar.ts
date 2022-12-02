@@ -8,11 +8,12 @@ export default function getChildren(path: string, link: string) {
   return allFile
     .map((fileName) => ({
       text: fileName.slice(0, -3),
-      link: `/${link}/${fileName.slice(0, -3)}`,
+      link: `/${link}/${fileName.slice(0, -3)}`
     })) // 过滤readme文件，否则会出错无法渲染出列表
-    .filter((i) => i.text !== "readme");
-}
+    .filter((i) => i.text !== "readme")
+  }
 
+  
 export function autoTagChildren(scope: string, spath: string) {
   // 读取每个文件收集第一个tag
   let allFile = fs.readdirSync(spath).filter((i) => i.includes(".md"));
