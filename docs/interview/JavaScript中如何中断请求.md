@@ -1,6 +1,6 @@
 ---
 title: JavaScript中如何中断请求
-tags: [JavaScript,node,adb]
+tags: [JavaScript]
 ---
 
 ## JavaScript中如何中断请求
