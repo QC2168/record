@@ -10,6 +10,10 @@ export default defineConfig({
         "article",
         path.join(__dirname, "../article")
       ),
+      "/interview/": autoTagChildren(
+        "interview",
+        path.join(__dirname, "../interview")
+      ),
     },
     nav: [
       { text: "首页", link: "/" },
