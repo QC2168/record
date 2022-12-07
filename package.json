@@ -8,6 +8,8 @@
     "build": "cross-env NODE_ENV=production vitepress build docs",
     "serve": "cross-env NODE_ENV=production vitepress serve docs",
     "lint": "eslint --fix --ext .js,.ts ./",
+    "prepare":"husky install",
+    "postinstall": "husky install",
     "commit": "git-cz"
   },
   "author": "QC2168",
