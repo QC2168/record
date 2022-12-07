@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        function Foo() {
+            return 'foo function'
+        }
+        Foo.prototype.name = 'foo'
+
+        let f = new Foo()
+        console.log(f.name)
+
+        function myNew(fn, ...args) {
+            // 创建一个新的对象
+            let obj = {}
+            // 将这个空对象的__proto__属性指向构造函数的原型prototype
+            Reflect.setPrototypeOf(obj,fn.prototype)
+            // 等价于
+            // obj.__proto__=fn.prototype
+            // 将构造函数的this改变为这个空对象
+            let result = fn.apply(obj, args)
+            // 返回数据
+            return result instanceof Object ? result : obj
+        }
+
+        let f1 = myNew(Foo)
+        console.log(f1.name)
+    </script>
+</body>
+
+</html>
