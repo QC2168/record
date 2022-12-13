@@ -19,7 +19,13 @@ export default defineConfig({
       { text: "首页", link: "/" },
       { text: "文章", link: "/article/index" },
       { text: "片段", link: "/snippets/index" },
-      { text: "面试", link: "/interview/index" },
+      {
+        text: '面试',
+        items: [
+          { text: '面试题', link: '/interview/index' },
+          { text: '手写题', link: '/interview/jsCode/index' },
+        ]
+      }
     ],
     socialLinks: [{ icon: "github", link: "https://github.com/QC2168" }],
     lastUpdatedText: "更新时间",
