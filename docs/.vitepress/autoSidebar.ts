@@ -13,7 +13,7 @@ export default function getChildren(path: string, link: string) {
     .filter((i) => i.text !== "readme")
   }
 
-  
+
 export function autoTagChildren(scope: string, spath: string) {
   // 读取每个文件收集第一个tag
   let allFile = fs.readdirSync(spath).filter((i) => i.includes(".md"));
