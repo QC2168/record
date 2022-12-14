@@ -8,7 +8,7 @@
     "build": "cross-env NODE_ENV=production vitepress build docs",
     "serve": "cross-env NODE_ENV=production vitepress serve docs",
     "lint": "eslint --fix --ext .js,.ts ./",
-    "prepare":"husky install",
+    "prepare": "husky install",
     "postinstall": "husky install",
     "commit": "git-cz"
   },
@@ -16,7 +16,6 @@
   "license": "MIT",
   "devDependencies": {
     "@commitlint/cli": "^16.3.0",
-    "@commitlint/config-conventional": "^16.2.4",
     "@commitlint/prompt": "^16.3.0",
     "@typescript-eslint/eslint-plugin": "^5.45.0",
     "@typescript-eslint/parser": "^5.45.0",

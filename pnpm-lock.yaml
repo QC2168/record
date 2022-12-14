@@ -2,7 +2,6 @@ lockfileVersion: 5.4
 
 specifiers:
   '@commitlint/cli': ^16.3.0
-  '@commitlint/config-conventional': ^16.2.4
   '@commitlint/prompt': ^16.3.0
   '@typescript-eslint/eslint-plugin': ^5.45.0
   '@typescript-eslint/parser': ^5.45.0
@@ -29,7 +28,6 @@ dependencies:
 
 devDependencies:
   '@commitlint/cli': 16.3.0
-  '@commitlint/config-conventional': 16.2.4
   '@commitlint/prompt': 16.3.0
   '@typescript-eslint/eslint-plugin': 5.45.0_kzrsroqcc7vbj7n52hn5amk4im
   '@typescript-eslint/parser': 5.45.0_q6p45lmqdjcv7l3ujdjpqzkule
@@ -219,13 +217,6 @@ packages:
     transitivePeerDependencies:
       - '@swc/core'
       - '@swc/wasm'
-    dev: true
-
-  /@commitlint/config-conventional/16.2.4:
-    resolution: {integrity: sha512-av2UQJa3CuE5P0dzxj/o/B9XVALqYzEViHrMXtDrW9iuflrqCStWBAioijppj9URyz6ONpohJKAtSdgAOE0gkA==}
-    engines: {node: '>=v12'}
-    dependencies:
-      conventional-changelog-conventionalcommits: 4.6.3
     dev: true
 
   /@commitlint/config-validator/16.2.1:
@@ -1323,15 +1314,6 @@ packages:
     engines: {node: '>=10'}
     dependencies:
       compare-func: 2.0.0
-      q: 1.5.1
-    dev: true
-
-  /conventional-changelog-conventionalcommits/4.6.3:
-    resolution: {integrity: sha512-LTTQV4fwOM4oLPad317V/QNQ1FY4Hju5qeBIM1uTHbrnCE+Eg4CdRZ3gO2pUeR+tzWdp80M2j3qFFEDWVqOV4g==}
-    engines: {node: '>=10'}
-    dependencies:
-      compare-func: 2.0.0
-      lodash: 4.17.21
       q: 1.5.1
     dev: true
 
