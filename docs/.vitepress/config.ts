@@ -30,6 +30,10 @@ export default defineConfig({
         ]
       }
     ],
+    editLink: {
+      pattern: 'https://github.com/QC2168/record/edit/main/docs/:path',
+      text: '编辑此页内容'
+    },
     socialLinks: [{ icon: "github", link: "https://github.com/QC2168" }],
     lastUpdatedText: "更新时间",
   },
