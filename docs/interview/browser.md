@@ -1,10 +1,10 @@
 ## 浏览器原理篇
 
-### 缓存篇
+### 浏览器缓存
 
 :point_right: [HTTP中的强缓存与协商缓存](https://juejin.cn/post/7101942484543995934)
 
-### deter async script tag
+### script标签中async和deter属性有什么区别
 
 `async`（异步） 并行下载`script`脚本（不会中断`HTML`解析过程），下载完毕之后中断`HTML`解析，执行脚本内容
 
