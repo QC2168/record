@@ -4,6 +4,10 @@
 
 :point_right: [HTTP中的强缓存与协商缓存](https://juejin.cn/post/7101942484543995934)
 
+### 浏览器解析HTML
+
+
+
 ### script标签中async和deter属性有什么区别
 
 `async`（异步） 并行下载`script`脚本（不会中断`HTML`解析过程），下载完毕之后中断`HTML`解析，执行脚本内容
@@ -13,6 +17,35 @@
 默认行为是 在下载script脚本时会中断HTML解析，如果脚本内容比较大时，会导致加载时间较久，无法很快渲染出整个页面
 
 [<script>: The Script element](https://developer.mozilla.org/en-US/docs/Web/HTML/Element/script)
+
+#### 动态添加
+
+还有一种情况，通过`createElement`方法创建`script`标签，默认`async`属性为`true`
+
+如果你想要按照`script`标签添加的顺序执行，请`script.async=false`
+
+```html
+<script>
+  console.log('script1')
+
+  const script1 = document.createElement('script');
+  script.async = false;
+  script.src = 'foo.js';
+  document.body.appendChild(script1);
+
+  const script2 = document.createElement('script');
+  script2.async = false;
+  script2.src = 'bar.js';
+  document.body.appendChild(script2);
+</script>
+<script>console.log('script2')</script>
+<!--
+    script1
+    script2
+    foo
+    bar
+ -->
+```
 
 ### Load和DOMContentLoad区别
 
