@@ -1,6 +1,6 @@
 ---
 title: 延迟执行函数delay
-tags: [jsCode]
+tags: [JavaScript手写题]
 ---
 
 ## delay函数

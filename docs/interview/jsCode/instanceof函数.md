@@ -1,6 +1,6 @@
 ---
 title: instanceof
-tags: [jsCode]
+tags: [JavaScript手写题]
 ---
 
 ## instanceof

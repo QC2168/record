@@ -1,6 +1,6 @@
 ---
 title: 累计计算的sum函数
-tags: [jsCode]
+tags: [JavaScript手写题]
 ---
 
 ## 累计计算的sum函数

@@ -1,6 +1,6 @@
 ---
 title: 判断一个是否为整数
-tags: [jsCode]
+tags: [JavaScript手写题]
 ---
 
 ## isInteger函数

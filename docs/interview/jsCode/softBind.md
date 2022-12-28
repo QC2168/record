@@ -1,6 +1,6 @@
 ---
 title: softbind函数
-tags: [jsCode]
+tags: [JavaScript手写题]
 ---
 
 ## softbind函数

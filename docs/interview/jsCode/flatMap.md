@@ -1,6 +1,6 @@
 ---
 title: 实现一个flatMap函数
-tags: [jsCode]
+tags: [JavaScript手写题]
 ---
 
 ## flatMap函数

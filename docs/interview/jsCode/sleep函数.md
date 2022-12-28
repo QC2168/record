@@ -1,6 +1,6 @@
 ---
 title: sleep函数
-tags: [jsCode]
+tags: [JavaScript手写题]
 ---
 
 ## sleep函数

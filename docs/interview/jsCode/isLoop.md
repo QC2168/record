@@ -1,6 +1,6 @@
 ---
 title: isLoop函数-判断是否有环
-tags: [jsCode]
+tags: [JavaScript手写题]
 ---
 
 ## isLoop函数

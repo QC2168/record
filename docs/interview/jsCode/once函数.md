@@ -1,6 +1,6 @@
 ---
 title: once函数
-tags: [jsCode]
+tags: [JavaScript手写题]
 ---
 
 ## once函数
