@@ -16,13 +16,13 @@ tags: [JavaScript]
 
 ### script标签中async和deter属性有什么区别
 
-`async`（异步） 并行下载`script`脚本（不会中断`HTML`解析过程），下载完毕之后中断`HTML`解析，执行脚本内容
+`async`（异步） 并行下载`script`脚本（不会中断`HTML`解析过程），下载完毕之后中断`HTML`解析，执行脚本内容.
 
 `deter`（延迟） 并行下载`script`脚本（不会中断`HTML`解析过程），在执行`DOMContentLoaded`事件之前，将下载好的`script`内容执行。
 
 默认行为是 在下载script脚本时会中断HTML解析，如果脚本内容比较大时，会导致加载时间较久，无法很快渲染出整个页面
 
-[<script>: The Script element](https://developer.mozilla.org/en-US/docs/Web/HTML/Element/script)
+[<script\>: The Script element](https://developer.mozilla.org/en-US/docs/Web/HTML/Element/script)
 
 #### 动态添加
 
