@@ -24,6 +24,7 @@ module.exports = {
         'revert', // 版本回退
         'interview', // 面试题
         'article', // 文章
+        'snippets', // 片段
       ],
     ],
     // <type> 不能为空
