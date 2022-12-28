@@ -1,6 +1,7 @@
 import { defineConfig } from "vitepress";
-import path from "path";
 import { autoTagChildren } from "./autoSidebar";
+const path = require('path')
+
 export default defineConfig({
   base: process.env.NODE_ENV === "production" ? "/record/" : "",
   themeConfig: {
@@ -21,7 +22,7 @@ export default defineConfig({
     nav: [
       { text: "首页", link: "/" },
       { text: "文章", link: "/article/index" },
-      { text: "片段", link: "/snippets/index" },
+      { text: "代码片段", link: "/snippets/index" },
       {
         text: '面试',
         items: [
