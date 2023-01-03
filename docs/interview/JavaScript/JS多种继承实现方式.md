@@ -140,6 +140,11 @@ console.log(obj1)
 console.log(obj2)
 ```
 ### 寄生组合式继承
+
+这个方法只调用了一次父级函数，也没有在子类原型上面添加多余的属性，与原来的原型链保持不变
+
+- 解决两次调用的方法是使用寄生组合式继承
+
 ```js
 function Person(name) {
   this.friends = ['张三','李四'];
@@ -166,5 +171,3 @@ console.log(p2)
 console.log(p1.getfriends())
 console.log(p1 instanceof Worker)
 ```
-
- 
