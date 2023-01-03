@@ -6,6 +6,10 @@ tags: [JavaScript]
 ## JS多种继承实现方式
 
 ### 类式继承
+
+- 原型中如果存在引用类型的数据,当修改一个实例时,其他实例中的值也会跟着改变
+- 实例化子类时,无法给父类传参
+
 ```js
 function SuperClass() {
   this.superValue = true;
@@ -32,6 +36,8 @@ console.log(instance instanceof SubClass)// true
 console.log(SubClass instanceof SuperClass)// false
 ```
 ### 构造函数继承
+- 必须在构造函数中定义方法,因此函数不能被复用
+- 子类不能访问父类的方法
 ```js
 function Person(name) {
   this.friends = ['张三','李四'];
@@ -53,6 +59,12 @@ console.log(p2)
 console.log(p1 instanceof Worker) // true
 ```
 ### 组合式继承
+
+- 父类构造函数会被调用两次
+  - 第一次创建子类原型时
+  - 第二次子类构造函数时
+- 子类包含父类所有实例属性
+
 ```js
 function Person(name) {
   this.friends = ['张三','李四'];
@@ -80,6 +92,9 @@ console.log(p1.getfriends())
 console.log(p1 instanceof Worker)
 ```
 ### 原型式继承
+
+- 属性中如果包含引用数据类型,会被共享
+
 ```js
 function inheritObject(o) {
     // 定义一个临时函数
@@ -104,6 +119,10 @@ console.log(p1.name)
 console.log(p2.name)
 ```
 ### 寄生式继承
+
+- 在对象上添加函数,会导致后续不好复用
+- 类似构造函数方法
+
 ```js
 const obj1 = {
     name:'_island'
