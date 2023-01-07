@@ -17,6 +17,12 @@ export default defineConfig({
       ),...autoTagChildren(
         "interview/jsCode",
         path.join(__dirname, "../interview/jsCode")
+      ),...autoTagChildren(
+          "interview/CSS",
+          path.join(__dirname, "../interview/CSS")
+      ),...autoTagChildren(
+          "interview/JavaScript",
+          path.join(__dirname, "../interview/JavaScript")
       )]
     },
     nav: [
