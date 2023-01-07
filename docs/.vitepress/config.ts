@@ -6,6 +6,8 @@ export default defineConfig({
   base: process.env.NODE_ENV === "production" ? "/record/" : "",
   themeConfig: {
     siteTitle: false,
+    outline:"deep",
+    outlineTitle: '目录',
     sidebar: {
       "/article/": autoTagChildren(
         "article",
