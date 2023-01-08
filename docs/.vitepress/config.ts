@@ -1,31 +1,27 @@
 import { defineConfig } from "vitepress";
-import { autoTagChildren } from "./autoSidebar";
+import { scanMdToCreateSidebarGroup } from "./createSidebarGroup";
 const path = require('path')
 
 export default defineConfig({
   base: process.env.NODE_ENV === "production" ? "/record/" : "",
+  vite:{
+    build:{
+      target:'modules'
+    }
+  },
   themeConfig: {
     siteTitle: false,
     outline:"deep",
     outlineTitle: '目录',
     sidebar: {
-      "/article/": autoTagChildren(
+      "/article/": scanMdToCreateSidebarGroup(
         "article",
         path.join(__dirname, "../article")
       ),
-      "/interview/": [...autoTagChildren(
+      "/interview/": scanMdToCreateSidebarGroup(
         "interview",
         path.join(__dirname, "../interview")
-      ),...autoTagChildren(
-        "interview/jsCode",
-        path.join(__dirname, "../interview/jsCode")
-      ),...autoTagChildren(
-          "interview/CSS",
-          path.join(__dirname, "../interview/CSS")
-      ),...autoTagChildren(
-          "interview/JavaScript",
-          path.join(__dirname, "../interview/JavaScript")
-      )]
+      )
     },
     nav: [
       { text: "首页", link: "/" },
