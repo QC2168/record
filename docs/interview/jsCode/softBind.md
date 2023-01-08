@@ -1,11 +1,11 @@
 ---
-title: softbind函数
+title: softBind
 tags: [JavaScript手写题]
 ---
 
-## softbind函数
+## softBind函数
 
-`softbind`与`bind`函数一样，返回一个指向`this`的新的函数，但`bind`函数多次调用只会将`this`指向第一次绑定的值，而`softBind`指向最后绑定的值
+`softBind`与`bind`函数一样，返回一个指向`this`的新的函数，但`bind`函数多次调用只会将`this`指向第一次绑定的值，而`softBind`指向最后绑定的值
 
 ```js
 Function.prototype.softBind = function (thisAry, ...args) {
