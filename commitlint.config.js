@@ -25,6 +25,7 @@ module.exports = {
         'interview', // 面试题
         'article', // 文章
         'snippets', // 片段
+        'log', // 记录
       ],
     ],
     // <type> 不能为空
