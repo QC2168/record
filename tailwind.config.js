@@ -5,6 +5,7 @@ module.exports = {
   content: [
     './docs/.vitepress/**/*.js',
     './docs/.vitepress/**/*.vue',
+    './docs/components/**/*.vue',
     './docs/.vitepress/**/*.ts',
   ],
 };
