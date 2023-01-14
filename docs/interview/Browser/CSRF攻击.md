@@ -1,3 +1,8 @@
+---
+title: CSRF攻击
+tags: [Browser]
+---
+
 ## CSRF攻击
 
 CSRF（Cross-site request forgery），跨站请求伪造，指的是攻击者诱导用户点击链接，打开带有攻击的网站，利用用户当前在原网站的登录状态数据信息进去跨站请求。
