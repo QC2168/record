@@ -14,14 +14,30 @@ export default defineConfig({
     outline:"deep",
     outlineTitle: '目录',
     sidebar: {
-      "/article/": scanMdToCreateSidebarGroup(
-        "article",
-        path.join(__dirname, "../article")
-      ),
+      "/article/":[
+        {
+          text: '文章目录',
+          items:scanMdToCreateSidebarGroup(
+            "article",
+            path.join(__dirname, "../article"),
+            true
+          ),
+        }
+      ] ,
       "/interview/": scanMdToCreateSidebarGroup(
         "interview",
         path.join(__dirname, "../interview")
-      )
+      ),
+      "/log/":[
+        {
+          text: '随手一记',
+          items:scanMdToCreateSidebarGroup(
+            "log",
+            path.join(__dirname, "../log"),
+            true
+          ),
+        }
+      ]
     },
     nav: [
       { text: "首页", link: "/" },
