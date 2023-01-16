@@ -20,7 +20,7 @@ export function scanMdToCreateSidebarGroup(
   scope: string,
   path: string,
   pure = false,
-  suffix: null | string
+  suffix: null | string = null
 ) {
   const result: any = [];
   const temp: any = [];
