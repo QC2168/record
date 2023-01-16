@@ -1,5 +1,6 @@
 import { defineConfig } from "vitepress";
 import { scanMdToCreateSidebarGroup } from "./createSidebarGroup";
+import sidebarPlugin from "./sidebar";
 const path = require('path')
 
 export default defineConfig({
@@ -7,7 +8,10 @@ export default defineConfig({
   vite:{
     build:{
       target:'modules'
-    }
+    },
+    plugins:[
+      sidebarPlugin()
+    ]
   },
   themeConfig: {
     siteTitle: false,
