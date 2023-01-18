@@ -1,6 +1,9 @@
+
+import Inspect from 'vite-plugin-inspect'
 import { defineConfig } from "vitepress";
 import { scanMdToCreateSidebarGroup } from "./createSidebarGroup";
 import sidebarPlugin from "./sidebar";
+
 const path = require('path')
 
 export default defineConfig({
@@ -10,6 +13,7 @@ export default defineConfig({
       target:'modules'
     },
     plugins:[
+      Inspect(),
       sidebarPlugin()
     ]
   },
@@ -61,5 +65,5 @@ export default defineConfig({
     },
     socialLinks: [{ icon: "github", link: "https://github.com/QC2168" }],
     lastUpdatedText: "更新时间",
-  },
+  }
 });
