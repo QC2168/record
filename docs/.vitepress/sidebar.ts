@@ -1,13 +1,11 @@
 import path, { join } from "node:path";
 import { fstat, readdirSync, statSync } from "node:fs";
 import c from "picocolors";
-import glob from "glob";
+
 import {
   closeSync,
   openSync,
   utimesSync,
-  readFileSync,
-  writeFileSync,
 } from "fs";
 import { type DefaultTheme } from "vitepress";
 
@@ -23,24 +21,46 @@ function touch() {
   }
 }
 
-export function scan(targetPath: string, folder: string) {
+export function scan(
+  targetPath: string,
+  folder: string,
+  isChild = false
+): DefaultTheme.SidebarGroup[] | DefaultTheme.SidebarItem[] {
   // through path scan and create sidebar a item
   let allNode = readdirSync(path.join(targetPath, folder));
-  console.log(allNode);
-
+  const result: DefaultTheme.SidebarItem[] = [];
   for (const fname of allNode) {
     if (statSync(path.join(targetPath, folder, fname)).isDirectory()) {
       // is directory
+      result.push({
+        text: fname,
+        items: scan(
+          path.join(targetPath, folder),
+          fname,
+          true
+        ) as DefaultTheme.SidebarItem[],
+      });
     } else {
       // file
-      const text = fname.replace(/\.md$/, "")
-      const item = {
+      const text = fname.replace(/\.md$/, "");
+      const item: DefaultTheme.SidebarItem = {
         text,
-        link: [folder,`${text}.html`].join('/'),
+        link: [folder, `${text}.html`].join("/"),
       };
-      console.log(item);
+      result.push(item);
     }
   }
+  return isChild
+    ? result
+    : [
+        {
+          items: result,
+        },
+      ];
+}
+
+function insertStr(source, start, newStr) {
+  return source.slice(0, start) + newStr + source.slice(start);
 }
 
 interface SidebarPluginOptionType {
@@ -62,21 +82,9 @@ export default function sidebarPlugin(
         }
       });
     },
-
-    //         "sidebar": {
-    //             "/article/": [
-    //                 {
-    //                     "text": "文章目录",
-    //                     "items": [
-    //                         {
-    //                             "text": "迁移vitePress",
-    //                             "link": "/article/迁移vitePress.md"
-    //                         }
-    //                     ]
-    //                 }
-    //             ],
-    transform(source, id) {
+    transform(source: string, id:string) {
       if (/\/@siteData/.test(id)) {
+        console.log(c.bgGreen(" INFO "), c.green("Creating sidebar data"));
         const docsPath = path.join(process.cwd(), "/docs");
         const { ignoreList = [] } = option;
         const ignoreFolder = [
@@ -92,12 +100,32 @@ export default function sidebarPlugin(
             statSync(path.join(docsPath, n)).isDirectory() &&
             !ignoreFolder.includes(n)
         );
-        console.log(allNode);
 
-        scan(docsPath, "log");
+        const sidebarData: DefaultTheme.SidebarMulti = {};
+        for (const k of allNode) {
+          sidebarData[`/${k}/`] = scan(
+            docsPath,
+            k
+          ) as DefaultTheme.SidebarGroup[];
+        }
         // 扫描docs下面文件夹，创建对应的sidebar组
-        console.log(c.green("create sidebar..."));
-        console.log(id);
+        const themeConfigPosition = source.indexOf(
+          "{",
+          source.indexOf("themeConfig")
+        );
+        const code = insertStr(
+          source,
+          themeConfigPosition + 1,
+          `"sidebar": ${JSON.stringify(sidebarData)},`.replaceAll(
+            '"',
+            '\\"'
+          )
+        );
+        console.log(
+          c.bgGreen(" INFO "),
+          c.green("The sidebar data was successfully injected")
+        );
+        return { code };
       }
     },
   };

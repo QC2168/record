@@ -2,9 +2,7 @@
 import Inspect from 'vite-plugin-inspect'
 import { defineConfig } from "vitepress";
 import { scanMdToCreateSidebarGroup } from "./createSidebarGroup";
-import sidebarPlugin from "./sidebar";
-
-const path = require('path')
+import SidebarPlugin from "./sidebar";
 
 export default defineConfig({
   base: process.env.NODE_ENV === "production" ? "/record/" : "",
@@ -14,39 +12,13 @@ export default defineConfig({
     },
     plugins:[
       Inspect(),
-      sidebarPlugin()
+      SidebarPlugin()
     ]
   },
   themeConfig: {
     siteTitle: false,
     outline:"deep",
     outlineTitle: '目录',
-    sidebar: {
-      "/article/":[
-        {
-          text: '文章目录',
-          items:scanMdToCreateSidebarGroup(
-            "article",
-            path.join(__dirname, "../article"),
-            true
-          ),
-        }
-      ] ,
-      "/interview/": scanMdToCreateSidebarGroup(
-        "interview",
-        path.join(__dirname, "../interview")
-      ),
-      "/log/":[
-        {
-          text: '随手一记',
-          items:scanMdToCreateSidebarGroup(
-            "log",
-            path.join(__dirname, "../log"),
-            true
-          ),
-        }
-      ]
-    },
     nav: [
       { text: "首页", link: "/" },
       { text: "文章", link: "/article/index" },
