@@ -5,7 +5,7 @@ import c from "picocolors";
 import { closeSync, openSync, utimesSync } from "fs";
 import { type DefaultTheme } from "vitepress";
 
-const configFile = "./config.ts";
+const configFile = join(process.cwd(),'docs/.vitepress/config.ts');
 
 function touch() {
   const time = new Date();
@@ -98,12 +98,15 @@ export default function sidebarPlugin(
 ) {
   return {
     name: "sidebar",
-    configureServer({ watcher }) {
-      const fsWatcher = watcher.add("../log/**/*.md");
-
-      fsWatcher.on("all", (event) => {
+    configureServer({ watcher}) {
+      const fsWatcher = watcher.add("*.md");
+      fsWatcher.on("all", (event,path) => {
         if (event !== "change") {
           touch();
+          console.log(
+            c.bgGreen(" UPDATE "),
+            c.green(`${event} ${path}, update sidebar data...`)
+          );
         }
       });
     },
