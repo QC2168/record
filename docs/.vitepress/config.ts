@@ -1,44 +1,20 @@
 import { defineConfig } from "vitepress";
-import { scanMdToCreateSidebarGroup } from "./createSidebarGroup";
-const path = require('path')
+import AutoSidebar from 'vite-plugin-vitepress-auto-sidebar';
 
 export default defineConfig({
   base: process.env.NODE_ENV === "production" ? "/record/" : "",
   vite:{
     build:{
       target:'modules'
-    }
+    },
+    plugins:[
+      AutoSidebar()
+    ]
   },
   themeConfig: {
     siteTitle: false,
     outline:"deep",
     outlineTitle: '目录',
-    sidebar: {
-      "/article/":[
-        {
-          text: '文章目录',
-          items:scanMdToCreateSidebarGroup(
-            "article",
-            path.join(__dirname, "../article"),
-            true
-          ),
-        }
-      ] ,
-      "/interview/": scanMdToCreateSidebarGroup(
-        "interview",
-        path.join(__dirname, "../interview")
-      ),
-      "/log/":[
-        {
-          text: '随手一记',
-          items:scanMdToCreateSidebarGroup(
-            "log",
-            path.join(__dirname, "../log"),
-            true
-          ),
-        }
-      ]
-    },
     nav: [
       { text: "首页", link: "/" },
       { text: "文章", link: "/article/index" },
@@ -57,5 +33,5 @@ export default defineConfig({
     },
     socialLinks: [{ icon: "github", link: "https://github.com/QC2168" }],
     lastUpdatedText: "更新时间",
-  },
+  }
 });
