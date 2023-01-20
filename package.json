@@ -38,6 +38,7 @@
   },
   "dependencies": {
     "@types/node": "^18.11.18",
+    "vite-plugin-vitepress-auto-sidebar": "^1.0.0",
     "vitepress": "1.0.0-alpha.35"
   },
   "pnpm": {

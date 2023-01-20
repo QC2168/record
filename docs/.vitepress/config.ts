@@ -1,8 +1,5 @@
-
-import Inspect from 'vite-plugin-inspect'
 import { defineConfig } from "vitepress";
-import { scanMdToCreateSidebarGroup } from "./createSidebarGroup";
-import SidebarPlugin from "./sidebar";
+import AutoSidebar from 'vite-plugin-vitepress-auto-sidebar';
 
 export default defineConfig({
   base: process.env.NODE_ENV === "production" ? "/record/" : "",
@@ -11,8 +8,7 @@ export default defineConfig({
       target:'modules'
     },
     plugins:[
-      Inspect(),
-      SidebarPlugin()
+      AutoSidebar()
     ]
   },
   themeConfig: {
