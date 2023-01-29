@@ -143,7 +143,7 @@ div{
   width: 300px; 
   height: 300px;
   background: gray;
-  overflow:hidden;">
+  ">
 普通的元素普通的元素普通的元素普通的元素普通的元素普通的元素普通  的元素普通的元素普通的元素
 </div>
 :::
