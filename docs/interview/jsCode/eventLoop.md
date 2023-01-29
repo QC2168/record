@@ -56,3 +56,5 @@ setTimeout(function() {
 - 继续执行第二个宏任务，输出`9`，又遇到了nextTick，存放到微任务队列中，执行promise回调函数输出`11`，把then回调函数存放到微任务队列中，宏任务结束
 - 执行微任务队列，输出`10`和`12`
 - 全部代码执行完毕
+
+推荐文章 [tasks-microtasks-queues-and-schedules](https://jakearchibald.com/2015/tasks-microtasks-queues-and-schedules/)
