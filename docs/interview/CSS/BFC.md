@@ -4,13 +4,11 @@
 
 ### 触发BFC
 
-比较常见触发BFC的CSS属性有
+- 根元素为html
 - `overflow: hidden`
-- `display: inline-block`
-- `position: absolute`
-- `position: fixed`
-- `display: table-cell`
-- `display: flex`
+- `display: inline-block/table-cell/flex`
+- `position: absolute/fixed`
+- `float`不为`none`
 
 ### BFC的使用场景
 
@@ -38,15 +36,28 @@ div{
   overflow:hidden
 }
 ```
+未启用BFC特性
 ::: raw
-
-<div style="overflow:hidden">
-  <p style="margin:100px 0;">1</p>
+<div style="border:1px solid gray;">
+  <div>
+    <p style="margin:100px 0;">1</p>
+  </div>
+  <div>
+    <p style="margin:100px 0;">2</p>
+  </div>
 </div>
-<div style="overflow:hidden">
-  <p style="margin:100px 0;">2</p>
+:::
+启用BFC特性
+::: raw
+<div style="border:1px solid gray;">
+  <div style="overflow:hidden;">
+    <p style="margin:100px 0;">1</p>
+  </div>
+  <div style="overflow:hidden">
+    <p style="margin:100px 0;">2</p>
+  </div>
 </div>
-
+<br>
 :::
 
 
@@ -75,4 +86,80 @@ div{
 }
 ```
 
-#### 
+启用BFC特性
+
+::: raw
+<div style="
+  background: #000;
+  overflow:hidden;
+">
+    <div style="
+    margin: 100px;
+    width: 100px;
+    height: 100px;
+    background: red;
+    float: left;"
+    ></div>
+</div>
+<br>
+:::
+
+
+#### 防止元素被浮动元素遮挡住
+
+第二个元素如果没有触发BFC特性，会被浮动的元素所覆盖
+
+
+```html
+<div class="left">左浮动的元素</div>
+<div class="right">
+普通的元素普通的元素普通的元素普通的元素普通的元素普通的元素普通  的元素普通的元素普通的元素
+</div>
+```
+```css
+.left{
+  height: 200px;
+  width: 100px;
+  float: left;
+  background: red;
+}
+.right{
+  width: 300px;
+  height: 300px;
+  background: gray;
+  /* 解决元素覆盖问题，启用BFC */
+  overflow:hidden;
+}
+```
+未启用BFC特性
+::: raw
+<div style="
+  height: 200px;
+  width: 100px;
+  float: left;
+  background: red;
+  ">左浮动的元素</div>
+<div style="
+  width: 300px; 
+  height: 300px;
+  background: gray;
+  overflow:hidden;">
+普通的元素普通的元素普通的元素普通的元素普通的元素普通的元素普通  的元素普通的元素普通的元素
+</div>
+:::
+启用BFC特性
+::: raw
+<div style="
+  height: 200px;
+  width: 100px;
+  float: left;
+  background: red;
+  ">左浮动的元素</div>
+<div style="
+  width: 300px; 
+  height: 300px;
+  background: gray;
+  overflow:hidden;">
+普通的元素普通的元素普通的元素普通的元素普通的元素普通的元素普通  的元素普通的元素普通的元素
+</div>
+:::
