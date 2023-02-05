@@ -7,16 +7,14 @@ module.exports = {
       2,
       'always',
       [
-        'add', // 添加依赖
-        'delete', // 删除代码/文件
         'feat', // 增加新功能
         'fix', // 修复bug
-        'style', // 样式修改不影响逻辑
+        'style', // 代码样式修改
         'merge', // 合并分支
         'perfect', // 功能完善
-        'docs', // 修改更新文档
+        'docs', // 添加/修改文档
         'refactor', // 代码重构
-        'test', // 单元测试修改
+        'test', // 单元测试
         'ci', // 持续继承
         'release', // 发布
         'deploy', // 部署
@@ -26,6 +24,7 @@ module.exports = {
         'article', // 文章
         'snippets', // 片段
         'log', // 记录
+        'code', // 开源、代码、工具
       ],
     ],
     // <type> 不能为空
