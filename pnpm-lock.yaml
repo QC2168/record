@@ -27,7 +27,7 @@ specifiers:
 
 dependencies:
   '@types/node': 18.11.18
-  vite-plugin-vitepress-auto-sidebar: 1.0.0_vitepress@1.0.0-alpha.35
+  vite-plugin-vitepress-auto-sidebar: link:node_modules/vite-plugin-vitepress-auto-sidebar
   vitepress: 1.0.0-alpha.35_@types+node@18.11.18
 
 devDependencies:
@@ -4129,16 +4129,6 @@ packages:
       - rollup
       - supports-color
     dev: true
-
-  /vite-plugin-vitepress-auto-sidebar/1.0.0_vitepress@1.0.0-alpha.35:
-    resolution: {integrity: sha512-j+a9+GqqFc/pGo90Ltk4/DIrDRxBdff6hBR/gB77n47WrTZLVEbJjaUu7MgwRE7nu/UuXRJjqzyYlXk2gne8pQ==}
-    peerDependencies:
-      vite: ^4.0.4
-      vitepress: 1.0.0-alpha.38
-    dependencies:
-      picocolors: 1.0.0
-      vitepress: 1.0.0-alpha.35_@types+node@18.11.18
-    dev: false
 
   /vite/4.0.4_@types+node@18.11.18:
     resolution: {integrity: sha512-xevPU7M8FU0i/80DMR+YhgrzR5KS2ORy1B4xcX/cXLsvnUWvfHuqMmVU6N0YiJ4JWGRJJsLCgjEzKjG9/GKoSw==}
