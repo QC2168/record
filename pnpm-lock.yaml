@@ -21,13 +21,13 @@ specifiers:
   tailwindcss: ^3.2.4
   typescript: ^4.9.4
   vite-plugin-inspect: ^0.7.14
-  vite-plugin-vitepress-auto-sidebar: ^1.0.0
+  vite-plugin-vitepress-auto-sidebar: ^1.0.2
   vitepress: 1.0.0-alpha.35
   vue: ^3.2.45
 
 dependencies:
   '@types/node': 18.11.18
-  vite-plugin-vitepress-auto-sidebar: link:node_modules/vite-plugin-vitepress-auto-sidebar
+  vite-plugin-vitepress-auto-sidebar: 1.0.2_vitepress@1.0.0-alpha.35
   vitepress: 1.0.0-alpha.35_@types+node@18.11.18
 
 devDependencies:
@@ -37,7 +37,7 @@ devDependencies:
   '@typescript-eslint/parser': 5.45.0_rixfb63bvt6dagk3yimdtzfu64
   autoprefixer: 10.4.13_postcss@8.4.19
   commander: 2.20.3
-  commitizen: 4.2.5_@types+node@18.11.18
+  commitizen: 4.2.5
   cross-env: 7.0.3
   cz-customizable: 6.9.2
   eslint: 8.2.0
@@ -311,8 +311,8 @@ packages:
       - '@swc/wasm'
     dev: true
 
-  /@commitlint/load/17.4.0_@types+node@18.11.18:
-    resolution: {integrity: sha512-wDKNvAJqukqZqKmhRlf3KNo/12QGo1AQcd80EbV01SxtGvyHOsJ/g+/IbrZpopZv8rvzmEVktcpfDYH6ITepFA==}
+  /@commitlint/load/17.4.2:
+    resolution: {integrity: sha512-Si++F85rJ9t4hw6JcOw1i2h0fdpdFQt0YKwjuK4bk9KhFjyFkRxvR3SB2dPaMs+EwWlDrDBGL+ygip1QD6gmPw==}
     engines: {node: '>=v14'}
     requiresBuild: true
     dependencies:
@@ -320,19 +320,19 @@ packages:
       '@commitlint/execute-rule': 17.4.0
       '@commitlint/resolve-extends': 17.4.0
       '@commitlint/types': 17.4.0
+      '@types/node': 18.13.0
       chalk: 4.1.2
       cosmiconfig: 8.0.0
-      cosmiconfig-typescript-loader: 4.2.0_bxtyj3et3xbsdyxhh3oblnfbj4
+      cosmiconfig-typescript-loader: 4.2.0_64vwns6mze6dqa3geqhnxg4km4
       lodash.isplainobject: 4.0.6
       lodash.merge: 4.6.2
       lodash.uniq: 4.5.0
       resolve-from: 5.0.0
-      ts-node: 10.9.1_awa2wsr5thmg3i7jqycphctjfq
+      ts-node: 10.9.1_j7ujjvgaenksbuonlzvryephbi
       typescript: 4.9.4
     transitivePeerDependencies:
       - '@swc/core'
       - '@swc/wasm'
-      - '@types/node'
     dev: true
     optional: true
 
@@ -802,6 +802,11 @@ packages:
 
   /@types/node/18.11.18:
     resolution: {integrity: sha512-DHQpWGjyQKSHj3ebjFI/wRKcqQcdR+MoFBygntYOZytCqNfkd2ZC4ARDJ2DQqhjH5p85Nnd3jhUJIXrszFX/JA==}
+
+  /@types/node/18.13.0:
+    resolution: {integrity: sha512-gC3TazRzGoOnoKAhUx+Q0t8S9Tzs74z7m0ipwGpSqQrleP14hKxP4/JUeEQcD3W1/aIpnWl8pHowI7WokuZpXg==}
+    dev: true
+    optional: true
 
   /@types/normalize-package-data/2.4.1:
     resolution: {integrity: sha512-Gj7cI7z+98M282Tqmp2K5EIsoouUEzbBJhQQzDE3jSIRk6r9gsz0oUokqIUR4u1R3dMHo0pDHM7sNOHyhulypw==}
@@ -1471,13 +1476,13 @@ packages:
     resolution: {integrity: sha512-GpVkmM8vF2vQUkj2LvZmD35JxeJOLCwJ9cUkugyk2nuhbv3+mJvpLYYt+0+USMxE+oj+ey/lJEnhZw75x/OMcQ==}
     dev: true
 
-  /commitizen/4.2.5_@types+node@18.11.18:
+  /commitizen/4.2.5:
     resolution: {integrity: sha512-9sXju8Qrz1B4Tw7kC5KhnvwYQN88qs2zbiB8oyMsnXZyJ24PPGiNM3nHr73d32dnE3i8VJEXddBFIbOgYSEXtQ==}
     engines: {node: '>= 12'}
     hasBin: true
     dependencies:
       cachedir: 2.3.0
-      cz-conventional-changelog: 3.3.0_@types+node@18.11.18
+      cz-conventional-changelog: 3.3.0
       dedent: 0.7.0
       detect-indent: 6.1.0
       find-node-modules: 2.1.3
@@ -1493,7 +1498,6 @@ packages:
     transitivePeerDependencies:
       - '@swc/core'
       - '@swc/wasm'
-      - '@types/node'
     dev: true
 
   /compare-func/2.0.0:
@@ -1552,7 +1556,7 @@ packages:
       - '@swc/wasm'
     dev: true
 
-  /cosmiconfig-typescript-loader/4.2.0_bxtyj3et3xbsdyxhh3oblnfbj4:
+  /cosmiconfig-typescript-loader/4.2.0_64vwns6mze6dqa3geqhnxg4km4:
     resolution: {integrity: sha512-NkANeMnaHrlaSSlpKGyvn2R4rqUDeE/9E5YHx+b4nwo0R8dZyAqcih8/gxpCZvqWP9Vf6xuLpMSzSgdVEIM78g==}
     engines: {node: '>=12', npm: '>=6'}
     peerDependencies:
@@ -1561,9 +1565,9 @@ packages:
       ts-node: '>=10'
       typescript: '>=3'
     dependencies:
-      '@types/node': 18.11.18
+      '@types/node': 18.13.0
       cosmiconfig: 8.0.0
-      ts-node: 10.9.1_awa2wsr5thmg3i7jqycphctjfq
+      ts-node: 10.9.1_j7ujjvgaenksbuonlzvryephbi
       typescript: 4.9.4
     dev: true
     optional: true
@@ -1620,22 +1624,21 @@ packages:
   /csstype/2.6.21:
     resolution: {integrity: sha512-Z1PhmomIfypOpoMjRQB70jfvy/wxT50qW08YXO5lMIJkrdq4yOTR+AW7FqutScmB9NkLwxo+jU+kZLbofZZq/w==}
 
-  /cz-conventional-changelog/3.3.0_@types+node@18.11.18:
+  /cz-conventional-changelog/3.3.0:
     resolution: {integrity: sha512-U466fIzU5U22eES5lTNiNbZ+d8dfcHcssH4o7QsdWaCcRs/feIPCxKYSWkYBNs5mny7MvEfwpTLWjvbm94hecw==}
     engines: {node: '>= 10'}
     dependencies:
       chalk: 2.4.2
-      commitizen: 4.2.5_@types+node@18.11.18
+      commitizen: 4.2.5
       conventional-commit-types: 3.0.0
       lodash.map: 4.6.0
       longest: 2.0.1
       word-wrap: 1.2.3
     optionalDependencies:
-      '@commitlint/load': 17.4.0_@types+node@18.11.18
+      '@commitlint/load': 17.4.2
     transitivePeerDependencies:
       - '@swc/core'
       - '@swc/wasm'
-      - '@types/node'
     dev: true
 
   /cz-customizable/6.9.2:
@@ -3982,6 +3985,38 @@ packages:
       yn: 3.1.1
     dev: true
 
+  /ts-node/10.9.1_j7ujjvgaenksbuonlzvryephbi:
+    resolution: {integrity: sha512-NtVysVPkxxrwFGUUxGYhfux8k78pQB3JqYBXlLRZgdGUqTO5wU/UyHop5p70iEbGhB7q5KmiZiU0Y3KlJrScEw==}
+    hasBin: true
+    peerDependencies:
+      '@swc/core': '>=1.2.50'
+      '@swc/wasm': '>=1.2.50'
+      '@types/node': '*'
+      typescript: '>=2.7'
+    peerDependenciesMeta:
+      '@swc/core':
+        optional: true
+      '@swc/wasm':
+        optional: true
+    dependencies:
+      '@cspotcode/source-map-support': 0.8.1
+      '@tsconfig/node10': 1.0.9
+      '@tsconfig/node12': 1.0.11
+      '@tsconfig/node14': 1.0.3
+      '@tsconfig/node16': 1.0.3
+      '@types/node': 18.13.0
+      acorn: 8.8.1
+      acorn-walk: 8.2.0
+      arg: 4.1.3
+      create-require: 1.1.1
+      diff: 4.0.2
+      make-error: 1.3.6
+      typescript: 4.9.4
+      v8-compile-cache-lib: 3.0.1
+      yn: 3.1.1
+    dev: true
+    optional: true
+
   /tsconfig-paths/3.14.1:
     resolution: {integrity: sha512-fxDhWnFSLt3VuTwtvJt5fpwxBHg5AdKWMsgcPOOIilyjymcYVZoCQF8fvFRezCNfblEXmi+PcM1eYHeOAgXCOQ==}
     dependencies:
@@ -4129,6 +4164,16 @@ packages:
       - rollup
       - supports-color
     dev: true
+
+  /vite-plugin-vitepress-auto-sidebar/1.0.2_vitepress@1.0.0-alpha.35:
+    resolution: {integrity: sha512-HahD2p4oJQlg477KhuN2jlZFmcOmaUbJ3RD8ND8rBggdVWr7h6IBdk77ZPDSkrK80pemP19ulAv+z1Y3fA96+g==}
+    peerDependencies:
+      vite: ^4.0.4
+      vitepress: 1.0.0-alpha.38
+    dependencies:
+      picocolors: 1.0.0
+      vitepress: 1.0.0-alpha.35_@types+node@18.11.18
+    dev: false
 
   /vite/4.0.4_@types+node@18.11.18:
     resolution: {integrity: sha512-xevPU7M8FU0i/80DMR+YhgrzR5KS2ORy1B4xcX/cXLsvnUWvfHuqMmVU6N0YiJ4JWGRJJsLCgjEzKjG9/GKoSw==}
