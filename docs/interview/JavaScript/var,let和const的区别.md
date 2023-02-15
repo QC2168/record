@@ -1,6 +1,6 @@
 ---
-`title`: var，let和const的区别
-`tags`: [`JavaScript`]
+title: var,let和const的区别
+tags: [JavaScript]
 ---
 
 ## var，let和const的区别
