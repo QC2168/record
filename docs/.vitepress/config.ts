@@ -33,5 +33,10 @@ export default defineConfig({
     },
     socialLinks: [{ icon: "github", link: "https://github.com/QC2168" }],
     lastUpdatedText: "更新时间",
-  }
+  },
+  markdown: {
+    config: (md) => {
+      md.use(require("markdown-it-task-lists"));
+    },
+  },
 });

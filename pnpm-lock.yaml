@@ -15,6 +15,7 @@ specifiers:
   eslint-config-airbnb-base: ^15.0.0
   eslint-plugin-import: 2.25.2
   husky: ^7.0.4
+  markdown-it-task-lists: ^2.1.1
   nodemon: ^2.0.20
   picocolors: ^1.0.0
   postcss: ^8.4.19
@@ -27,6 +28,7 @@ specifiers:
 
 dependencies:
   '@types/node': 18.11.18
+  markdown-it-task-lists: 2.1.1
   vite-plugin-vitepress-auto-sidebar: 1.0.2_vitepress@1.0.0-alpha.35
   vitepress: 1.0.0-alpha.35_@types+node@18.11.18
 
@@ -2944,6 +2946,10 @@ packages:
     resolution: {integrity: sha512-hdN1wVrZbb29eBGiGjJbeP8JbKjq1urkHJ/LIP/NY48MZ1QVXUsQBV1G1zvYFHn1XE06cwjBsOI2K3Ulnj1YXQ==}
     engines: {node: '>=8'}
     dev: true
+
+  /markdown-it-task-lists/2.1.1:
+    resolution: {integrity: sha512-TxFAc76Jnhb2OUu+n3yz9RMu4CwGfaT788br6HhEDlvWfdeJcLUsxk1Hgw2yJio0OXsxv7pyIPmvECY7bMbluA==}
+    dev: false
 
   /meow/8.1.2:
     resolution: {integrity: sha512-r85E3NdZ+mpYk1C6RjPFEMSE+s1iZMuHtsHAqY0DT3jZczl0diWUZ8g6oU7h0M9cD2EL+PzaYghhCLzR0ZNn5Q==}
