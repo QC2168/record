@@ -41,4 +41,10 @@ const { frontmatter } = data
     -webkit-box-shadow: inset 0 0 10px rgba(0,0,0,0.2);
 }
 
+
+iframe{
+  width: 100%;
+  height: auto;
+  margin: 28px 0;
+}
 </style>
