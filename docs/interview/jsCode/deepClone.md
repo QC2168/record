@@ -70,6 +70,8 @@ JSON.parse(JSON.stringify({foo:Symbol(),bar:'bar'}))
 
 ### 使用递归的方式实现深拷贝
 
+> 深拷贝需要处理的数据类型较多，具体见下面代码注释
+
 ```js
 // 判断处理对象
 function isObject(value) {
