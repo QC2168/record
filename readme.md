@@ -1,3 +1,5 @@
-### 学习记录、笔记、文章站点
+## _island Blog
 
-[点我跳转到在线站点](https://qc2168.github.io/record/)
+> 目前还在继续完善中,如果您想访问可以点击下方进入 ~
+
+### [online preview](https://qc2168.github.io/record/)
