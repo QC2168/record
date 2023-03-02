@@ -8,7 +8,9 @@ export default defineConfig({
       target:'modules'
     },
     plugins:[
-      AutoSidebar()
+      AutoSidebar({
+        ignoreIndexItem : true
+      })
     ]
   },
   themeConfig: {
