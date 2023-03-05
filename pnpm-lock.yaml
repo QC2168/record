@@ -23,14 +23,14 @@ specifiers:
   tailwindcss: ^3.2.4
   typescript: ^4.9.4
   vite-plugin-inspect: ^0.7.14
-  vite-plugin-vitepress-auto-sidebar: ^1.0.2
+  vite-plugin-vitepress-auto-sidebar: ^1.1.1
   vitepress: 1.0.0-alpha.46
   vue: ^3.2.45
 
 dependencies:
   '@types/node': 18.11.18
   markdown-it-task-lists: 2.1.1
-  vite-plugin-vitepress-auto-sidebar: 1.0.2_vitepress@1.0.0-alpha.46
+  vite-plugin-vitepress-auto-sidebar: 1.1.1_vitepress@1.0.0-alpha.46
   vitepress: 1.0.0-alpha.46_@types+node@18.11.18
 
 devDependencies:
@@ -4187,11 +4187,11 @@ packages:
       - supports-color
     dev: true
 
-  /vite-plugin-vitepress-auto-sidebar/1.0.2_vitepress@1.0.0-alpha.46:
-    resolution: {integrity: sha512-HahD2p4oJQlg477KhuN2jlZFmcOmaUbJ3RD8ND8rBggdVWr7h6IBdk77ZPDSkrK80pemP19ulAv+z1Y3fA96+g==}
+  /vite-plugin-vitepress-auto-sidebar/1.1.1_vitepress@1.0.0-alpha.46:
+    resolution: {integrity: sha512-7YvcqFHZWgkwLEGsI/iBOrlB0inPzCFwsymL4uyc5s25VXa53CrnDC1HWH9BzAcDfNh1i9Jp6OJHAhbczz4X1w==}
     peerDependencies:
       vite: ^4.0.4
-      vitepress: 1.0.0-alpha.38
+      vitepress: 1.0.0-alpha.49
     dependencies:
       picocolors: 1.0.0
       vitepress: 1.0.0-alpha.46_@types+node@18.11.18
