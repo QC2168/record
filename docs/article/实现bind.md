@@ -72,7 +72,9 @@ Function.prototype.mybind = function (thisArg, ...argArray) {
 
 
 
-在`bind`函数中有一个特点，当`bind`函数返回的新函数作为构造函数时它之前绑定的`this`值会失效，但是传入的参数不生效，目前我们的实现的bind并没有这个特点。（例如下面这个例子）
+在`bind`函数中有一个特点，当`bind`函数返回的新函数作为构造函数时它之前绑定的`this`值会失效，但是传入的参数不失效，目前我们的实现的bind并没有这个特点。
+
+例如下面这个例子
 
 ```javascript
 var foo = {
@@ -94,11 +96,12 @@ let newBar=new bar();
 // Person {constructor: Object}
 //    <constructor>: "Person"
 //    name: "Person"
+// 这里的this.name失效了
 // undefined
 // 18
 ```
 
-> 准确来说，JavaScript中的构造函数只是使用new 调用的普通函数
+> 准确来说，JavaScript中的构造函数只是使用new调用的普通函数
 
 从上面我们可以发现，当`bar`函数使用`new`关键字去调用时，之前的绑定的`foo`已经失效了。
 
@@ -132,7 +135,9 @@ Function.prototype.mybind = function (thisArg, ...argArray) {
 
 这里我们多出了在`apply`时判断了当前`this`是否属于`proxyFn`本身，也即是当作为构造函数时，如果是将绑定函数的this指实例。
 
-将`this`指向实例之后，我们需要把它的原型对象也赋值过去，这也是为什么上面的代码不直接返回`proxyFn`这个函数。
+将`this`指向实例之后，我们需要把它的原型对象也赋值过去
+
+这也是为什么上面的代码不直接返回`proxyFn`这个函数。
 
 ```javascript
 Function.prototype.mybind = function (thisArg, ...argArray) {
