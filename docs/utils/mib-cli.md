@@ -23,9 +23,23 @@
 - [x] 多备份设备 
 
 ### 📦 安装
-```bash
+
+::: code-group
+
+```bash [npm]
 npm install -g @qc2168/mib
 ```
+
+```bash [yarn]
+yarn add -g @qc2168/mib
+```
+
+```bash [pnpm]
+pnpm install -g @qc2168/mib
+```
+
+:::
+
 
 ### 📄 常见问题
 - 如何开启设备ADB

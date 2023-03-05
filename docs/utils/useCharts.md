@@ -13,16 +13,24 @@
 
 ### 📦 安装
 
-```bash
-# pnpm (推荐使用pnpm包，当然也要遵循当前项目包管理工具约束哦)
+> pnpm (推荐使用pnpm包，当然也要遵循当前项目包管理工具约束哦)
+
+::: code-group
+
+```bash [pnpm]
 pnpm add echarts @qc2168/use-charts
+```
 
-# yarn
+```bash [yarn]
 yarn add echarts @qc2168/use-charts
+```
 
-# npm
+```bash [npm]
 npm install echarts @qc2168/use-charts
 ```
+
+:::
+
 
 ### 🤖 例子
 

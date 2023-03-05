@@ -20,9 +20,27 @@
 - [x] 实时监听文件变动更新侧边栏数据
 
 ### 📦 安装
-```bash
+
+> pnpm (推荐使用pnpm包，当然也要遵循当前项目包管理工具约束哦)
+
+::: code-group
+
+```bash [pnpm]
+pnpm add vite-plugin-vitepress-auto-sidebar
+```
+
+```bash [yarn]
+yarn add vite-plugin-vitepress-auto-sidebar
+```
+
+```bash [npm]
 npm install vite-plugin-vitepress-auto-sidebar
 ```
+
+
+
+:::
+
 ### 🎨 使用
 
 在`.vitepress/config.ts`文件中，追加插件即可。
