@@ -40,7 +40,7 @@
   "dependencies": {
     "@types/node": "^18.11.18",
     "markdown-it-task-lists": "^2.1.1",
-    "vite-plugin-vitepress-auto-sidebar": "^1.1.1",
+    "vite-plugin-vitepress-auto-sidebar": "^1.2.0",
     "vitepress": "1.0.0-alpha.46"
   },
   "pnpm": {
