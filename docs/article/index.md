@@ -2,9 +2,5 @@
 ---
 ### 当学习到一些有用的知识点，我会将它整理成一篇文章放在这里，同时也会在[稀土掘金](https://juejin.cn/user/2858385965322935/posts)上面发布，也方便自己后续查找资料 ~
 ---
-<script setup>
-import outline from '../components/outline.vue';
-import { articleNav } from '../nav.json';
-</script>
 
-<outline :nav="articleNav" />
+在左侧点击你喜欢的文章开始阅读吧！:satisfied: :satisfied:
