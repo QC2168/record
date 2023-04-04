@@ -1,0 +1,1 @@
+import{_ as t,c as e,o as a}from"./app.b9c86669.js";const d=JSON.parse('{"title":"","description":"","frontmatter":{},"headers":[],"relativePath":"algorithm/链表的中间结点.md"}'),r={name:"algorithm/链表的中间结点.md"};function o(_,s,c,n,i,p){return a(),e("div")}const l=t(r,[["render",o]]);export{d as __pageData,l as default};

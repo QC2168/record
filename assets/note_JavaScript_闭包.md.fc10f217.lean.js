@@ -1,1 +1,0 @@
-import{_ as t,c as e,o as a}from"./app.06f43e56.js";const m=JSON.parse('{"title":"","description":"","frontmatter":{},"headers":[],"relativePath":"note/JavaScript/闭包.md"}'),r={name:"note/JavaScript/闭包.md"};function o(c,n,s,p,_,i){return a(),e("div")}const f=t(r,[["render",o]]);export{m as __pageData,f as default};
