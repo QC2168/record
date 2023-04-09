@@ -22,15 +22,17 @@ specifiers:
   postcss-prefix-selector: ^1.16.0
   tailwindcss: ^3.2.4
   typescript: ^4.9.4
+  vite: ^4.1.4
   vite-plugin-inspect: ^0.7.14
-  vite-plugin-vitepress-auto-sidebar: ^1.1.1
+  vite-plugin-vitepress-auto-sidebar: ^1.2.0
   vitepress: 1.0.0-alpha.46
   vue: ^3.2.45
 
 dependencies:
   '@types/node': 18.11.18
   markdown-it-task-lists: 2.1.1
-  vite-plugin-vitepress-auto-sidebar: 1.1.1_vitepress@1.0.0-alpha.46
+  vite: 4.1.4_@types+node@18.11.18
+  vite-plugin-vitepress-auto-sidebar: 1.2.0_gc6anndqvkz47wtgg6fjd3ld5i
   vitepress: 1.0.0-alpha.46_@types+node@18.11.18
 
 devDependencies:
@@ -53,7 +55,7 @@ devDependencies:
   postcss-prefix-selector: 1.16.0_postcss@8.4.19
   tailwindcss: 3.2.4_postcss@8.4.19
   typescript: 4.9.4
-  vite-plugin-inspect: 0.7.14
+  vite-plugin-inspect: 0.7.14_vite@4.1.4
   vue: 3.2.45
 
 packages:
@@ -493,7 +495,6 @@ packages:
     cpu: [arm]
     os: [android]
     requiresBuild: true
-    dev: false
     optional: true
 
   /@esbuild/android-arm64/0.16.17:
@@ -502,7 +503,6 @@ packages:
     cpu: [arm64]
     os: [android]
     requiresBuild: true
-    dev: false
     optional: true
 
   /@esbuild/android-x64/0.16.17:
@@ -511,7 +511,6 @@ packages:
     cpu: [x64]
     os: [android]
     requiresBuild: true
-    dev: false
     optional: true
 
   /@esbuild/darwin-arm64/0.16.17:
@@ -520,7 +519,6 @@ packages:
     cpu: [arm64]
     os: [darwin]
     requiresBuild: true
-    dev: false
     optional: true
 
   /@esbuild/darwin-x64/0.16.17:
@@ -529,7 +527,6 @@ packages:
     cpu: [x64]
     os: [darwin]
     requiresBuild: true
-    dev: false
     optional: true
 
   /@esbuild/freebsd-arm64/0.16.17:
@@ -538,7 +535,6 @@ packages:
     cpu: [arm64]
     os: [freebsd]
     requiresBuild: true
-    dev: false
     optional: true
 
   /@esbuild/freebsd-x64/0.16.17:
@@ -547,7 +543,6 @@ packages:
     cpu: [x64]
     os: [freebsd]
     requiresBuild: true
-    dev: false
     optional: true
 
   /@esbuild/linux-arm/0.16.17:
@@ -556,7 +551,6 @@ packages:
     cpu: [arm]
     os: [linux]
     requiresBuild: true
-    dev: false
     optional: true
 
   /@esbuild/linux-arm64/0.16.17:
@@ -565,7 +559,6 @@ packages:
     cpu: [arm64]
     os: [linux]
     requiresBuild: true
-    dev: false
     optional: true
 
   /@esbuild/linux-ia32/0.16.17:
@@ -574,7 +567,6 @@ packages:
     cpu: [ia32]
     os: [linux]
     requiresBuild: true
-    dev: false
     optional: true
 
   /@esbuild/linux-loong64/0.16.17:
@@ -583,7 +575,6 @@ packages:
     cpu: [loong64]
     os: [linux]
     requiresBuild: true
-    dev: false
     optional: true
 
   /@esbuild/linux-mips64el/0.16.17:
@@ -592,7 +583,6 @@ packages:
     cpu: [mips64el]
     os: [linux]
     requiresBuild: true
-    dev: false
     optional: true
 
   /@esbuild/linux-ppc64/0.16.17:
@@ -601,7 +591,6 @@ packages:
     cpu: [ppc64]
     os: [linux]
     requiresBuild: true
-    dev: false
     optional: true
 
   /@esbuild/linux-riscv64/0.16.17:
@@ -610,7 +599,6 @@ packages:
     cpu: [riscv64]
     os: [linux]
     requiresBuild: true
-    dev: false
     optional: true
 
   /@esbuild/linux-s390x/0.16.17:
@@ -619,7 +607,6 @@ packages:
     cpu: [s390x]
     os: [linux]
     requiresBuild: true
-    dev: false
     optional: true
 
   /@esbuild/linux-x64/0.16.17:
@@ -628,7 +615,6 @@ packages:
     cpu: [x64]
     os: [linux]
     requiresBuild: true
-    dev: false
     optional: true
 
   /@esbuild/netbsd-x64/0.16.17:
@@ -637,7 +623,6 @@ packages:
     cpu: [x64]
     os: [netbsd]
     requiresBuild: true
-    dev: false
     optional: true
 
   /@esbuild/openbsd-x64/0.16.17:
@@ -646,7 +631,6 @@ packages:
     cpu: [x64]
     os: [openbsd]
     requiresBuild: true
-    dev: false
     optional: true
 
   /@esbuild/sunos-x64/0.16.17:
@@ -655,7 +639,6 @@ packages:
     cpu: [x64]
     os: [sunos]
     requiresBuild: true
-    dev: false
     optional: true
 
   /@esbuild/win32-arm64/0.16.17:
@@ -664,7 +647,6 @@ packages:
     cpu: [arm64]
     os: [win32]
     requiresBuild: true
-    dev: false
     optional: true
 
   /@esbuild/win32-ia32/0.16.17:
@@ -673,7 +655,6 @@ packages:
     cpu: [ia32]
     os: [win32]
     requiresBuild: true
-    dev: false
     optional: true
 
   /@esbuild/win32-x64/0.16.17:
@@ -682,7 +663,6 @@ packages:
     cpu: [x64]
     os: [win32]
     requiresBuild: true
-    dev: false
     optional: true
 
   /@eslint/eslintrc/1.3.3:
@@ -957,14 +937,14 @@ packages:
       eslint-visitor-keys: 3.3.0
     dev: true
 
-  /@vitejs/plugin-vue/4.0.0_vite@4.1.3+vue@3.2.45:
+  /@vitejs/plugin-vue/4.0.0_vite@4.1.4+vue@3.2.45:
     resolution: {integrity: sha512-e0X4jErIxAB5oLtDqbHvHpJe/uWNkdpYV83AOG2xo2tEVSzCzewgJMtREZM30wXnM5ls90hxiOtAuVU6H5JgbA==}
     engines: {node: ^14.18.0 || >=16.0.0}
     peerDependencies:
       vite: ^4.0.0
       vue: ^3.2.25
     dependencies:
-      vite: 4.1.3_@types+node@18.11.18
+      vite: 4.1.4_@types+node@18.11.18
       vue: 3.2.45
     dev: false
 
@@ -1910,7 +1890,6 @@ packages:
       '@esbuild/win32-arm64': 0.16.17
       '@esbuild/win32-ia32': 0.16.17
       '@esbuild/win32-x64': 0.16.17
-    dev: false
 
   /escalade/3.1.1:
     resolution: {integrity: sha512-k0er2gUkLf8O0zKJiAhmkTnJlTvINGv7ygDNPbeIsX/TJjGJZHuh9B2UxbsaEkmlEo9MfhrSzmhIlhRlI2GXnw==}
@@ -3416,7 +3395,6 @@ packages:
       nanoid: 3.3.4
       picocolors: 1.0.0
       source-map-js: 1.0.2
-    dev: false
 
   /preact/10.12.1:
     resolution: {integrity: sha512-l8386ixSsBdbreOAkqtrwqHwdvR35ID8c3rKPa8lCWuO86dBi32QWHV4vfsZK1utLLFMvw+Z5Ad4XLkZzchscg==}
@@ -3608,7 +3586,6 @@ packages:
     hasBin: true
     optionalDependencies:
       fsevents: 2.3.2
-    dev: false
 
   /run-async/2.4.1:
     resolution: {integrity: sha512-tvVnVv01b8c1RrA6Ep7JkStj85Guv/YrMcwqYQnwjsAS2cTmmPGBBjAjpCW7RrSodNSoE2/qg9O4bceNvUuDgQ==}
@@ -4169,7 +4146,7 @@ packages:
       spdx-expression-parse: 3.0.1
     dev: true
 
-  /vite-plugin-inspect/0.7.14:
+  /vite-plugin-inspect/0.7.14_vite@4.1.4:
     resolution: {integrity: sha512-C9V93Yy2yUf941oVxIq93K6T1o0SZxoG8MdmyJsnoNDijOAGHT1rVSVjzF/uKFYvgnvLvaXioaoy6ica6aOS0g==}
     engines: {node: '>=14'}
     peerDependencies:
@@ -4182,23 +4159,25 @@ packages:
       kolorist: 1.6.0
       sirv: 2.0.2
       ufo: 1.0.1
+      vite: 4.1.4_@types+node@18.11.18
     transitivePeerDependencies:
       - rollup
       - supports-color
     dev: true
 
-  /vite-plugin-vitepress-auto-sidebar/1.1.1_vitepress@1.0.0-alpha.46:
-    resolution: {integrity: sha512-7YvcqFHZWgkwLEGsI/iBOrlB0inPzCFwsymL4uyc5s25VXa53CrnDC1HWH9BzAcDfNh1i9Jp6OJHAhbczz4X1w==}
+  /vite-plugin-vitepress-auto-sidebar/1.2.0_gc6anndqvkz47wtgg6fjd3ld5i:
+    resolution: {integrity: sha512-uB04y43islSQqvG/b4Z47gKcI+6hBKMDvpEJH1VcTiexDd0ebxbmsNkscN9QRizpKYI7XgQbnREOkFfJpqQqfQ==}
     peerDependencies:
       vite: ^4.0.4
       vitepress: 1.0.0-alpha.49
     dependencies:
       picocolors: 1.0.0
+      vite: 4.1.4_@types+node@18.11.18
       vitepress: 1.0.0-alpha.46_@types+node@18.11.18
     dev: false
 
-  /vite/4.1.3_@types+node@18.11.18:
-    resolution: {integrity: sha512-0Zqo4/Fr/swSOBmbl+HAAhOjrqNwju+yTtoe4hQX9UsARdcuc9njyOdr6xU0DDnV7YP0RT6mgTTOiRtZgxfCxA==}
+  /vite/4.1.4_@types+node@18.11.18:
+    resolution: {integrity: sha512-3knk/HsbSTKEin43zHu7jTwYWv81f8kgAL99G5NWBcA1LKvtvcVAC4JjBH1arBunO9kQka+1oGbrMKOjk4ZrBg==}
     engines: {node: ^14.18.0 || >=16.0.0}
     hasBin: true
     peerDependencies:
@@ -4229,7 +4208,6 @@ packages:
       rollup: 3.17.2
     optionalDependencies:
       fsevents: 2.3.2
-    dev: false
 
   /vitepress/1.0.0-alpha.46_@types+node@18.11.18:
     resolution: {integrity: sha512-HiKiHzC0iTPsRsKs8XcsMeMzCpcCt5LWcX9mpDr288Ju+nQf1G8A2+Wm44ZkBsVv4EHxFK4ChmWyZrL1OJUXpg==}
@@ -4237,12 +4215,12 @@ packages:
     dependencies:
       '@docsearch/css': 3.3.3
       '@docsearch/js': 3.3.3
-      '@vitejs/plugin-vue': 4.0.0_vite@4.1.3+vue@3.2.45
+      '@vitejs/plugin-vue': 4.0.0_vite@4.1.4+vue@3.2.45
       '@vue/devtools-api': 6.5.0
       '@vueuse/core': 9.13.0_vue@3.2.45
       body-scroll-lock: 4.0.0-beta.0
       shiki: 0.14.1
-      vite: 4.1.3_@types+node@18.11.18
+      vite: 4.1.4_@types+node@18.11.18
       vue: 3.2.45
     transitivePeerDependencies:
       - '@algolia/client-search'
