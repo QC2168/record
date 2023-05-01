@@ -1,0 +1,1 @@
+import{_ as e,c as t,o,O as a}from"./chunks/framework.488fce0c.js";const k=JSON.parse('{"title":"","description":"","frontmatter":{},"headers":[],"relativePath":"interview/Vue/nextTick核心和作用.md"}'),c={name:"interview/Vue/nextTick核心和作用.md"},d=a("",8),i=[d];function r(n,_,s,h,l,p){return o(),t("div",null,i)}const m=e(c,[["render",r]]);export{k as __pageData,m as default};

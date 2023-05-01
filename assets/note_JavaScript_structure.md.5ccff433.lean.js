@@ -1,0 +1,1 @@
+import{_ as s,c as n,o as a,O as l}from"./chunks/framework.488fce0c.js";const A=JSON.parse('{"title":"数据结构","description":"","frontmatter":{},"headers":[],"relativePath":"note/JavaScript/structure.md"}'),p={name:"note/JavaScript/structure.md"},o=l("",230),e=[o];function t(c,r,F,y,D,i){return a(),n("div",null,e)}const h=s(p,[["render",t]]);export{A as __pageData,h as default};

@@ -1,0 +1,1 @@
+import{_ as e,c as o,o as a,O as i}from"./chunks/framework.488fce0c.js";const u=JSON.parse('{"title":"","description":"","frontmatter":{},"headers":[],"relativePath":"interview/CSS/如何优化CSS.md"}'),l={name:"interview/CSS/如何优化CSS.md"},t=i("",12),c=[t];function r(d,s,n,h,_,p){return a(),o("div",null,c)}const f=e(l,[["render",r]]);export{u as __pageData,f as default};

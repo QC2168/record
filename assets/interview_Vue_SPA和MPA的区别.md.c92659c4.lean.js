@@ -1,0 +1,1 @@
+import{_ as e,c as a,o,O as d}from"./chunks/framework.488fce0c.js";const _=JSON.parse('{"title":"","description":"","frontmatter":{},"headers":[],"relativePath":"interview/Vue/SPA和MPA的区别.md"}'),c={name:"interview/Vue/SPA和MPA的区别.md"},l=d("",15),i=[l];function t(r,n,h,s,P,u){return o(),a("div",null,i)}const p=e(c,[["render",t]]);export{_ as __pageData,p as default};

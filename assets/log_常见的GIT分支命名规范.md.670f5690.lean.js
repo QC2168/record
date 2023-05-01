@@ -1,0 +1,1 @@
+import{_ as t,c as e,o,O as r}from"./chunks/framework.488fce0c.js";const h=JSON.parse('{"title":"","description":"","frontmatter":{},"headers":[],"relativePath":"log/常见的GIT分支命名规范.md"}'),s={name:"log/常见的GIT分支命名规范.md"},a=r("",2),_=[a];function n(i,l,g,c,d,p){return o(),e("div",null,_)}const T=t(s,[["render",n]]);export{h as __pageData,T as default};

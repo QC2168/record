@@ -1,0 +1,1 @@
+import{_ as s,c as a,o as n,O as l}from"./chunks/framework.488fce0c.js";const C=JSON.parse('{"title":"","description":"","frontmatter":{},"headers":[],"relativePath":"interview/jsCode/Promise.md"}'),o={name:"interview/jsCode/Promise.md"},p=l("",10),e=[p];function c(t,r,F,y,D,i){return n(),a("div",null,e)}const d=s(o,[["render",c]]);export{C as __pageData,d as default};

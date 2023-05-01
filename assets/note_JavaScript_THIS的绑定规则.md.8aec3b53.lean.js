@@ -1,0 +1,1 @@
+import{_ as s,c as a,o as n,O as l}from"./chunks/framework.488fce0c.js";const C=JSON.parse('{"title":"","description":"","frontmatter":{},"headers":[],"relativePath":"note/JavaScript/THIS的绑定规则.md"}'),o={name:"note/JavaScript/THIS的绑定规则.md"},p=l("",55),e=[p];function t(c,r,F,y,i,D){return n(),a("div",null,e)}const h=s(o,[["render",t]]);export{C as __pageData,h as default};

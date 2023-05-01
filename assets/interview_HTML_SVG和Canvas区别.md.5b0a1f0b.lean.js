@@ -1,0 +1,1 @@
+import{_ as a,c as e,o as s,O as n}from"./chunks/framework.488fce0c.js";const S=JSON.parse('{"title":"","description":"","frontmatter":{},"headers":[],"relativePath":"interview/HTML/SVG和Canvas区别.md"}'),t={name:"interview/HTML/SVG和Canvas区别.md"},i=n("",9),r=[i];function l(o,c,h,_,v,d){return s(),e("div",null,r)}const u=a(t,[["render",l]]);export{S as __pageData,u as default};

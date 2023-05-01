@@ -1,0 +1,1 @@
+import{_ as s,c as a,o as n,O as l}from"./chunks/framework.488fce0c.js";const A=JSON.parse('{"title":"移除vuepress","description":"","frontmatter":{},"headers":[],"relativePath":"article/迁移vitePress.md"}'),p={name:"article/迁移vitePress.md"},o=l("",36),e=[o];function t(c,r,D,y,F,i){return n(),a("div",null,e)}const d=s(p,[["render",t]]);export{A as __pageData,d as default};

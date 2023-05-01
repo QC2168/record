@@ -1,0 +1,1 @@
+import{_ as a,c as s,o as n,O as e}from"./chunks/framework.488fce0c.js";const u=JSON.parse('{"title":"","description":"","frontmatter":{},"headers":[],"relativePath":"algorithm/第一个错误的版本.md"}'),l={name:"algorithm/第一个错误的版本.md"},o=e("",16),t=[o];function p(i,c,r,d,h,C){return n(),s("div",null,t)}const _=a(l,[["render",p]]);export{u as __pageData,_ as default};

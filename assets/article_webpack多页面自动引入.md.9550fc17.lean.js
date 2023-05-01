@@ -1,0 +1,1 @@
+import{_ as s,c as a,o as n,O as l}from"./chunks/framework.488fce0c.js";const A=JSON.parse('{"title":"","description":"","frontmatter":{},"headers":[],"relativePath":"article/webpack多页面自动引入.md"}'),p={name:"article/webpack多页面自动引入.md"},o=l("",25),e=[o];function t(c,r,y,F,D,i){return n(),a("div",null,e)}const d=s(p,[["render",t]]);export{A as __pageData,d as default};

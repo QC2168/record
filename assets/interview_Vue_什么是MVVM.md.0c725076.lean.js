@@ -1,0 +1,1 @@
+import{_ as e,c as o,o as c,O as t}from"./chunks/framework.488fce0c.js";const p=JSON.parse('{"title":"","description":"","frontmatter":{},"headers":[],"relativePath":"interview/Vue/什么是MVVM.md"}'),d={name:"interview/Vue/什么是MVVM.md"},a=t("",3),_=[a];function r(i,n,s,V,l,M){return c(),o("div",null,_)}const v=e(d,[["render",r]]);export{p as __pageData,v as default};

@@ -1,0 +1,1 @@
+import{_ as s,c as a,o as n,O as l}from"./chunks/framework.488fce0c.js";const C=JSON.parse('{"title":"","description":"","frontmatter":{},"headers":[],"relativePath":"interview/jsCode/私有变量.md"}'),o={name:"interview/jsCode/私有变量.md"},p=l("",19),e=[p];function t(c,r,y,F,D,A){return n(),a("div",null,e)}const d=s(o,[["render",t]]);export{C as __pageData,d as default};

@@ -1,0 +1,1 @@
+import{_ as s,c as n,o as a,O as l}from"./chunks/framework.488fce0c.js";const C=JSON.parse('{"title":"","description":"","frontmatter":{},"headers":[],"relativePath":"interview/jsCode/eventLoop.md"}'),o={name:"interview/jsCode/eventLoop.md"},p=l("",5),e=[p];function c(t,r,F,y,D,i){return a(),n("div",null,e)}const d=s(o,[["render",c]]);export{C as __pageData,d as default};
