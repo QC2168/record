@@ -37,8 +37,9 @@ export default defineConfig({
     lastUpdatedText: "更新时间",
   },
   markdown: {
-    config: (md) => {
-      md.use(require("markdown-it-task-lists"));
+    config: async (md) => {
+      const taskListsModule = await import("markdown-it-task-lists");
+      md.use(taskListsModule.default);
     },
   },
 });
