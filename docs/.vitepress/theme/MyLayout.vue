@@ -1,6 +1,8 @@
 <script setup>
 import DefaultTheme from 'vitepress/theme'
 import { useData } from 'vitepress'
+import 'virtual:uno.css'
+
 const data = useData()
 const { Layout } = DefaultTheme
 const { frontmatter } = data
@@ -22,7 +24,6 @@ const { frontmatter } = data
   </Layout>
 </template>
 <style>
-@import "./index.css";
 
 /* 滚动槽 */
 ::-webkit-scrollbar {

@@ -1,5 +1,6 @@
 import { defineConfig } from "vitepress";
 import AutoSidebar from 'vite-plugin-vitepress-auto-sidebar';
+import UnoCSS from 'unocss/vite'
 
 export default defineConfig({
   base: process.env.NODE_ENV === "production" ? "/record/" : "",
@@ -8,9 +9,12 @@ export default defineConfig({
       target:'modules'
     },
     plugins:[
+      // @ts-ignore
       AutoSidebar({
         ignoreIndexItem : true
-      })
+      }),
+      // @ts-ignore
+      UnoCSS(),
     ]
   },
   themeConfig: {
