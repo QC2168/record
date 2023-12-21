@@ -13,6 +13,10 @@ interface ThemeExtends extends DefaultTheme.Config {
 
 export default defineConfigWithTheme<ThemeExtends>({
   base: process.env.NODE_ENV === "production" ? "/record/" : "",
+  title:'_island Record',
+  lang: 'zh-CN',
+  description: '哈喽，这是_island的记录小站',
+  head: [['link', { rel: 'icon', href: '../assets/avatar.png' }]],
   vite: {
     build: {
       target: 'modules'
@@ -27,7 +31,6 @@ export default defineConfigWithTheme<ThemeExtends>({
     ]
   },
   themeConfig: {
-    siteTitle: false,
     post: await getPosts(),
     outline: false,
     outlineTitle: '目录',
