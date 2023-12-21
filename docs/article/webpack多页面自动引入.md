@@ -1,3 +1,7 @@
+---
+title: webpack多页面自动引入
+tags: [javascript]
+---
 
 ## 前言
 

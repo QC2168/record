@@ -3,9 +3,9 @@ layout: home
 hero:
   name: _island
   text: 珍惜时间可以使生命变的更有价值
-  image:
-    src: https://raw.githubusercontent.com/QC2168/note-img/main/hill.png
-    alt: Hill
+  # image:
+  #   src: https://raw.githubusercontent.com/QC2168/note-img/main/hill.png
+  #   alt: Hill
 
 features:
   - icon: 🥩

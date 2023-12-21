@@ -1,3 +1,8 @@
+---
+title: create指令执行了什么
+tags: [javascript]
+---
+
 ## 你的项目是如何被创建的
 
 在使用`vite`创建项目的时候，我们通常会使用到`pnpm create vite`命令来初始化一个`vite`项目

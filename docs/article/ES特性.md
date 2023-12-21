@@ -1,3 +1,8 @@
+---
+title: ES特性
+tags: [javascript]
+---
+
 ## ES6语法
 
 `ES6`是`ECMAScript 6.0`是简称，其实它在2015年6月就发布出来了，所以又称`ES2015`，目的是使`JavaScript`这一门语言可以来编写更加复杂的大型应用。

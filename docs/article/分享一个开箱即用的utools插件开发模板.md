@@ -1,3 +1,8 @@
+---
+title: 分享一个开箱即用的utools插件开发模板
+tags: [other]
+---
+
 ## utools-plugin-template
 
 今天给大家带来一个开源的`utools`插件开发模板，让你更快的开发一个属于自己的`utools`插件

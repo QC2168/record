@@ -1,9 +1,8 @@
 ---
-title: 2022年了你还不知道pnpm么
+title: PNPM-更快更好包管理工具
 tags: [other]
 ---
 
-## 2022年了你还不知道pnpm么
 ## 什么是pnpm
 
 `pnpm` 名字的由来是`performant`+`pnpm`，由`rstacruz`提出的这个名字。

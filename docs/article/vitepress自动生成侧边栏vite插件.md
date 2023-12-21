@@ -1,3 +1,8 @@
+---
+title: vitepress自动生成侧边栏vite插件
+tags: [javascript]
+---
+
 ## vite-plugin-vitepress-auto-sidebar
 
 ### 起因

@@ -1,5 +1,5 @@
 ---
-title: echarts可拖拽的折线图.md
+title: echarts可拖拽的折线图
 tags: [JavaScript]
 ---
 

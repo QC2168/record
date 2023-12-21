@@ -1,17 +1,26 @@
-import { defineConfig } from "vitepress";
+import { defineConfigWithTheme, DefaultTheme } from "vitepress";
 import AutoSidebar from 'vite-plugin-vitepress-auto-sidebar';
 import UnoCSS from 'unocss/vite'
+import { getPosts } from "./theme/utils";
 
-export default defineConfig({
+export interface PostItem {
+  frontMatter: any
+  regularPath: string
+}
+interface ThemeExtends extends DefaultTheme.Config {
+  post: PostItem[]
+}
+
+export default defineConfigWithTheme<ThemeExtends>({
   base: process.env.NODE_ENV === "production" ? "/record/" : "",
-  vite:{
-    build:{
-      target:'modules'
+  vite: {
+    build: {
+      target: 'modules'
     },
-    plugins:[
+    plugins: [
       // @ts-ignore
       AutoSidebar({
-        ignoreIndexItem : true
+        ignoreIndexItem: true
       }),
       // @ts-ignore
       UnoCSS(),
@@ -19,8 +28,14 @@ export default defineConfig({
   },
   themeConfig: {
     siteTitle: false,
-    outline:"deep",
+    post: await getPosts(),
+    outline: false,
     outlineTitle: '目录',
+    logo:"../assets/avatar.png",
+    docFooter: {
+      prev: false,
+      next: false,
+    },
     nav: [
       { text: "首页", link: "/" },
       { text: "文章", link: "/article/index" },
@@ -38,7 +53,7 @@ export default defineConfig({
       text: '编辑此页内容'
     },
     socialLinks: [{ icon: "github", link: "https://github.com/QC2168" }],
-    lastUpdatedText: "更新时间",
+    lastUpdatedText: "最后更新时间",
   },
   markdown: {
     config: async (md) => {

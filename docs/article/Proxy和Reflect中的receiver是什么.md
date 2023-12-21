@@ -1,5 +1,5 @@
 ---
-title: 一文搞懂Proxy和Reflect中的receiver到底是什么东西
+title: Proxy和Reflect中的receiver是什么
 tags: [JavaScript]
 ---
 

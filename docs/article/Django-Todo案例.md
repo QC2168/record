@@ -1,3 +1,8 @@
+---
+title: Django-Todo案例
+tags: [python]
+---
+
 ## Django是什么
 
 `Django`是一个采用MTV的框架模式的web应用框架， 最初被设计用于具有快速开发需求的新闻类站点，目的是要实现简单快捷的网站开发。

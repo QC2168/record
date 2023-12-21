@@ -1,3 +1,10 @@
+---
+aside: false
+sidebar: false
+editLink: false
+---
+
+
 # 代码片段
 
 在日常开发中，往往少不了对一些第三方库进行二次封装，达到更佳的使用效果。

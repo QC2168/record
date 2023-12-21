@@ -1,2 +1,7 @@
-# 随手一记
 ---
+aside: false
+sidebar: false
+editLink: false
+---
+
+# 随手一记
