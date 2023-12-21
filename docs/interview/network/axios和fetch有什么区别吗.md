@@ -1,6 +1,6 @@
 ---
-title: `axios和fetch有什么区别吗`
-tags: [`network`]
+title: axios和fetch有什么区别吗
+tags: [network]
 ---
 
 ## `axios`和`fetch`有什么区别吗
