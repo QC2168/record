@@ -1,5 +1,9 @@
-## _island Blog
+## _island
 
-> 目前还在继续完善中,如果您想访问可以点击下方进入 ~
+哈喽，欢迎您的到来😄
 
-### [online preview](https://qc2168.github.io/record/)
+这里是我的个人网站仓库🦎
+
+记录着我在学习和开发过中的点点滴滴，欢迎一起学习交流呀！
+
+[点击访问](https://island-record.vercel.app/)
