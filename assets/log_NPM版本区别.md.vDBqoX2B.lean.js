@@ -1,1 +1,0 @@
-import{_ as l,o as i,c as o,R as t}from"./chunks/framework.sdpcv3_n.js";const h=JSON.parse('{"title":"","description":"","frontmatter":{},"headers":[],"relativePath":"log/NPM版本区别.md","filePath":"log/NPM版本区别.md"}'),r={name:"log/NPM版本区别.md"},n=t("",4),e=[n];function s(p,a,g,u,_,c){return i(),o("div",null,e)}const d=l(r,[["render",s]]);export{h as __pageData,d as default};

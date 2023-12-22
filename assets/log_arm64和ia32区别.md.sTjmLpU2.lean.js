@@ -1,0 +1,1 @@
+import{_ as e,o,c,R as a}from"./chunks/framework.qjNjGLUL.js";const h=JSON.parse('{"title":"","description":"","frontmatter":{},"headers":[],"relativePath":"log/arm64和ia32区别.md","filePath":"log/arm64和ia32区别.md"}'),d={name:"log/arm64和ia32区别.md"},t=a("",5),r=[t];function _(i,s,n,p,m,l){return o(),c("div",null,r)}const f=e(d,[["render",_]]);export{h as __pageData,f as default};

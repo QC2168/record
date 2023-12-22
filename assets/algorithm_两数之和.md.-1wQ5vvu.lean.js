@@ -1,0 +1,1 @@
+import{_ as s,o as i,c as a,R as h}from"./chunks/framework.qjNjGLUL.js";const c=JSON.parse('{"title":"","description":"","frontmatter":{},"headers":[],"relativePath":"algorithm/两数之和.md","filePath":"algorithm/两数之和.md"}'),n={name:"algorithm/两数之和.md"},k=h("",26),t=[k];function l(p,e,E,r,d,g){return i(),a("div",null,t)}const F=s(n,[["render",l]]);export{c as __pageData,F as default};

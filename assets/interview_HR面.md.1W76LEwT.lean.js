@@ -1,1 +1,0 @@
-import{_ as a,o as r,c as t,R as e}from"./chunks/framework.sdpcv3_n.js";const g=JSON.parse('{"title":"","description":"","frontmatter":{},"headers":[],"relativePath":"interview/HR面.md","filePath":"interview/HR面.md"}'),o={name:"interview/HR面.md"},i=e("",43),n=[i];function l(p,s,h,c,d,u){return r(),t("div",null,n)}const _=a(o,[["render",l]]);export{g as __pageData,_ as default};
