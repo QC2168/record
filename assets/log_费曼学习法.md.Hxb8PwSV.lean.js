@@ -1,0 +1,1 @@
+import{_ as e,o as a,c as l,R as t}from"./chunks/framework.sdpcv3_n.js";const p=JSON.parse('{"title":"","description":"","frontmatter":{},"headers":[],"relativePath":"log/费曼学习法.md","filePath":"log/费曼学习法.md"}'),i={name:"log/费曼学习法.md"},o=t("",5),n=[o];function r(_,c,s,h,u,d){return a(),l("div",null,n)}const f=e(i,[["render",r]]);export{p as __pageData,f as default};

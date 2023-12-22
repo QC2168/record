@@ -1,1 +1,0 @@
-import{_ as s,c as l,o as a,O as o}from"./chunks/framework.488fce0c.js";const y=JSON.parse('{"title":"","description":"","frontmatter":{},"headers":[],"relativePath":"interview/Vue/父子组件挂载顺序.md"}'),e={name:"interview/Vue/父子组件挂载顺序.md"},n=o("",11),t=[n];function p(r,i,c,D,F,d){return a(),l("div",null,t)}const _=s(e,[["render",p]]);export{y as __pageData,_ as default};

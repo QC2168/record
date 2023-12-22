@@ -1,1 +1,0 @@
-import{_ as s,c as a,o as n,O as o}from"./chunks/framework.488fce0c.js";const i=JSON.parse('{"title":"","description":"","frontmatter":{},"headers":[],"relativePath":"interview/Vue/为什么data是一个函数.md"}'),l={name:"interview/Vue/为什么data是一个函数.md"},p=o("",9),e=[p];function t(c,D,r,F,y,A){return n(),a("div",null,e)}const d=s(l,[["render",t]]);export{i as __pageData,d as default};

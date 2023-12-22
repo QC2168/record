@@ -1,1 +1,0 @@
-import{_ as s,c as a,o as n,O as l}from"./chunks/framework.488fce0c.js";const A=JSON.parse('{"title":"","description":"","frontmatter":{},"headers":[],"relativePath":"algorithm/二分查找.md"}'),o={name:"algorithm/二分查找.md"},p=l("",25),e=[p];function t(c,r,y,F,D,i){return n(),a("div",null,e)}const d=s(o,[["render",t]]);export{A as __pageData,d as default};

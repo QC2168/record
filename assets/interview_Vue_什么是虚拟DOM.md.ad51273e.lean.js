@@ -1,1 +1,0 @@
-import{_ as s,c as n,o as a,O as o}from"./chunks/framework.488fce0c.js";const i=JSON.parse('{"title":"","description":"","frontmatter":{},"headers":[],"relativePath":"interview/Vue/什么是虚拟DOM.md"}'),l={name:"interview/Vue/什么是虚拟DOM.md"},p=o("",12),e=[p];function t(c,r,y,C,D,F){return a(),n("div",null,e)}const d=s(l,[["render",t]]);export{i as __pageData,d as default};

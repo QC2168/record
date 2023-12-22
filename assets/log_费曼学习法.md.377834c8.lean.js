@@ -1,1 +1,0 @@
-import{_ as e,c as a,o as l,O as t}from"./chunks/framework.488fce0c.js";const p=JSON.parse('{"title":"","description":"","frontmatter":{},"headers":[],"relativePath":"log/费曼学习法.md"}'),i={name:"log/费曼学习法.md"},o=t("",5),n=[o];function r(_,c,s,u,h,d){return l(),a("div",null,n)}const f=e(i,[["render",r]]);export{p as __pageData,f as default};

@@ -1,1 +1,0 @@
-import{_ as e,c as a,o,O as t}from"./chunks/framework.488fce0c.js";const b=JSON.parse('{"title":"","description":"","frontmatter":{},"headers":[],"relativePath":"note/JavaScript/浏览器的工作原理.md"}'),c={name:"note/JavaScript/浏览器的工作原理.md"},s=t("",38),d=[s];function l(n,r,p,i,h,u){return o(),a("div",null,d)}const g=e(c,[["render",l]]);export{b as __pageData,g as default};

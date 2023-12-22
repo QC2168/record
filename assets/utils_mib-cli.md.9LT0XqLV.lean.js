@@ -1,0 +1,1 @@
+import{_ as s,o as i,c as a,R as t}from"./chunks/framework.sdpcv3_n.js";const u=JSON.parse('{"title":"","description":"","frontmatter":{},"headers":[],"relativePath":"utils/mib-cli.md","filePath":"utils/mib-cli.md"}'),l={name:"utils/mib-cli.md"},n=t("",19),e=[n];function h(p,k,d,o,c,r){return i(),a("div",null,e)}const g=s(l,[["render",h]]);export{u as __pageData,g as default};

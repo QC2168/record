@@ -1,1 +1,0 @@
-import{_ as e,c as a,o,O as t}from"./chunks/framework.488fce0c.js";const C=JSON.parse('{"title":"","description":"","frontmatter":{},"headers":[],"relativePath":"interview/CSS/CSS预处理器和后处理器是什么.md"}'),c={name:"interview/CSS/CSS预处理器和后处理器是什么.md"},s=t("",5),_=[s];function r(d,n,i,S,l,h){return o(),a("div",null,_)}const u=e(c,[["render",r]]);export{C as __pageData,u as default};

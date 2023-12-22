@@ -1,1 +1,0 @@
-import{_ as s,c as n,o as a,O as l}from"./chunks/framework.488fce0c.js";const A=JSON.parse('{"title":"","description":"","frontmatter":{},"headers":[],"relativePath":"interview/jsCode/单例模式.md"}'),o={name:"interview/jsCode/单例模式.md"},p=l("",6),e=[p];function t(c,r,D,F,y,i){return a(),n("div",null,e)}const _=s(o,[["render",t]]);export{A as __pageData,_ as default};

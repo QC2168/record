@@ -1,1 +1,0 @@
-import{_ as e,c as o,o as c,O as d}from"./chunks/framework.488fce0c.js";const _=JSON.parse('{"title":"","description":"","frontmatter":{},"headers":[],"relativePath":"interview/Vue/Vue2和3有什么区别.md"}'),a={name:"interview/Vue/Vue2和3有什么区别.md"},t=d("",29),r=[t];function p(i,s,n,u,l,h){return c(),o("div",null,r)}const V=e(a,[["render",p]]);export{_ as __pageData,V as default};

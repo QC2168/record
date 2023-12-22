@@ -1,1 +1,0 @@
-import{_ as e,c as o,o as a,O as s}from"./chunks/framework.488fce0c.js";const m=JSON.parse('{"title":"","description":"","frontmatter":{},"headers":[],"relativePath":"interview/Vue/组件之间的通信方式有哪些.md"}'),t={name:"interview/Vue/组件之间的通信方式有哪些.md"},c=s("",19),n=[c];function l(r,p,d,i,h,u){return a(),o("div",null,n)}const D=e(t,[["render",l]]);export{m as __pageData,D as default};

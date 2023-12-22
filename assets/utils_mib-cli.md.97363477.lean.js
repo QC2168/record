@@ -1,1 +1,0 @@
-import{_ as s,c as a,o as l,O as n}from"./chunks/framework.488fce0c.js";const C=JSON.parse('{"title":"","description":"","frontmatter":{},"headers":[],"relativePath":"utils/mib-cli.md"}'),o={name:"utils/mib-cli.md"},p=n("",19),t=[p];function e(c,r,D,i,y,F){return l(),a("div",null,t)}const u=s(o,[["render",e]]);export{C as __pageData,u as default};

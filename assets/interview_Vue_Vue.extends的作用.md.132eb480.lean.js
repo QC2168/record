@@ -1,1 +1,0 @@
-import{_ as e,c as t,o as s,O as a}from"./chunks/framework.488fce0c.js";const m=JSON.parse('{"title":"","description":"","frontmatter":{},"headers":[],"relativePath":"interview/Vue/Vue.extends的作用.md"}'),n={name:"interview/Vue/Vue.extends的作用.md"},o=a("",3),r=[o];function _(c,i,d,p,l,u){return s(),t("div",null,r)}const x=e(n,[["render",_]]);export{m as __pageData,x as default};

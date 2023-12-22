@@ -1,1 +1,0 @@
-import{_ as a,c as e,o as t,O as r}from"./chunks/framework.488fce0c.js";const f=JSON.parse('{"title":"今天你学了什么","description":"","frontmatter":{},"headers":[],"relativePath":"til/index.md"}'),o={name:"til/index.md"},i=r("",4),n=[i];function s(c,d,_,l,h,u){return t(),e("div",null,n)}const p=a(o,[["render",s]]);export{f as __pageData,p as default};

@@ -1,1 +1,0 @@
-import{_ as s,c as a,o,O as n}from"./chunks/framework.488fce0c.js";const v=JSON.parse('{"title":"","description":"","frontmatter":{},"headers":[],"relativePath":"interview/Vue/指令篇.md"}'),e={name:"interview/Vue/指令篇.md"},l=n("",19),t=[l];function p(c,r,d,F,D,i){return o(),a("div",null,t)}const h=s(e,[["render",p]]);export{v as __pageData,h as default};

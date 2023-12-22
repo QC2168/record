@@ -1,1 +1,0 @@
-import{_ as e,c as o,o as a,O as t}from"./chunks/framework.488fce0c.js";const b=JSON.parse('{"title":"","description":"","frontmatter":{},"headers":[],"relativePath":"interview/Vue/Vue路由.md"}'),r={name:"interview/Vue/Vue路由.md"},c=t("",5),i=[c];function d(l,n,_,s,u,h){return a(),o("div",null,i)}const m=e(r,[["render",d]]);export{b as __pageData,m as default};
