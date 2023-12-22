@@ -16,7 +16,7 @@ export default defineConfigWithTheme<ThemeExtends>({
   title:'_island Record',
   lang: 'zh-CN',
   description: '哈喽，这是_island的记录小站',
-  head: [['link', { rel: 'icon', href: '../assets/avatar.png' }]],
+  head: [['link', { rel: 'icon', href: 'avatar.png' }]],
   vite: {
     build: {
       target: 'modules'
@@ -34,7 +34,7 @@ export default defineConfigWithTheme<ThemeExtends>({
     post: await getPosts(),
     outline: false,
     outlineTitle: '目录',
-    logo:"../assets/avatar.png",
+    logo:"avatar.png",
     docFooter: {
       prev: false,
       next: false,

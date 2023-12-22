@@ -4,7 +4,7 @@ hero:
   name: _island
   text: 珍惜时间可以使生命变的更有价值
   image:
-    src: ./assets/island.png
+    src: island.png
     alt: island
 
 features:
