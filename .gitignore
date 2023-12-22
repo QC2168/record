@@ -4,3 +4,6 @@ cache
 *.log
 docs/.vitepress/dist
 .idea
+package-json.lock
+yarn.lock
+package-lock.json
