@@ -13,10 +13,10 @@ editLink: false
 
  我创建了下面这个库  方便大家直接拿去到项目中使用。
 
-[GITHUB仓库](https://github.com/QC2168/snippets)
+[Code Snippets Of GITHUB](https://github.com/QC2168/snippets)
 
 ---
-### 相关文章
+### 文章
 
 - [Vue3这样子结合hook写弹窗组件更快更高效](https://juejin.cn/post/7175821416237891644) - [useDialog](https://github.com/QC2168/useDialog)
 - [在Vue3这样子写页面更快更高效](https://juejin.cn/post/7172889961446768670) - [useList](https://github.com/QC2168/snippets/tree/main/useList)
