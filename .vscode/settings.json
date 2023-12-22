@@ -3,6 +3,8 @@
         "commitlint",
         "echarts",
         "reco",
+        "Utools",
+        "Vite",
         "vitepress",
         "vuepress"
     ]
